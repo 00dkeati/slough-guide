@@ -135,11 +135,12 @@ export default async function HomePage() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {featuredData.map(({ category, topPicks }) => (
-                <Link
-                  key={category.id}
-                  href={`/category/${category.id}`}
-                  className="group block p-6 bg-white rounded-lg border hover:shadow-lg transition-all duration-200 hover:border-blue-300"
-                >
+                category && (
+                  <Link
+                    key={category.id}
+                    href={`/category/${category.id}`}
+                    className="group block p-6 bg-white rounded-lg border hover:shadow-lg transition-all duration-200 hover:border-blue-300"
+                  >
                   <div className="text-center">
                     <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
                       {category.icon}
@@ -159,7 +160,8 @@ export default async function HomePage() {
                       )}
                     </div>
                   </div>
-                </Link>
+                  </Link>
+                )
               ))}
             </div>
 
