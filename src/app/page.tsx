@@ -1,103 +1,322 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { Metadata } from 'next';
+import { KVStore } from '@/lib/kv';
+import { CATEGORIES, getCategoryById } from '@/config/categories';
+import { CITY } from '@/config/city';
+import { getTopPicks } from '@/lib/search';
+import { BusinessCard } from '@/components/business-card';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { 
+  generateMetaTags,
+  generateBreadcrumbStructuredData
+} from '@/lib/seo';
+import { 
+  Search, 
+  MapPin, 
+  Star, 
+  Clock, 
+  TrendingUp,
+  Phone,
+  Globe
+} from 'lucide-react';
 
-export default function Home() {
+export const metadata: Metadata = generateMetaTags({
+  title: 'Slough Guide - Best Local Businesses & Services in Slough, Berkshire',
+  description: 'Discover the best restaurants, shops, services and businesses in Slough. Read reviews, check opening hours, and find top-rated local businesses near you.',
+  canonical: '/',
+});
+
+// Featured categories for the home page
+const FEATURED_CATEGORIES = [
+  'restaurants',
+  'takeaways', 
+  'cafes',
+  'pubs',
+  'gyms',
+  'barbers',
+  'hairdressers',
+  'plumbers',
+  'electricians',
+  'car_wash',
+  'taxi',
+  'hotels'
+];
+
+export default async function HomePage() {
+  // Get top picks for featured categories
+  const featuredData = await Promise.all(
+    FEATURED_CATEGORIES.map(async (categoryId) => {
+      const category = getCategoryById(categoryId);
+      const topPicks = await getTopPicks(categoryId, 3);
+      return { category, topPicks };
+    })
+  );
+
+  // Get stats
+  const totalPlaces = await KVStore.getPlaceCount();
+  const categoryCounts = await KVStore.getCategoryCounts();
+
+  // Generate structured data
+  const breadcrumbData = generateBreadcrumbStructuredData([
+    { name: 'Home' },
+  ]);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbData),
+        }}
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <div className="min-h-screen">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                Discover the Best of Slough
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-blue-100">
+                Find top-rated restaurants, services, and businesses in Slough, Berkshire
+              </p>
+              
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto">
+                <form action="/search" method="GET" className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <input
+                    type="text"
+                    name="q"
+                    placeholder="Search restaurants, services, businesses..."
+                    className="w-full pl-12 pr-4 py-4 text-lg rounded-lg border-0 focus:ring-2 focus:ring-blue-300"
+                  />
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2"
+                  >
+                    Search
+                  </Button>
+                </form>
+              </div>
+
+              {/* Stats */}
+              <div className="flex justify-center gap-8 mt-8 text-blue-100">
+                <div className="text-center">
+                  <div className="text-2xl font-bold">{totalPlaces.toLocaleString()}</div>
+                  <div className="text-sm">Businesses</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold">{CATEGORIES.length}</div>
+                  <div className="text-sm">Categories</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold">{CITY.neighbourhoods.length}</div>
+                  <div className="text-sm">Areas</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Categories */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Popular Categories
+              </h2>
+              <p className="text-lg text-gray-600">
+                Explore the most popular business categories in Slough
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {featuredData.map(({ category, topPicks }) => (
+                <Link
+                  key={category.id}
+                  href={`/category/${category.id}`}
+                  className="group block p-6 bg-white rounded-lg border hover:shadow-lg transition-all duration-200 hover:border-blue-300"
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
+                      {category.icon}
+                    </div>
+                    <h3 className="font-semibold text-gray-900 mb-2">{category.label}</h3>
+                    <p className="text-sm text-gray-600 mb-3">{category.description}</p>
+                    <div className="flex items-center justify-center gap-2 text-sm text-blue-600">
+                      <span>{categoryCounts[category.id] || 0} businesses</span>
+                      {topPicks.length > 0 && (
+                        <>
+                          <span>•</span>
+                          <span className="flex items-center gap-1">
+                            <Star className="w-3 h-3" />
+                            {topPicks[0].rating?.toFixed(1)}
+                          </span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <Link
+                href="/categories"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                View All Categories
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Top Picks */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Top Rated Businesses
+              </h2>
+              <p className="text-lg text-gray-600">
+                Discover the highest-rated businesses in Slough
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredData.slice(0, 6).map(({ category, topPicks }) => (
+                <div key={category.id}>
+                  {topPicks.length > 0 && (
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                          <span className="text-2xl">{category.icon}</span>
+                          <span>Top {category.label}</span>
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-4">
+                          {topPicks.map((place) => (
+                            <BusinessCard
+                              key={place.place_id}
+                              place={place}
+                              showNeighbourhood={false}
+                              showCategories={false}
+                              className="shadow-none border-0 p-0"
+                            />
+                          ))}
+                        </div>
+                        <div className="mt-4 pt-4 border-t">
+                          <Link
+                            href={`/category/${category.id}/best`}
+                            className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                          >
+                            View all best {category.label.toLowerCase()} →
+                          </Link>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Areas */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Explore Slough Areas
+              </h2>
+              <p className="text-lg text-gray-600">
+                Find businesses in your local area
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {CITY.neighbourhoods.map((neighbourhood) => (
+                <Link
+                  key={neighbourhood}
+                  href={`/neighbourhood/${neighbourhood.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="group block p-4 bg-white rounded-lg border hover:shadow-md transition-all duration-200 hover:border-blue-300 text-center"
+                >
+                  <MapPin className="w-6 h-6 mx-auto mb-2 text-blue-600 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-medium text-gray-900">{neighbourhood}</h3>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Actions */}
+        <section className="py-16 bg-blue-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Quick Actions
+              </h2>
+              <p className="text-lg text-gray-600">
+                Find what you need quickly
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <Link
+                href="/category/restaurants/open-now"
+                className="group block p-6 bg-white rounded-lg border hover:shadow-lg transition-all duration-200"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-green-100 rounded-lg group-hover:bg-green-200 transition-colors">
+                    <Clock className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Open Now</h3>
+                    <p className="text-sm text-gray-600">Find restaurants open right now</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link
+                href="/category/takeaways/24-hours"
+                className="group block p-6 bg-white rounded-lg border hover:shadow-lg transition-all duration-200"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-purple-100 rounded-lg group-hover:bg-purple-200 transition-colors">
+                    <Clock className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">24 Hours</h3>
+                    <p className="text-sm text-gray-600">Businesses open around the clock</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link
+                href="/add-business"
+                className="group block p-6 bg-white rounded-lg border hover:shadow-lg transition-all duration-200"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
+                    <Phone className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Add Business</h3>
+                    <p className="text-sm text-gray-600">List your business with us</p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 }
