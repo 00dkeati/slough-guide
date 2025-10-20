@@ -183,4 +183,4 @@ This project is licensed under the MIT License.
 
 ## Support
 
-For questions or support, please contact [your-email@domain.com]
+For questions or support, please contact [your-email@domain.com]# Force Vercel redeploy
