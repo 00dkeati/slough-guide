@@ -190,7 +190,8 @@ export default async function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredData.slice(0, 6).map(({ category, topPicks }) => (
-                <div key={category.id}>
+                category && (
+                  <div key={category.id}>
                   {topPicks.length > 0 && (
                     <Card>
                       <CardHeader>
@@ -222,7 +223,8 @@ export default async function HomePage() {
                       </CardContent>
                     </Card>
                   )}
-                </div>
+                  </div>
+                )
               ))}
             </div>
           </div>
