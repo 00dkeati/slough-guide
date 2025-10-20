@@ -39,7 +39,7 @@ interface GooglePlaceDetailsResponse {
 export async function placesTextSearch(
   query: string,
   pageToken?: string
-): Promise<{ results: any[]; nextPageToken?: string }> {
+): Promise<{ results: unknown[]; nextPageToken?: string }> {
   await rateLimit();
   
   const params = new URLSearchParams({
@@ -81,7 +81,7 @@ export async function placesNearby(
   type: string,
   radius: number = 7000,
   pageToken?: string
-): Promise<{ results: any[]; nextPageToken?: string }> {
+): Promise<{ results: unknown[]; nextPageToken?: string }> {
   await rateLimit();
   
   const params = new URLSearchParams({
@@ -168,9 +168,9 @@ export function placePhotoUrl(photoReference: string, maxWidth: number = 800): s
 
 // Helper function to get all pages of results
 export async function getAllPlaces(
-  searchFn: (pageToken?: string) => Promise<{ results: any[]; nextPageToken?: string }>
-): Promise<any[]> {
-  const allResults: any[] = [];
+  searchFn: (pageToken?: string) => Promise<{ results: unknown[]; nextPageToken?: string }>
+): Promise<unknown[]> {
+  const allResults: unknown[] = [];
   let pageToken: string | undefined;
   let pageCount = 0;
   const maxPages = 3; // Google limits to 3 pages (60 results max)

@@ -1,7 +1,6 @@
 import { format } from 'date-fns';
 import { Place, LocalBusiness, ItemList, BreadcrumbList } from './types';
-import { CATEGORIES, getCategoryById } from '@/config/categories';
-import { CITY } from '@/config/city';
+import { getCategoryById } from '@/config/categories';
 
 const SITE_CANONICAL = process.env.SITE_CANONICAL || 'https://www.sloughguide.co.uk';
 

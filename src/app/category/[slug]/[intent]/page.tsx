@@ -12,8 +12,7 @@ import {
 } from '@/lib/seo';
 import { filterPlacesByIntent } from '@/lib/place-utils';
 import { BusinessCard } from '@/components/business-card';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Star, Clock, MapPin, DollarSign, TrendingUp } from 'lucide-react';
 
 interface IntentPageProps {
@@ -188,7 +187,7 @@ export default async function IntentPage({ params }: IntentPageProps) {
                   No {intentInfo.label.toLowerCase()} {category.label.toLowerCase()} found
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  We couldn't find any {category.label.toLowerCase()} that match your criteria.
+                  We couldn&apos;t find any {category.label.toLowerCase()} that match your criteria.
                 </p>
                 <Link
                   href={`/category/${category.id}`}

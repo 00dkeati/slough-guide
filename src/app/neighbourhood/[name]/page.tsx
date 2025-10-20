@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { KVStore } from '@/lib/kv';
-import { CATEGORIES, getCategoryById } from '@/config/categories';
+import { CATEGORIES } from '@/config/categories';
 import { CITY } from '@/config/city';
 import { 
   generateNeighbourhoodTitle, 
@@ -51,7 +51,6 @@ export async function generateMetadata({ params }: NeighbourhoodPageProps): Prom
 }
 
 export default async function NeighbourhoodPage({ params }: NeighbourhoodPageProps) {
-  const neighbourhoodName = params.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const neighbourhood = CITY.neighbourhoods.find(n => 
     n.toLowerCase().replace(/\s+/g, '-') === params.name
   );
@@ -207,7 +206,7 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
                   No businesses found in {neighbourhood}
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  We don't have any businesses listed for {neighbourhood} yet. Check back soon or explore other areas.
+                  We don&apos;t have any businesses listed for {neighbourhood} yet. Check back soon or explore other areas.
                 </p>
                 <Link
                   href="/"

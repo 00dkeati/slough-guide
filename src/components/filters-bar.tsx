@@ -36,7 +36,7 @@ export function FiltersBar({
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   const handleSortChange = (sortBy: string) => {
-    onFiltersChange({ ...filters, sortBy: sortBy as any });
+    onFiltersChange({ ...filters, sortBy: sortBy as 'rating' | 'reviews' | 'name' | 'distance' });
   };
 
   const handleSortOrderChange = (sortOrder: string) => {

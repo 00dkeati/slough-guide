@@ -13,7 +13,6 @@ import {
 import { getTopPicks } from '@/lib/search';
 import { BusinessCard } from '@/components/business-card';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Star, Clock, MapPin, DollarSign, TrendingUp } from 'lucide-react';
 

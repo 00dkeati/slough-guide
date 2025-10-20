@@ -22,8 +22,6 @@ import {
   Globe, 
   MapPin, 
   Clock, 
-  ExternalLink,
-  Star,
   Navigation
 } from 'lucide-react';
 

@@ -12,8 +12,7 @@ import {
   Globe, 
   MapPin, 
   Clock, 
-  ExternalLink,
-  Star
+  ExternalLink
 } from 'lucide-react';
 
 interface BusinessCardProps {

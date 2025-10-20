@@ -115,7 +115,7 @@ export default function SearchPage() {
                   No results found
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  We couldn't find any businesses matching "{query}". Try different keywords or browse our categories.
+                  We couldn&apos;t find any businesses matching &quot;{query}&quot;. Try different keywords or browse our categories.
                 </p>
                 <div className="space-y-2">
                   <p className="text-sm text-gray-500">Suggestions:</p>
@@ -136,7 +136,7 @@ export default function SearchPage() {
                 Start your search
               </h3>
               <p className="text-gray-600">
-                Enter a business name, service, or category to find what you're looking for.
+                Enter a business name, service, or category to find what you&apos;re looking for.
               </p>
             </CardContent>
           </Card>

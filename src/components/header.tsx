@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { CATEGORIES } from '@/config/categories';
-import { Search, Menu, MapPin, Phone } from 'lucide-react';
+import { Search, Menu, Phone } from 'lucide-react';
 
 export function Header() {
   const [searchQuery, setSearchQuery] = useState('');

@@ -5,7 +5,6 @@ import { CATEGORIES, getCategoryById } from '@/config/categories';
 import { CITY } from '@/config/city';
 import { getTopPicks } from '@/lib/search';
 import { BusinessCard } from '@/components/business-card';
-import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -17,9 +16,7 @@ import {
   MapPin, 
   Star, 
   Clock, 
-  TrendingUp,
-  Phone,
-  Globe
+  Phone
 } from 'lucide-react';
 
 export const metadata: Metadata = generateMetaTags({

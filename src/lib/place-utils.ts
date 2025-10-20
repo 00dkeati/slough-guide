@@ -1,6 +1,6 @@
 import slugify from 'slugify';
 import { Place, GooglePlaceDetails } from './types';
-import { CATEGORIES, getCategoriesByGoogleType } from '@/config/categories';
+import { getCategoriesByGoogleType } from '@/config/categories';
 import { CITY, NEIGHBOURHOOD_COORDS } from '@/config/city';
 
 // Calculate distance between two points using Haversine formula

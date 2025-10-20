@@ -63,7 +63,6 @@ export async function generateMetadata({ params }: NeighbourhoodCategoryPageProp
 }
 
 export default async function NeighbourhoodCategoryPage({ params }: NeighbourhoodCategoryPageProps) {
-  const neighbourhoodName = params.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const neighbourhood = CITY.neighbourhoods.find(n => 
     n.toLowerCase().replace(/\s+/g, '-') === params.name
   );
@@ -159,7 +158,7 @@ export default async function NeighbourhoodCategoryPage({ params }: Neighbourhoo
                   No {category.label.toLowerCase()} found in {neighbourhood}
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  We don't have any {category.label.toLowerCase()} listed for {neighbourhood} yet.
+                  We don&apos;t have any {category.label.toLowerCase()} listed for {neighbourhood} yet.
                 </p>
                 <div className="space-y-2">
                   <Link
