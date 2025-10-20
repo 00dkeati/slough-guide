@@ -12,7 +12,6 @@ import {
 } from '@/lib/seo';
 import { getTopPicks } from '@/lib/search';
 import { BusinessCard } from '@/components/business-card';
-import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Star, Clock, MapPin, DollarSign, TrendingUp } from 'lucide-react';
 

@@ -28,7 +28,6 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: NeighbourhoodPageProps): Promise<Metadata> {
-  const neighbourhoodName = params.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const neighbourhood = CITY.neighbourhoods.find(n => 
     n.toLowerCase().replace(/\s+/g, '-') === params.name
   );

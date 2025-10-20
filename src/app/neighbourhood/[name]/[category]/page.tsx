@@ -12,8 +12,7 @@ import {
   generateMetaTags
 } from '@/lib/seo';
 import { BusinessCard } from '@/components/business-card';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Star } from 'lucide-react';
 
 interface NeighbourhoodCategoryPageProps {
@@ -39,7 +38,6 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: NeighbourhoodCategoryPageProps): Promise<Metadata> {
-  const neighbourhoodName = params.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const neighbourhood = CITY.neighbourhoods.find(n => 
     n.toLowerCase().replace(/\s+/g, '-') === params.name
   );

@@ -53,7 +53,7 @@ export async function placesTextSearch(
   }
 
   try {
-    const response = await axios.get<GooglePlacesResponse<any>>(
+    const response = await axios.get<GooglePlacesResponse<unknown>>(
       `${BASE_URL}/textsearch/json?${params}`
     );
 
@@ -97,7 +97,7 @@ export async function placesNearby(
   }
 
   try {
-    const response = await axios.get<GooglePlacesResponse<any>>(
+    const response = await axios.get<GooglePlacesResponse<unknown>>(
       `${BASE_URL}/nearbysearch/json?${params}`
     );
 
