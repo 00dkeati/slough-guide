@@ -85,9 +85,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   // If no data in cache, use sample data
   if (allPlaces.length === 0) {
     console.log('No data in cache, using sample data for category:', category.id);
-    allPlaces = sampleBusinesses.filter(business => 
+    allPlaces = (sampleBusinesses as any).filter((business: any) => 
       business.categories.includes(category.id)
-    ) as any;
+    );
     
     // Get top picks from sample data
     topPicks = allPlaces
