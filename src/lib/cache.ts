@@ -1,204 +1,233 @@
-import { Place } from './types';
+import { Place, PlaceSchema } from './types';
 import { CATEGORIES } from '@/config/categories';
 import { CITY } from '@/config/city';
+import { sortPlaces } from './place-utils';
+import { writeFile, readFile, mkdir } from 'fs/promises';
+import { existsSync } from 'fs';
+import path from 'path';
 
-// In-memory cache
 interface CacheData {
-  places: Map<string, Place>;
-  categoryPlaces: Map<string, Set<string>>;
-  neighbourhoodPlaces: Map<string, Set<string>>;
-  nameIndex: Map<string, Set<string>>;
-  lastUpdated: number;
+  places: Record<string, Place>; // place_id -> Place
+  categoryPlaceIds: Record<string, string[]>; // categoryId -> place_id[]
+  neighbourhoodPlaceIds: Record<string, string[]>; // neighbourhood -> place_id[]
+  nameIndex: Record<string, string[]>; // firstLetter -> place_id[]
+  lastRefresh: string | null;
 }
 
-class MemoryCache {
-  private cache: CacheData = {
-    places: new Map(),
-    categoryPlaces: new Map(),
-    neighbourhoodPlaces: new Map(),
-    nameIndex: new Map(),
-    lastUpdated: 0
-  };
+class FileCache {
+  private cacheDir = '/tmp/slough-guide-cache';
+  private dataFile = path.join(this.cacheDir, 'data.json');
 
-  private readonly CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
-
-  // Check if cache is valid
-  private isCacheValid(): boolean {
-    return Date.now() - this.cache.lastUpdated < this.CACHE_DURATION;
+  constructor() {
+    this.ensureCacheDir();
   }
 
-  // Place operations
+  private async ensureCacheDir() {
+    if (!existsSync(this.cacheDir)) {
+      await mkdir(this.cacheDir, { recursive: true });
+    }
+  }
+
+  private async loadData(): Promise<CacheData> {
+    try {
+      if (!existsSync(this.dataFile)) {
+        return this.getEmptyData();
+      }
+      const data = await readFile(this.dataFile, 'utf-8');
+      return JSON.parse(data);
+    } catch (error) {
+      console.error('Error loading cache data:', error);
+      return this.getEmptyData();
+    }
+  }
+
+  private async saveData(data: CacheData): Promise<void> {
+    try {
+      await this.ensureCacheDir();
+      await writeFile(this.dataFile, JSON.stringify(data, null, 2));
+    } catch (error) {
+      console.error('Error saving cache data:', error);
+    }
+  }
+
+  private getEmptyData(): CacheData {
+    const data: CacheData = {
+      places: {},
+      categoryPlaceIds: {},
+      neighbourhoodPlaceIds: {},
+      nameIndex: {},
+      lastRefresh: null,
+    };
+
+    // Initialize category and neighbourhood arrays
+    CATEGORIES.forEach(cat => {
+      data.categoryPlaceIds[cat.id] = [];
+    });
+    CITY.neighbourhoods.forEach(nh => {
+      data.neighbourhoodPlaceIds[nh] = [];
+    });
+
+    return data;
+  }
+
   async savePlace(place: Place): Promise<void> {
-    this.cache.places.set(place.place_id, place);
+    const data = await this.loadData();
+    data.places[place.place_id] = place;
     
     // Add to name index
     const firstLetter = place.name.charAt(0).toLowerCase();
-    if (!this.cache.nameIndex.has(firstLetter)) {
-      this.cache.nameIndex.set(firstLetter, new Set());
+    if (!data.nameIndex[firstLetter]) {
+      data.nameIndex[firstLetter] = [];
     }
-    this.cache.nameIndex.get(firstLetter)!.add(place.place_id);
+    if (!data.nameIndex[firstLetter].includes(place.place_id)) {
+      data.nameIndex[firstLetter].push(place.place_id);
+    }
+    
+    await this.saveData(data);
   }
 
   async getPlace(placeId: string): Promise<Place | null> {
-    return this.cache.places.get(placeId) || null;
+    const data = await this.loadData();
+    return data.places[placeId] || null;
   }
 
-  async getAllPlaces(): Promise<Place[]> {
-    return Array.from(this.cache.places.values());
-  }
-
-  async getPlaces(placeIds: string[]): Promise<Place[]> {
-    return placeIds
-      .map(id => this.cache.places.get(id))
-      .filter((place): place is Place => place !== undefined);
-  }
-
-  // Category operations
-  async addPlaceToCategory(placeId: string, categoryId: string): Promise<void> {
-    if (!this.cache.categoryPlaces.has(categoryId)) {
-      this.cache.categoryPlaces.set(categoryId, new Set());
-    }
-    this.cache.categoryPlaces.get(categoryId)!.add(placeId);
-  }
-
-  async getCategoryPlaceIds(categoryId: string): Promise<string[]> {
-    return Array.from(this.cache.categoryPlaces.get(categoryId) || []);
-  }
-
-  async getCategoryPlaces(categoryId: string): Promise<Place[]> {
-    const placeIds = await this.getCategoryPlaceIds(categoryId);
-    return await this.getPlaces(placeIds);
-  }
-
-  async getTopRatedPlaces(
-    categoryId: string,
-    limit: number = 10,
-    minReviews: number = 5
-  ): Promise<Place[]> {
-    const places = await this.getCategoryPlaces(categoryId);
-    
-    return places
-      .filter(place => 
-        place.user_ratings_total && 
-        place.user_ratings_total >= minReviews &&
-        place.rating
-      )
-      .sort((a, b) => (b.rating || 0) - (a.rating || 0))
-      .slice(0, limit);
-  }
-
-  async getMostReviewedPlaces(
-    categoryId: string,
-    limit: number = 10
-  ): Promise<Place[]> {
-    const places = await this.getCategoryPlaces(categoryId);
-    
-    return places
-      .filter(place => place.user_ratings_total)
-      .sort((a, b) => (b.user_ratings_total || 0) - (a.user_ratings_total || 0))
-      .slice(0, limit);
-  }
-
-  // Neighbourhood operations
-  async addPlaceToNeighbourhood(placeId: string, neighbourhood: string): Promise<void> {
-    if (!this.cache.neighbourhoodPlaces.has(neighbourhood)) {
-      this.cache.neighbourhoodPlaces.set(neighbourhood, new Set());
-    }
-    this.cache.neighbourhoodPlaces.get(neighbourhood)!.add(placeId);
-  }
-
-  async getNeighbourhoodPlaces(neighbourhood: string): Promise<Place[]> {
-    const placeIds = Array.from(this.cache.neighbourhoodPlaces.get(neighbourhood) || []);
-    return await this.getPlaces(placeIds);
-  }
-
-  async getNeighbourhoodCategoryPlaces(
-    neighbourhood: string,
-    categoryId: string
-  ): Promise<Place[]> {
-    const neighbourhoodPlaceIds = Array.from(this.cache.neighbourhoodPlaces.get(neighbourhood) || []);
-    const categoryPlaceIds = Array.from(this.cache.categoryPlaces.get(categoryId) || []);
-    
-    // Find intersection
-    const intersection = neighbourhoodPlaceIds.filter(id => categoryPlaceIds.includes(id));
-    return await this.getPlaces(intersection);
-  }
-
-  // Search operations
-  async searchPlaces(query: string, limit: number = 20): Promise<Place[]> {
-    const results: Place[] = [];
-    const searchTerm = query.toLowerCase();
-    
-    // Search through name index
-    for (const letter of 'abcdefghijklmnopqrstuvwxyz') {
-      const placeIds = Array.from(this.cache.nameIndex.get(letter) || []);
-      if (placeIds.length === 0) continue;
-      
-      const places = await this.getPlaces(placeIds);
-      const matches = places.filter(place => 
-        place.name.toLowerCase().includes(searchTerm)
-      );
-      
-      results.push(...matches);
-      
-      if (results.length >= limit) break;
-    }
-    
-    return results.slice(0, limit);
-  }
-
-  // Statistics
-  async getCategoryCounts(): Promise<Record<string, number>> {
-    const counts: Record<string, number> = {};
-    
-    for (const category of CATEGORIES) {
-      const placeIds = Array.from(this.cache.categoryPlaces.get(category.id) || []);
-      counts[category.id] = placeIds.length;
-    }
-    
-    return counts;
-  }
-
-  async getNeighbourhoodCounts(): Promise<Record<string, number>> {
-    const counts: Record<string, number> = {};
-    
-    for (const neighbourhood of CITY.neighbourhoods) {
-      const placeIds = Array.from(this.cache.neighbourhoodPlaces.get(neighbourhood) || []);
-      counts[neighbourhood] = placeIds.length;
-    }
-    
-    return counts;
-  }
-
-  // Cache management
-  async clearAll(): Promise<void> {
-    this.cache = {
-      places: new Map(),
-      categoryPlaces: new Map(),
-      neighbourhoodPlaces: new Map(),
-      nameIndex: new Map(),
-      lastUpdated: 0
-    };
-  }
-
-  async markAsUpdated(): Promise<void> {
-    this.cache.lastUpdated = Date.now();
-  }
-
-  async isDataStale(): Promise<boolean> {
-    return !this.isCacheValid();
-  }
-
-  // Find place by slug
   async findPlaceBySlug(slug: string): Promise<Place | null> {
-    for (const place of this.cache.places.values()) {
+    const data = await this.loadData();
+    for (const place of Object.values(data.places)) {
       if (place.slug === slug) {
         return place;
       }
     }
     return null;
   }
+
+  async getAllPlaces(): Promise<Place[]> {
+    const data = await this.loadData();
+    return Object.values(data.places);
+  }
+
+  async addPlaceToCategory(placeId: string, categoryId: string): Promise<void> {
+    const data = await this.loadData();
+    if (!data.categoryPlaceIds[categoryId]) {
+      data.categoryPlaceIds[categoryId] = [];
+    }
+    if (!data.categoryPlaceIds[categoryId].includes(placeId)) {
+      data.categoryPlaceIds[categoryId].push(placeId);
+    }
+    await this.saveData(data);
+  }
+
+  async getCategoryPlaceIds(categoryId: string): Promise<string[]> {
+    const data = await this.loadData();
+    return data.categoryPlaceIds[categoryId] || [];
+  }
+
+  async getCategoryPlaces(categoryId: string): Promise<Place[]> {
+    const data = await this.loadData();
+    const placeIds = data.categoryPlaceIds[categoryId] || [];
+    return placeIds.map(id => data.places[id]).filter(Boolean);
+  }
+
+  async getTopRatedPlaces(categoryId: string, limit: number = 10, minReviews: number = 5): Promise<Place[]> {
+    const places = await this.getCategoryPlaces(categoryId);
+    const filtered = places.filter(place => place.rating && place.user_ratings_total && place.user_ratings_total >= minReviews);
+    return sortPlaces(filtered, 'rating', 'desc').slice(0, limit);
+  }
+
+  async getMostReviewedPlaces(categoryId: string, limit: number = 10): Promise<Place[]> {
+    const places = await this.getCategoryPlaces(categoryId);
+    const filtered = places.filter(place => place.user_ratings_total);
+    return sortPlaces(filtered, 'reviews', 'desc').slice(0, limit);
+  }
+
+  async addPlaceToNeighbourhood(placeId: string, neighbourhood: string): Promise<void> {
+    const data = await this.loadData();
+    if (!data.neighbourhoodPlaceIds[neighbourhood]) {
+      data.neighbourhoodPlaceIds[neighbourhood] = [];
+    }
+    if (!data.neighbourhoodPlaceIds[neighbourhood].includes(placeId)) {
+      data.neighbourhoodPlaceIds[neighbourhood].push(placeId);
+    }
+    await this.saveData(data);
+  }
+
+  async getNeighbourhoodPlaces(neighbourhood: string): Promise<Place[]> {
+    const data = await this.loadData();
+    const placeIds = data.neighbourhoodPlaceIds[neighbourhood] || [];
+    return placeIds.map(id => data.places[id]).filter(Boolean);
+  }
+
+  async getNeighbourhoodCategoryPlaces(
+    neighbourhood: string,
+    categoryId: string
+  ): Promise<Place[]> {
+    const data = await this.loadData();
+    const neighbourhoodPlaceIds = new Set(data.neighbourhoodPlaceIds[neighbourhood] || []);
+    const categoryPlaceIds = new Set(data.categoryPlaceIds[categoryId] || []);
+
+    const intersectionIds = Array.from(neighbourhoodPlaceIds).filter(placeId =>
+      categoryPlaceIds.has(placeId)
+    );
+
+    return intersectionIds.map(id => data.places[id]).filter(Boolean);
+  }
+
+  async searchPlaces(query: string, limit: number = 100): Promise<Place[]> {
+    const data = await this.loadData();
+    const searchTerm = query.toLowerCase();
+    const matchingPlaces: Place[] = [];
+
+    for (const place of Object.values(data.places)) {
+      if (place.name.toLowerCase().includes(searchTerm) || 
+          place.types.some(type => type.toLowerCase().includes(searchTerm))) {
+        matchingPlaces.push(place);
+      }
+      if (matchingPlaces.length >= limit) break;
+    }
+    return matchingPlaces;
+  }
+
+  async getCategoryCounts(): Promise<Record<string, number>> {
+    const data = await this.loadData();
+    const counts: Record<string, number> = {};
+    CATEGORIES.forEach(category => {
+      counts[category.id] = (data.categoryPlaceIds[category.id] || []).length;
+    });
+    return counts;
+  }
+
+  async getNeighbourhoodCounts(): Promise<Record<string, number>> {
+    const data = await this.loadData();
+    const counts: Record<string, number> = {};
+    CITY.neighbourhoods.forEach(neighbourhood => {
+      counts[neighbourhood] = (data.neighbourhoodPlaceIds[neighbourhood] || []).length;
+    });
+    return counts;
+  }
+
+  async clearAllData(): Promise<void> {
+    const emptyData = this.getEmptyData();
+    await this.saveData(emptyData);
+  }
+
+  setLastRefresh(date: Date): void {
+    // This will be saved on next data operation
+    this.lastRefreshDate = date;
+  }
+
+  getLastRefresh(): Date | null {
+    return this.lastRefreshDate;
+  }
+
+  private lastRefreshDate: Date | null = null;
+
+  async saveLastRefresh(): Promise<void> {
+    if (this.lastRefreshDate) {
+      const data = await this.loadData();
+      data.lastRefresh = this.lastRefreshDate.toISOString();
+      await this.saveData(data);
+    }
+  }
 }
 
-// Export singleton instance
-export const cache = new MemoryCache();
+export const cache = new FileCache();

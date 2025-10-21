@@ -37,7 +37,7 @@ export async function refreshAllData(options: RefreshOptions = {}): Promise<{
     // Clear existing data if requested
     if (clearExisting) {
       console.log('Clearing existing data...');
-      await cache.clearAll();
+      await cache.clearAllData();
     }
 
     // Fetch all categories
@@ -59,6 +59,10 @@ export async function refreshAllData(options: RefreshOptions = {}): Promise<{
     }
 
     const duration = Date.now() - startTime;
+    
+    // Set last refresh time
+    cache.setLastRefresh(new Date());
+    await cache.saveLastRefresh();
     
     console.log('Data refresh completed!');
     console.log(`Duration: ${Math.round(duration / 1000)}s`);
