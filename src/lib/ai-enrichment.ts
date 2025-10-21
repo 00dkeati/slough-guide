@@ -20,12 +20,8 @@ export class AIBusinessEnrichment {
       scrapedReviews: [],
       additionalInfo: {},
       socialMediaLinks: {},
-      openingHours: place.openingHours || {},
+      opening_hours: place.opening_hours || {},
       amenities: [],
-      pricing: '',
-      accessibility: '',
-      parking: '',
-      wifi: '',
       lastEnriched: new Date().toISOString()
     };
 
@@ -214,7 +210,7 @@ export class AIBusinessEnrichment {
       const phoneRegex = /(\+44|0)[0-9\s-]{10,}/g;
       const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
       
-      const pageText = $.text();
+      const pageText = $('body').text() || '';
       const phones = pageText.match(phoneRegex);
       const emails = pageText.match(emailRegex);
       
@@ -306,7 +302,7 @@ export class AIBusinessEnrichment {
     
     return {
       title: `${place.name} - ${businessType} in ${location}`,
-      metaDescription: `${place.name} is a ${businessType} located in ${location}. ${place.aiGeneratedDescription?.substring(0, 150) || 'Visit us for quality service.'}`,
+      metaDescription: `${place.name} is a ${businessType} located in ${location}. Visit us for quality service.`,
       keywords: [
         place.name.toLowerCase(),
         businessType,

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function NeighbourhoodPage() {
   // In a real implementation, you'd filter businesses by neighbourhood
-  const businesses = []; // Placeholder
+  const businesses: any[] = []; // Placeholder
 
   return (
     <div className="min-h-screen bg-gray-50">

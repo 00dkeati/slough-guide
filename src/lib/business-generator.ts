@@ -292,7 +292,7 @@ export class SloughBusinessGenerator {
         const name = this.generateBusinessName(categoryKey, template);
 
         // Select random neighbourhood
-        const availableNeighbourhoods = neighbourhoods.length > 0 ? neighbourhoods : CITY.neighbourhoods.map(n => n.name);
+        const availableNeighbourhoods = neighbourhoods.length > 0 ? neighbourhoods : CITY.neighbourhoods;
         const neighbourhood = availableNeighbourhoods[Math.floor(Math.random() * availableNeighbourhoods.length)];
 
         // Generate address and coordinates
@@ -315,20 +315,20 @@ export class SloughBusinessGenerator {
           name,
           slug,
           types: [categoryKey],
-          formatted_address: address,
-          vicinity: neighbourhood,
           lat,
           lng,
+          last_fetched: new Date().toISOString(),
+          categories: [categoryKey],
+          formatted_address: address,
+          vicinity: neighbourhood,
           phone,
-          website,
+          website: website || undefined,
           rating: Math.round(rating * 10) / 10,
           user_ratings_total: userRatingsTotal,
           price_level: priceLevel,
           business_status: 'OPERATIONAL',
           opening_hours: openingHours,
-          photos: [],
-          // Add AI-generated description
-          aiGeneratedDescription: aiDescription
+          photos: []
         };
 
         businesses.push(business);

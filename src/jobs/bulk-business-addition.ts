@@ -81,7 +81,7 @@ export async function addBulkBusinesses(count: number = 500): Promise<BulkAdditi
           }
 
         } catch (error) {
-          const errorMsg = `Failed to add business ${business.name}: ${error.message}`;
+          const errorMsg = `Failed to add business ${business.name}: ${error instanceof Error ? error.message : 'Unknown error'}`;
           console.error(`❌ ${errorMsg}`);
           result.errors.push(errorMsg);
         }
@@ -115,7 +115,7 @@ export async function addBulkBusinesses(count: number = 500): Promise<BulkAdditi
 
   } catch (error) {
     console.error('❌ Bulk business addition failed:', error);
-    result.errors.push(`Bulk addition failed: ${error.message}`);
+    result.errors.push(`Bulk addition failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
     result.summary.timeElapsed = `${((Date.now() - startTime) / 1000).toFixed(2)}s`;
     return result;
   }

@@ -23,11 +23,11 @@ async function generateSloughBusinessData() {
       
       // Add to categories
       for (const category of business.types) {
-        await cache.addPlaceToCategory(category, business.placeId);
+        await cache.addPlaceToCategory(business.place_id, category);
       }
       
       // Add to neighbourhoods (simplified for now)
-      await cache.addPlaceToNeighbourhood('Slough', business.placeId);
+      await cache.addPlaceToNeighbourhood(business.place_id, 'Slough');
     }
     
     // Step 3: Generate individual business pages

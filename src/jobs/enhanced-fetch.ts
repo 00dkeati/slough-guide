@@ -196,14 +196,14 @@ async function fetchNeighbourhoodCategories(concurrency: number, enrichWithAI: b
   let errors = 0;
 
   for (const neighbourhood of CITY.neighbourhoods) {
-    console.log(`Processing neighbourhood: ${neighbourhood.name}`);
+    console.log(`Processing neighbourhood: ${neighbourhood}`);
     
     for (const category of CATEGORIES) {
       try {
-        console.log(`Fetching places for category: ${category.label} in ${neighbourhood.name}`);
+        console.log(`Fetching places for category: ${category.label} in ${neighbourhood}`);
         const result = await fetchCategoryPlaces({
           categoryId: category.id,
-          neighbourhood: neighbourhood.name,
+          neighbourhood: neighbourhood,
           concurrency: 1
         });
         added += result.placesAdded;
@@ -212,9 +212,9 @@ async function fetchNeighbourhoodCategories(concurrency: number, enrichWithAI: b
 
         // Enrich with AI if requested
         if (enrichWithAI && result.placesAdded > 0) {
-          console.log(`🤖 Enriching ${result.placesAdded} new places in ${neighbourhood.name}`);
+          console.log(`🤖 Enriching ${result.placesAdded} new places in ${neighbourhood}`);
           // Get the newly added places and enrich them
-          const neighbourhoodPlaces = await cache.getNeighbourhoodPlaces(neighbourhood.name);
+          const neighbourhoodPlaces = await cache.getNeighbourhoodPlaces(neighbourhood);
           const recentPlaces = neighbourhoodPlaces.slice(-result.placesAdded);
           
           for (const place of recentPlaces) {
@@ -229,7 +229,7 @@ async function fetchNeighbourhoodCategories(concurrency: number, enrichWithAI: b
         }
 
       } catch (error) {
-        console.error(`Error fetching ${category.id} in ${neighbourhood.name}:`, error);
+        console.error(`Error fetching ${category.id} in ${neighbourhood}:`, error);
         errors++;
       }
     }
@@ -245,8 +245,8 @@ function determineNeighbourhood(place: any): string | null {
   const address = (place.vicinity || place.formatted_address || '').toLowerCase();
   
   for (const neighbourhood of CITY.neighbourhoods) {
-    if (address.includes(neighbourhood.name.toLowerCase())) {
-      return neighbourhood.name;
+    if (address.includes(neighbourhood.toLowerCase())) {
+      return neighbourhood;
     }
   }
   

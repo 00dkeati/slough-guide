@@ -219,38 +219,37 @@ export class AISloughBusinessScraper {
   private async scrapeBusinessDetails(businessInfo: any, category: string): Promise<EnrichedPlace | null> {
     try {
       const business: EnrichedPlace = {
-        placeId: this.generatePlaceId(businessInfo.name),
+        place_id: this.generatePlaceId(businessInfo.name),
         name: businessInfo.name,
-        formattedAddress: '',
-        geometry: {
-          location: {
-            lat: 51.5105, // Default Slough coordinates
-            lng: -0.5950
-          }
-        },
-        internationalPhoneNumber: '',
+        formatted_address: '',
+        lat: 51.5105, // Default Slough coordinates
+        lng: -0.5950,
+        phone: '',
         website: '',
-        openingHours: {},
+        opening_hours: {},
         photos: [],
         rating: 0,
-        userRatingsTotal: 0,
+        user_ratings_total: 0,
         types: [category],
-        businessStatus: 'OPERATIONAL',
-        priceLevel: 0,
-        url: businessInfo.url || '',
+        business_status: 'OPERATIONAL',
+        price_level: 0,
         vicinity: 'Slough, UK',
+        slug: businessInfo.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        last_fetched: new Date().toISOString(),
+        categories: [category],
+        neighbourhood: 'Slough',
         aiGeneratedDescription: '',
         scrapedReviews: [],
         additionalInfo: {},
         socialMediaLinks: {},
         amenities: [],
+        lastEnriched: new Date().toISOString(),
         seoContent: {
           title: '',
           metaDescription: '',
           keywords: '',
           structuredData: {}
-        },
-        lastEnriched: new Date().toISOString()
+        }
       };
 
       // Scrape business website if available
@@ -294,7 +293,7 @@ export class AISloughBusinessScraper {
       const phoneRegex = /(\+44|0)[0-9\s\-\(\)]{10,}/g;
       const phoneMatch = response.data.match(phoneRegex);
       if (phoneMatch) {
-        business.internationalPhoneNumber = phoneMatch[0];
+        business.phone = phoneMatch[0];
       }
 
       // Extract address
@@ -302,7 +301,7 @@ export class AISloughBusinessScraper {
       for (const selector of addressSelectors) {
         const address = $(selector).text().trim();
         if (address && address.includes('Slough')) {
-          business.formattedAddress = address;
+          business.formatted_address = address;
           break;
         }
       }
@@ -322,11 +321,13 @@ export class AISloughBusinessScraper {
       $('img').each((_, el) => {
         const src = $(el).attr('src');
         if (src && !src.includes('logo') && !src.includes('icon')) {
-          business.photos.push({
-            photoReference: src,
-            height: 400,
-            width: 600
-          });
+          if (business.photos) {
+            business.photos.push({
+              photo_reference: src,
+              height: 400,
+              width: 600
+            });
+          }
         }
       });
 
@@ -451,9 +452,9 @@ export class AISloughBusinessScraper {
       });
 
       const reviewText = response.data.choices[0].message.content;
-      const reviewLines = reviewText.split('\n').filter(line => line.trim());
+      const reviewLines = reviewText.split('\n').filter((line: string) => line.trim());
       
-      return reviewLines.map((line, index) => ({
+      return reviewLines.map((line: string, index: number) => ({
         source: 'ai_generated',
         rating: 4 + (index % 2), // 4 or 5 stars
         text: line.trim(),
@@ -487,13 +488,13 @@ export class AISloughBusinessScraper {
           "addressLocality": "Slough",
           "addressCountry": "UK"
         },
-        "telephone": business.internationalPhoneNumber,
+        "telephone": business.phone,
         "url": business.website,
-        "image": business.photos[0]?.photoReference,
+        "image": business.photos?.[0]?.photo_reference,
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": business.rating,
-          "reviewCount": business.userRatingsTotal
+          "reviewCount": business.user_ratings_total
         }
       }
     };

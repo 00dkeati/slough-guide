@@ -71,7 +71,7 @@ export async function addDailyBusinesses(count: number = 100): Promise<DailyAddi
         console.log(`✅ Added: ${business.name} (${business.types[0]}) in ${business.neighbourhood}`);
 
       } catch (error) {
-        const errorMsg = `Failed to add business ${business.name}: ${error.message}`;
+        const errorMsg = `Failed to add business ${business.name}: ${error instanceof Error ? error.message : 'Unknown error'}`;
         console.error(`❌ ${errorMsg}`);
         result.errors.push(errorMsg);
       }
@@ -97,7 +97,7 @@ export async function addDailyBusinesses(count: number = 100): Promise<DailyAddi
 
   } catch (error) {
     console.error('❌ Daily business addition failed:', error);
-    result.errors.push(`Daily addition failed: ${error.message}`);
+    result.errors.push(`Daily addition failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
     return result;
   }
 }

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: NeighbourhoodPageProps): Prom
 export default async function NeighbourhoodPage({ params }: NeighbourhoodPageProps) {
   const neighbourhood = params.name;
   // In a real implementation, you'd filter businesses by neighbourhood
-  const businesses = []; // Placeholder
+  const businesses: any[] = []; // Placeholder
 
   return (
     <div className="min-h-screen bg-gray-50">

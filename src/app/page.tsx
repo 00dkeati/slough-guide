@@ -59,12 +59,12 @@ export default async function HomePage() {
   // If no data in cache, use sample data
   if (totalPlaces.length === 0) {
     console.log('No data in cache, using sample data');
-    totalPlaces = sampleBusinesses;
+    totalPlaces = sampleBusinesses as any;
     
     // Calculate category counts from sample data
     categoryCounts = {};
     CATEGORIES.forEach(category => {
-      categoryCounts[category.id] = sampleBusinesses.filter(business => 
+      categoryCounts[category.id] = (sampleBusinesses as any).filter((business: any) => 
         business.categories.includes(category.id)
       ).length;
     });
