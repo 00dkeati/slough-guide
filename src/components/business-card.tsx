@@ -15,8 +15,13 @@ import {
   ExternalLink
 } from 'lucide-react';
 
+// Flexible Place type for BusinessCard
+type BusinessCardPlace = Omit<Place, 'photos'> & {
+  photos?: { photo_reference: string; width: number; height: number; }[] | string[];
+};
+
 interface BusinessCardProps {
-  place: Place;
+  place: BusinessCardPlace;
   showNeighbourhood?: boolean;
   showCategories?: boolean;
   className?: string;
@@ -39,7 +44,7 @@ export function BusinessCard({
         <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
           {place.photos && place.photos.length > 0 ? (
             <Image
-              src={`/api/photo?ref=${place.photos[0].photo_reference}&w=400`}
+              src={`/api/photo?ref=${typeof place.photos[0] === 'string' ? place.photos[0] : place.photos[0].photo_reference}&w=400`}
               alt={`${place.name} in Slough`}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-200"
