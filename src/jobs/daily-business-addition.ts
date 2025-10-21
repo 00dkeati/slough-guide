@@ -54,8 +54,8 @@ export async function addDailyBusinesses(count: number = 100): Promise<DailyAddi
         result.businessesAdded++;
 
         // Add to categories
-        for (const type of business.types) {
-          const category = CATEGORIES.find(c => c.id === type);
+        for (const categoryId of business.categories) {
+          const category = CATEGORIES.find(c => c.id === categoryId);
           if (category) {
             await cache.addPlaceToCategory(business.place_id, category.id);
             categoriesUpdated.add(category.label);

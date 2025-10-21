@@ -310,6 +310,34 @@ export class SloughBusinessGenerator {
         // Generate description
         const aiDescription = this.generateAIDescription(name, categoryKey, neighbourhood);
 
+        // Map Google types to category IDs
+        const categoryMap: Record<string, string> = {
+          'restaurant': 'restaurants',
+          'meal_takeaway': 'takeaways',
+          'cafe': 'cafes',
+          'bar': 'pubs',
+          'gym': 'gyms',
+          'hair_care': 'barbers',
+          'beauty_salon': 'hairdressers',
+          'plumber': 'plumbers',
+          'electrician': 'electricians',
+          'general_contractor': 'builders',
+          'locksmith': 'locksmiths',
+          'car_wash': 'car_wash',
+          'taxi_stand': 'taxi',
+          'lodging': 'hotels',
+          'park': 'parks',
+          'dentist': 'dentists',
+          'veterinary_care': 'vets',
+          'preschool': 'nurseries',
+          'school': 'schools',
+          'accountant': 'accountants',
+          'lawyer': 'solicitors',
+          'real_estate_agency': 'estate_agents'
+        };
+
+        const categoryId = categoryMap[categoryKey] || categoryKey;
+
         const business: Place = {
           place_id: `generated_${Date.now()}_${i}`,
           name,
@@ -318,7 +346,7 @@ export class SloughBusinessGenerator {
           lat,
           lng,
           last_fetched: new Date().toISOString(),
-          categories: [categoryKey],
+          categories: [categoryId],
           formatted_address: address,
           vicinity: neighbourhood,
           phone,
