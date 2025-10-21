@@ -87,7 +87,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     console.log('No data in cache, using sample data for category:', category.id);
     allPlaces = sampleBusinesses.filter(business => 
       business.categories.includes(category.id)
-    );
+    ) as any;
     
     // Get top picks from sample data
     topPicks = allPlaces
