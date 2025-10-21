@@ -35,6 +35,8 @@ type Place = {
   phone?: string;
   website?: string;
   neighbourhood?: string;
+  vicinity?: string;
+  business_status?: string;
 };
 
 interface CategoryPageProps {
