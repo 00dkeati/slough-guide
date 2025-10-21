@@ -57,6 +57,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   // Get places for this category
   let allPlaces = await cache.getCategoryPlaces(category.id);
+  let topPicks: Place[] = [];
   
   // If no data in cache, use sample data
   if (allPlaces.length === 0) {
@@ -64,9 +65,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     allPlaces = sampleBusinesses.filter(business => 
       business.categories.includes(category.id)
     );
+    
+    // Get top picks from sample data
+    topPicks = allPlaces
+      .filter(place => place.rating && place.user_ratings_total && place.user_ratings_total >= 5)
+      .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+      .slice(0, 10);
+  } else {
+    topPicks = await getTopPicks(category.id, 10);
   }
-  
-  const topPicks = await getTopPicks(category.id, 10);
 
   // Generate structured data
   const structuredData = generateItemListStructuredData(
