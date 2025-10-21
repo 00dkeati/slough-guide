@@ -12,7 +12,7 @@ export async function searchPlaces(
 
   // If we have a search query, search by name
   if (query && query.trim()) {
-    places = await cache.searchPlacesByName(query.trim(), 1000); // Get more results for filtering
+    places = await cache.searchPlaces(query.trim(), 1000); // Get more results for filtering
   } else if (filters.category) {
     // If no query but we have a category filter, get category places
     places = await cache.getCategoryPlaces(filters.category);
