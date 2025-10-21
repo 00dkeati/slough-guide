@@ -28,7 +28,7 @@ export function BusinessCard({
   showCategories = true,
   className 
 }: BusinessCardProps) {
-  const primaryCategory = getCategoryById(place.categories[0]);
+  const primaryCategory = getCategoryById(place.types[0]);
   const isOpen = isOpenNow(place);
   const priceLevel = getPriceLevelDescription(place.price_level);
 
@@ -91,19 +91,19 @@ export function BusinessCard({
           </div>
 
           {/* Categories */}
-          {showCategories && place.categories.length > 0 && (
+          {showCategories && place.types.length > 0 && (
             <div className="flex flex-wrap gap-1 mb-3">
-              {place.categories.slice(0, 2).map(categoryId => {
-                const category = getCategoryById(categoryId);
+              {place.types.slice(0, 2).map(typeId => {
+                const category = getCategoryById(typeId);
                 return (
-                  <Badge key={categoryId} variant="outline" className="text-xs">
-                    {category?.icon} {category?.label || categoryId}
+                  <Badge key={typeId} variant="outline" className="text-xs">
+                    {category?.icon} {category?.label || typeId}
                   </Badge>
                 );
               })}
-              {place.categories.length > 2 && (
+              {place.types.length > 2 && (
                 <Badge variant="outline" className="text-xs">
-                  +{place.categories.length - 2} more
+                  +{place.types.length - 2} more
                 </Badge>
               )}
             </div>

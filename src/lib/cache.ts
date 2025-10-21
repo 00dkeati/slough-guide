@@ -239,8 +239,27 @@ class FileCache {
     // Add sample businesses
     for (const business of sampleBusinesses) {
       await this.savePlace(business);
-      await this.addPlaceToCategory(business.place_id, business.categories[0]);
-      await this.addPlaceToNeighbourhood(business.place_id, business.neighbourhood);
+      
+      // Add to categories based on types
+      const categoryMap: Record<string, string> = {
+        'restaurant': 'restaurants',
+        'meal_takeaway': 'takeaways',
+        'cafe': 'cafes',
+        'bar': 'pubs',
+        'gym': 'gyms',
+        'hair_care': 'barbers',
+        'beauty_salon': 'hairdressers',
+        'plumber': 'plumbers'
+      };
+      
+      // Find the appropriate category
+      const category = business.types.find(type => categoryMap[type]);
+      if (category) {
+        await this.addPlaceToCategory(business.place_id, categoryMap[category]);
+      }
+      
+      // Add to neighbourhood
+      await this.addPlaceToNeighbourhood(business.place_id, 'Slough');
     }
     
     // Set last refresh time

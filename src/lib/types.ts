@@ -30,7 +30,6 @@ export const GooglePlaceDetailsSchema = z.object({
   rating: z.number().optional(),
   user_ratings_total: z.number().optional(),
   types: z.array(z.string()),
-  utc_offset_minutes: z.number().optional(),
   business_status: z.string().optional(),
   price_level: z.number().optional(),
   url: z.string().optional(),
@@ -66,6 +65,37 @@ export type GooglePlacePhoto = z.infer<typeof GooglePlacePhotoSchema>;
 export type GoogleOpeningHours = z.infer<typeof GoogleOpeningHoursSchema>;
 export type GooglePlaceDetails = z.infer<typeof GooglePlaceDetailsSchema>;
 export type Place = z.infer<typeof PlaceSchema>;
+
+// AI Enrichment types
+export const ReviewSchema = z.object({
+  source: z.enum(['google', 'tripadvisor', 'yelp', 'facebook']),
+  rating: z.number(),
+  text: z.string(),
+  author: z.string(),
+  date: z.string(),
+  helpful: z.number().optional(),
+});
+
+export const SEOContentSchema = z.object({
+  title: z.string(),
+  metaDescription: z.string(),
+  keywords: z.string(),
+  structuredData: z.any(),
+});
+
+export const EnrichedPlaceSchema = PlaceSchema.extend({
+  aiGeneratedDescription: z.string(),
+  scrapedReviews: z.array(ReviewSchema),
+  additionalInfo: z.record(z.any()),
+  socialMediaLinks: z.record(z.string()),
+  amenities: z.array(z.string()),
+  seoContent: SEOContentSchema.optional(),
+  lastEnriched: z.string(),
+});
+
+export type Review = z.infer<typeof ReviewSchema>;
+export type SEOContent = z.infer<typeof SEOContentSchema>;
+export type EnrichedPlace = z.infer<typeof EnrichedPlaceSchema>;
 
 // Search and filter types
 export const SearchFiltersSchema = z.object({

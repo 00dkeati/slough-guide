@@ -3,14 +3,18 @@ export const sampleBusinesses = [
   {
     place_id: 'sample_1',
     name: 'The Crown & Cushion',
+    slug: 'the-crown-cushion',
+    types: ['restaurant', 'food', 'establishment'],
     formatted_address: 'High Street, Slough SL1 1DH, UK',
+    vicinity: 'Slough',
+    lat: 51.5105,
+    lng: -0.5950,
+    phone: '+44 1753 521234',
+    website: 'https://www.crownandcushion-slough.co.uk',
     rating: 4.2,
     user_ratings_total: 156,
-    types: ['restaurant', 'food', 'establishment'],
-    slug: 'the-crown-cushion',
-    categories: ['restaurants'],
-    neighbourhood: 'Slough',
-    photos: [],
+    price_level: 2,
+    business_status: 'OPERATIONAL',
     opening_hours: {
       open_now: true,
       weekday_text: [
@@ -23,20 +27,23 @@ export const sampleBusinesses = [
         'Sunday: 12:00 PM – 9:00 PM'
       ]
     },
-    website: 'https://www.crownandcushion-slough.co.uk',
-    international_phone_number: '+44 1753 521234'
+    photos: []
   },
   {
     place_id: 'sample_2',
     name: 'Slough Kebab House',
+    slug: 'slough-kebab-house',
+    types: ['meal_takeaway', 'food', 'establishment'],
     formatted_address: 'Windsor Road, Slough SL1 2EJ, UK',
+    vicinity: 'Slough',
+    lat: 51.5115,
+    lng: -0.5940,
+    phone: '+44 1753 523456',
+    website: null,
     rating: 4.0,
     user_ratings_total: 89,
-    types: ['meal_takeaway', 'food', 'establishment'],
-    slug: 'slough-kebab-house',
-    categories: ['takeaways'],
-    neighbourhood: 'Slough',
-    photos: [],
+    price_level: 1,
+    business_status: 'OPERATIONAL',
     opening_hours: {
       open_now: true,
       weekday_text: [
@@ -49,20 +56,23 @@ export const sampleBusinesses = [
         'Sunday: 5:00 PM – 10:00 PM'
       ]
     },
-    website: null,
-    international_phone_number: '+44 1753 523456'
+    photos: []
   },
   {
     place_id: 'sample_3',
     name: 'Costa Coffee',
+    slug: 'costa-coffee-slough',
+    types: ['cafe', 'food', 'establishment'],
     formatted_address: 'Queensmere Shopping Centre, Slough SL1 1DB, UK',
+    vicinity: 'Slough',
+    lat: 51.5095,
+    lng: -0.5960,
+    phone: '+44 1753 524567',
+    website: 'https://www.costa.co.uk',
     rating: 4.1,
     user_ratings_total: 234,
-    types: ['cafe', 'food', 'establishment'],
-    slug: 'costa-coffee-slough',
-    categories: ['cafes'],
-    neighbourhood: 'Slough',
-    photos: [],
+    price_level: 2,
+    business_status: 'OPERATIONAL',
     opening_hours: {
       open_now: true,
       weekday_text: [
@@ -75,20 +85,23 @@ export const sampleBusinesses = [
         'Sunday: 9:00 AM – 6:00 PM'
       ]
     },
-    website: 'https://www.costa.co.uk',
-    international_phone_number: '+44 1753 524567'
+    photos: []
   },
   {
     place_id: 'sample_4',
     name: 'The Red Lion',
+    slug: 'the-red-lion-slough',
+    types: ['bar', 'food', 'establishment'],
     formatted_address: 'High Street, Slough SL1 1DH, UK',
+    vicinity: 'Slough',
+    lat: 51.5100,
+    lng: -0.5955,
+    phone: '+44 1753 525678',
+    website: 'https://www.redlion-slough.co.uk',
     rating: 4.3,
     user_ratings_total: 178,
-    types: ['bar', 'food', 'establishment'],
-    slug: 'the-red-lion-slough',
-    categories: ['pubs'],
-    neighbourhood: 'Slough',
-    photos: [],
+    price_level: 2,
+    business_status: 'OPERATIONAL',
     opening_hours: {
       open_now: false,
       weekday_text: [
@@ -101,20 +114,23 @@ export const sampleBusinesses = [
         'Sunday: 12:00 PM – 10:30 PM'
       ]
     },
-    website: 'https://www.redlion-slough.co.uk',
-    international_phone_number: '+44 1753 525678'
+    photos: []
   },
   {
     place_id: 'sample_5',
     name: 'PureGym Slough',
+    slug: 'puregym-slough',
+    types: ['gym', 'health', 'establishment'],
     formatted_address: 'Trading Estate, Slough SL1 4QP, UK',
+    vicinity: 'Slough',
+    lat: 51.5120,
+    lng: -0.5930,
+    phone: '+44 1753 526789',
+    website: 'https://www.puregym.com',
     rating: 4.0,
     user_ratings_total: 312,
-    types: ['gym', 'health', 'establishment'],
-    slug: 'puregym-slough',
-    categories: ['gyms'],
-    neighbourhood: 'Slough',
-    photos: [],
+    price_level: 2,
+    business_status: 'OPERATIONAL',
     opening_hours: {
       open_now: true,
       weekday_text: [
@@ -127,20 +143,23 @@ export const sampleBusinesses = [
         'Sunday: 8:00 AM – 8:00 PM'
       ]
     },
-    website: 'https://www.puregym.com',
-    international_phone_number: '+44 1753 526789'
+    photos: []
   },
   {
     place_id: 'sample_6',
     name: 'Tony\'s Barber Shop',
+    slug: 'tonys-barber-shop',
+    types: ['hair_care', 'beauty_salon', 'establishment'],
     formatted_address: 'Church Street, Slough SL1 2HJ, UK',
+    vicinity: 'Slough',
+    lat: 51.5110,
+    lng: -0.5945,
+    phone: '+44 1753 527890',
+    website: null,
     rating: 4.5,
     user_ratings_total: 67,
-    types: ['hair_care', 'beauty_salon', 'establishment'],
-    slug: 'tonys-barber-shop',
-    categories: ['barbers'],
-    neighbourhood: 'Slough',
-    photos: [],
+    price_level: 1,
+    business_status: 'OPERATIONAL',
     opening_hours: {
       open_now: false,
       weekday_text: [
@@ -153,20 +172,23 @@ export const sampleBusinesses = [
         'Sunday: Closed'
       ]
     },
-    website: null,
-    international_phone_number: '+44 1753 527890'
+    photos: []
   },
   {
     place_id: 'sample_7',
     name: 'Slough Hair Studio',
+    slug: 'slough-hair-studio',
+    types: ['hair_care', 'beauty_salon', 'establishment'],
     formatted_address: 'High Street, Slough SL1 1DH, UK',
+    vicinity: 'Slough',
+    lat: 51.5102,
+    lng: -0.5952,
+    phone: '+44 1753 528901',
+    website: 'https://www.sloughhairstudio.co.uk',
     rating: 4.3,
     user_ratings_total: 98,
-    types: ['hair_care', 'beauty_salon', 'establishment'],
-    slug: 'slough-hair-studio',
-    categories: ['hairdressers'],
-    neighbourhood: 'Slough',
-    photos: [],
+    price_level: 2,
+    business_status: 'OPERATIONAL',
     opening_hours: {
       open_now: true,
       weekday_text: [
@@ -179,20 +201,23 @@ export const sampleBusinesses = [
         'Sunday: 10:00 AM – 4:00 PM'
       ]
     },
-    website: 'https://www.sloughhairstudio.co.uk',
-    international_phone_number: '+44 1753 528901'
+    photos: []
   },
   {
     place_id: 'sample_8',
     name: 'Slough Plumbing Services',
+    slug: 'slough-plumbing-services',
+    types: ['plumber', 'home_goods_store', 'establishment'],
     formatted_address: 'Industrial Estate, Slough SL1 4QP, UK',
+    vicinity: 'Slough',
+    lat: 51.5125,
+    lng: -0.5925,
+    phone: '+44 1753 529012',
+    website: 'https://www.sloughplumbing.co.uk',
     rating: 4.4,
     user_ratings_total: 145,
-    types: ['plumber', 'home_goods_store', 'establishment'],
-    slug: 'slough-plumbing-services',
-    categories: ['plumbers'],
-    neighbourhood: 'Slough',
-    photos: [],
+    price_level: 2,
+    business_status: 'OPERATIONAL',
     opening_hours: {
       open_now: true,
       weekday_text: [
@@ -205,7 +230,6 @@ export const sampleBusinesses = [
         'Sunday: Emergency only'
       ]
     },
-    website: 'https://www.sloughplumbing.co.uk',
-    international_phone_number: '+44 1753 529012'
+    photos: []
   }
 ];

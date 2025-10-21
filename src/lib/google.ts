@@ -142,7 +142,6 @@ export async function placeDetails(placeId: string): Promise<GooglePlaceDetails>
       'rating',
       'user_ratings_total',
       'types',
-      'utc_offset_minutes',
       'business_status',
       'price_level',
       'url',

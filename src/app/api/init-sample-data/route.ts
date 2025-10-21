@@ -17,7 +17,7 @@ export async function GET() {
       categoryCounts,
       businesses: allPlaces.map(place => ({
         name: place.name,
-        category: place.categories[0],
+        category: place.types[0],
         rating: place.rating,
         address: place.formatted_address
       }))
