@@ -27,7 +27,7 @@ type Place = {
   categories: string[];
   rating?: number;
   address?: string;
-  photos?: { photo_reference: string; width: number; height: number; }[];
+  photos?: { photo_reference: string; width: number; height: number; }[] | string[];
   opening_hours?: any;
   price_level?: number;
   user_ratings_total?: number;
