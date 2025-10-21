@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: BusinessPageProps): Promise<M
     openGraph: {
       title,
       description,
-      image: place.photos?.[0] ? `/api/photo?ref=${place.photos[0].photo_reference}&w=1200` : undefined,
+      image: place.photos?.[0] ? `/api/photo?ref=${typeof place.photos[0] === 'string' ? place.photos[0] : place.photos[0].photo_reference}&w=1200` : undefined,
       url: canonical,
     },
   });
@@ -64,15 +64,16 @@ export default async function BusinessPage({ params }: BusinessPageProps) {
     notFound();
   }
 
-  const primaryCategory = getCategoryById(place.categories[0]);
+  const primaryCategory = getCategoryById(place.categories?.[0] || place.types?.[0] || '');
   const isOpen = isOpenNow(place);
   const priceLevel = getPriceLevelDescription(place.price_level);
   const openingHours = formatOpeningHours(place);
 
   // Get related places in the same neighbourhood and category
+  const categoryId = place.categories?.[0] || place.types?.[0] || '';
   const relatedPlaces = await cache.getNeighbourhoodCategoryPlaces(
     place.neighbourhood || '',
-    place.categories[0]
+    categoryId
   );
   const filteredRelatedPlaces = relatedPlaces
     .filter(p => p.place_id !== place.place_id)
@@ -82,7 +83,7 @@ export default async function BusinessPage({ params }: BusinessPageProps) {
   const structuredData = generateLocalBusinessStructuredData(place);
   const breadcrumbData = generateBreadcrumbStructuredData([
     { name: 'Home', url: '/' },
-    { name: primaryCategory?.label || 'Business', url: `/category/${place.categories[0]}` },
+    { name: primaryCategory?.label || 'Business', url: `/category/${categoryId}` },
     { name: place.name },
   ]);
 
@@ -109,8 +110,8 @@ export default async function BusinessPage({ params }: BusinessPageProps) {
             <ol className="flex items-center space-x-2 text-sm text-gray-600">
               <li><Link href="/" className="hover:text-gray-900">Home</Link></li>
               <li>/</li>
-              <li><Link href={`/category/${place.categories[0]}`} className="hover:text-gray-900">
-                {primaryCategory?.label || place.categories[0]}
+              <li><Link href={`/category/${categoryId}`} className="hover:text-gray-900">
+                {primaryCategory?.label || categoryId}
               </Link></li>
               <li>/</li>
               <li className="text-gray-900">{place.name}</li>
@@ -153,7 +154,7 @@ export default async function BusinessPage({ params }: BusinessPageProps) {
 
                     {/* Categories */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {place.categories.map(categoryId => {
+                      {(place.categories || place.types || []).map(categoryId => {
                         const category = getCategoryById(categoryId);
                         return (
                           <Badge key={categoryId} variant="outline">
@@ -211,7 +212,7 @@ export default async function BusinessPage({ params }: BusinessPageProps) {
                   {place.photos && place.photos.length > 0 && (
                     <div className="w-full md:w-48 h-48 relative rounded-lg overflow-hidden">
                       <Image
-                        src={`/api/photo?ref=${place.photos[0].photo_reference}&w=400`}
+                        src={`/api/photo?ref=${typeof place.photos[0] === 'string' ? place.photos[0] : place.photos[0].photo_reference}&w=400`}
                         alt={`${place.name} in Slough`}
                         fill
                         className="object-cover"
@@ -233,7 +234,7 @@ export default async function BusinessPage({ params }: BusinessPageProps) {
                       {place.photos.slice(1, 9).map((photo, index) => (
                         <div key={index} className="relative h-32 rounded-lg overflow-hidden">
                           <Image
-                            src={`/api/photo?ref=${photo.photo_reference}&w=300`}
+                            src={`/api/photo?ref=${typeof photo === 'string' ? photo : photo.photo_reference}&w=300`}
                             alt={`${place.name} photo ${index + 2} in Slough`}
                             fill
                             className="object-cover"
