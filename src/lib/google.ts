@@ -44,7 +44,7 @@ export async function placesTextSearch(
   
   const params = new URLSearchParams({
     query,
-    key: GOOGLE_MAPS_API_KEY,
+    key: GOOGLE_MAPS_API_KEY || '',
     fields: 'place_id,name,formatted_address,geometry,types,business_status',
   });
 
@@ -88,7 +88,7 @@ export async function placesNearby(
     location: `${lat},${lng}`,
     radius: radius.toString(),
     type,
-    key: GOOGLE_MAPS_API_KEY,
+    key: GOOGLE_MAPS_API_KEY || '',
     fields: 'place_id,name,formatted_address,geometry,types,business_status',
   });
 
@@ -124,7 +124,7 @@ export async function placeDetails(placeId: string): Promise<GooglePlaceDetails>
   
   const params = new URLSearchParams({
     place_id: placeId,
-    key: GOOGLE_MAPS_API_KEY,
+    key: GOOGLE_MAPS_API_KEY || '',
     fields: [
       'name',
       'formatted_address',
