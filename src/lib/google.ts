@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { GooglePlaceDetails, GooglePlaceDetailsSchema } from './types';
 
-const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
+const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_PLACES_API;
 const BASE_URL = 'https://maps.googleapis.com/maps/api/place';
 
 if (!GOOGLE_MAPS_API_KEY) {
-  throw new Error('GOOGLE_MAPS_API_KEY environment variable is required');
+  throw new Error('GOOGLE_PLACES_API environment variable is required');
 }
 
 // Rate limiting: Google allows 50 requests per second
