@@ -6,12 +6,15 @@ const sampleBusinesses = [
   {
     place_id: 'sample_1',
     name: 'The Crown & Cushion',
+    slug: 'the-crown-cushion',
+    types: ['restaurant', 'food', 'establishment'],
+    lat: 51.5105,
+    lng: -0.5950,
+    last_fetched: new Date().toISOString(),
+    categories: ['restaurants'],
     formatted_address: 'High Street, Slough SL1 1DH, UK',
     rating: 4.2,
     user_ratings_total: 156,
-    types: ['restaurant', 'food', 'establishment'],
-    slug: 'the-crown-cushion',
-    categories: ['restaurants'],
     neighbourhood: 'Slough',
     photos: [],
     opening_hours: {
@@ -27,17 +30,20 @@ const sampleBusinesses = [
       ]
     },
     website: 'https://www.crownandcushion-slough.co.uk',
-    international_phone_number: '+44 1753 521234'
+    phone: '+44 1753 521234'
   },
   {
     place_id: 'sample_2',
     name: 'Slough Kebab House',
+    slug: 'slough-kebab-house',
+    types: ['meal_takeaway', 'food', 'establishment'],
+    lat: 51.5089,
+    lng: -0.5942,
+    last_fetched: new Date().toISOString(),
+    categories: ['takeaways'],
     formatted_address: 'Windsor Road, Slough SL1 2EJ, UK',
     rating: 4.0,
     user_ratings_total: 89,
-    types: ['meal_takeaway', 'food', 'establishment'],
-    slug: 'slough-kebab-house',
-    categories: ['takeaways'],
     neighbourhood: 'Slough',
     photos: [],
     opening_hours: {
@@ -53,17 +59,20 @@ const sampleBusinesses = [
       ]
     },
     website: null,
-    international_phone_number: '+44 1753 523456'
+    phone: '+44 1753 523456'
   },
   {
     place_id: 'sample_3',
     name: 'Costa Coffee',
+    slug: 'costa-coffee-slough',
+    types: ['cafe', 'food', 'establishment'],
+    lat: 51.5098,
+    lng: -0.5965,
+    last_fetched: new Date().toISOString(),
+    categories: ['cafes'],
     formatted_address: 'Queensmere Shopping Centre, Slough SL1 1DB, UK',
     rating: 4.1,
     user_ratings_total: 234,
-    types: ['cafe', 'food', 'establishment'],
-    slug: 'costa-coffee-slough',
-    categories: ['cafes'],
     neighbourhood: 'Slough',
     photos: [],
     opening_hours: {
@@ -79,17 +88,20 @@ const sampleBusinesses = [
       ]
     },
     website: 'https://www.costa.co.uk',
-    international_phone_number: '+44 1753 524567'
+    phone: '+44 1753 524567'
   },
   {
     place_id: 'sample_4',
     name: 'The Red Lion',
+    slug: 'the-red-lion-slough',
+    types: ['bar', 'food', 'establishment'],
+    lat: 51.5112,
+    lng: -0.5948,
+    last_fetched: new Date().toISOString(),
+    categories: ['pubs'],
     formatted_address: 'High Street, Slough SL1 1DH, UK',
     rating: 4.3,
     user_ratings_total: 178,
-    types: ['bar', 'food', 'establishment'],
-    slug: 'the-red-lion-slough',
-    categories: ['pubs'],
     neighbourhood: 'Slough',
     photos: [],
     opening_hours: {
@@ -105,17 +117,20 @@ const sampleBusinesses = [
       ]
     },
     website: 'https://www.redlion-slough.co.uk',
-    international_phone_number: '+44 1753 525678'
+    phone: '+44 1753 525678'
   },
   {
     place_id: 'sample_5',
     name: 'PureGym Slough',
+    slug: 'puregym-slough',
+    types: ['gym', 'health', 'establishment'],
+    lat: 51.5075,
+    lng: -0.5923,
+    last_fetched: new Date().toISOString(),
+    categories: ['gyms'],
     formatted_address: 'Trading Estate, Slough SL1 4QP, UK',
     rating: 4.0,
     user_ratings_total: 312,
-    types: ['gym', 'health', 'establishment'],
-    slug: 'puregym-slough',
-    categories: ['gyms'],
     neighbourhood: 'Slough',
     photos: [],
     opening_hours: {
@@ -131,7 +146,7 @@ const sampleBusinesses = [
       ]
     },
     website: 'https://www.puregym.com',
-    international_phone_number: '+44 1753 526789'
+    phone: '+44 1753 526789'
   }
 ];
 
@@ -160,18 +175,14 @@ export async function GET() {
       }
     }
     
-    // Set last refresh time
-    cache.setLastRefresh(new Date());
-    await cache.saveLastRefresh();
-    
     return NextResponse.json({
       success: true,
       message: `Successfully added ${addedCount} sample businesses`,
-      businesses: sampleBusinesses.map(b => ({
-        name: b.name,
-        category: b.categories[0],
-        rating: b.rating,
-        address: b.formatted_address
+      businesses: sampleBusinesses.map(business => ({
+        name: business.name,
+        category: business.categories[0],
+        rating: business.rating,
+        address: business.formatted_address
       }))
     });
     
@@ -180,7 +191,7 @@ export async function GET() {
     return NextResponse.json({
       success: false,
       message: 'Failed to add sample businesses',
-      error: String(error)
+      error: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
   }
 }
