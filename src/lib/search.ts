@@ -15,7 +15,7 @@ export async function searchPlaces(
     places = await cache.searchPlacesByName(query.trim(), 1000); // Get more results for filtering
   } else if (filters.category) {
     // If no query but we have a category filter, get category places
-    places = await KVStore.getCategoryPlaces(filters.category);
+    places = await cache.getCategoryPlaces(filters.category);
   } else {
     // If no query and no category, return empty results
     return {
@@ -92,7 +92,7 @@ export async function searchPlacesByIntent(
   limit: number = 20
 ): Promise<SearchResults> {
   // Get all places for the category
-  const places = await KVStore.getCategoryPlaces(categoryId);
+  const places = await cache.getCategoryPlaces(categoryId);
 
   // Apply intent filter
   const intentFilteredPlaces = filterPlacesByIntent(places, intent);
@@ -151,10 +151,10 @@ export async function searchNeighbourhoodPlaces(
 
   if (categoryId) {
     // Get places for specific neighbourhood and category
-    places = await KVStore.getNeighbourhoodCategoryPlaces(neighbourhood, categoryId);
+    places = await cache.getNeighbourhoodCategoryPlaces(neighbourhood, categoryId);
   } else {
     // Get all places for neighbourhood
-    places = await KVStore.getNeighbourhoodPlaces(neighbourhood);
+    places = await cache.getNeighbourhoodPlaces(neighbourhood);
   }
 
   // Apply filters
@@ -204,12 +204,12 @@ export async function getTopPicks(
   categoryId: string,
   limit: number = 10
 ): Promise<Place[]> {
-  return await KVStore.getTopRatedPlaces(categoryId, limit, 50);
+  return await cache.getTopRatedPlaces(categoryId, limit, 50);
 }
 
 export async function getMostReviewed(
   categoryId: string,
   limit: number = 10
 ): Promise<Place[]> {
-  return await KVStore.getMostReviewedPlaces(categoryId, limit);
+  return await cache.getMostReviewedPlaces(categoryId, limit);
 }

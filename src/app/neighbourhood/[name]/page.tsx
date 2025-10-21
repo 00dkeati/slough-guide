@@ -64,7 +64,7 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
   // Get places by category
   const placesByCategory = await Promise.all(
     CATEGORIES.slice(0, 8).map(async (category) => {
-      const places = await KVStore.getNeighbourhoodCategoryPlaces(neighbourhood, category.id);
+      const places = await cache.getNeighbourhoodCategoryPlaces(neighbourhood, category.id);
       return { category, places: places.slice(0, 3) };
     })
   );

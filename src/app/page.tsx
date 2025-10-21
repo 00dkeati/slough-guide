@@ -52,7 +52,7 @@ export default async function HomePage() {
   );
 
   // Get stats
-  const totalPlaces = await KVStore.getPlaceCount();
+  const totalPlaces = await cache.getAllPlaces();
   const categoryCounts = await cache.getCategoryCounts();
 
   // Generate structured data
