@@ -84,7 +84,7 @@ export class KVStore {
   }
 
   static async getCategoryPlaceIds(categoryId: string): Promise<string[]> {
-    return await kv.smembers(CATEGORY_PLACES_KEY(categoryId));
+    return await kv.smembers(CATEGORY_PLACES_KEY(categoryId)) as string[];
   }
 
   static async getCategoryPlaces(categoryId: string): Promise<Place[]> {
@@ -116,7 +116,7 @@ export class KVStore {
     limit: number = 10,
     minReviews: number = 5
   ): Promise<Place[]> {
-    const placeIds = await kv.zrange(RANKING_RATING_KEY(categoryId), 0, limit - 1, { rev: true });
+    const placeIds = await kv.zrange(RANKING_RATING_KEY(categoryId), 0, limit - 1, { rev: true }) as string[];
     const places = await this.getPlaces(placeIds);
     
     // Filter by minimum reviews
@@ -129,7 +129,7 @@ export class KVStore {
     categoryId: string,
     limit: number = 10
   ): Promise<Place[]> {
-    const placeIds = await kv.zrange(RANKING_REVIEWS_KEY(categoryId), 0, limit - 1, { rev: true });
+    const placeIds = await kv.zrange(RANKING_REVIEWS_KEY(categoryId), 0, limit - 1, { rev: true }) as string[];
     return await this.getPlaces(placeIds);
   }
 
@@ -139,7 +139,7 @@ export class KVStore {
   }
 
   static async getNeighbourhoodPlaces(neighbourhood: string): Promise<Place[]> {
-    const placeIds = await kv.smembers(NEIGHBOURHOOD_PLACES_KEY(neighbourhood));
+    const placeIds = await kv.smembers(NEIGHBOURHOOD_PLACES_KEY(neighbourhood)) as string[];
     return await this.getPlaces(placeIds);
   }
 
@@ -147,8 +147,8 @@ export class KVStore {
     neighbourhood: string,
     categoryId: string
   ): Promise<Place[]> {
-    const neighbourhoodPlaceIds = await kv.smembers(NEIGHBOURHOOD_PLACES_KEY(neighbourhood));
-    const categoryPlaceIds = await kv.smembers(CATEGORY_PLACES_KEY(categoryId));
+    const neighbourhoodPlaceIds = await kv.smembers(NEIGHBOURHOOD_PLACES_KEY(neighbourhood)) as string[];
+    const categoryPlaceIds = await kv.smembers(CATEGORY_PLACES_KEY(categoryId)) as string[];
     
     // Find intersection
     const intersection = neighbourhoodPlaceIds.filter(id => categoryPlaceIds.includes(id));
@@ -162,7 +162,7 @@ export class KVStore {
     
     // Search through name index
     for (const letter of 'abcdefghijklmnopqrstuvwxyz') {
-      const placeIds = await kv.smembers(NAME_INDEX_KEY(letter));
+      const placeIds = await kv.smembers(NAME_INDEX_KEY(letter)) as string[];
       if (placeIds.length === 0) continue;
       
       const places = await this.getPlaces(placeIds);
@@ -209,7 +209,7 @@ export class KVStore {
     const counts: Record<string, number> = {};
     
     for (const category of CATEGORIES) {
-      const placeIds = await kv.smembers(CATEGORY_PLACES_KEY(category.id));
+      const placeIds = await kv.smembers(CATEGORY_PLACES_KEY(category.id)) as string[];
       counts[category.id] = placeIds.length;
     }
     
@@ -220,7 +220,7 @@ export class KVStore {
     const counts: Record<string, number> = {};
     
     for (const neighbourhood of CITY.neighbourhoods) {
-      const placeIds = await kv.smembers(NEIGHBOURHOOD_PLACES_KEY(neighbourhood));
+      const placeIds = await kv.smembers(NEIGHBOURHOOD_PLACES_KEY(neighbourhood)) as string[];
       counts[neighbourhood] = placeIds.length;
     }
     
@@ -229,7 +229,7 @@ export class KVStore {
 
   // Cleanup operations
   static async clearCategoryData(categoryId: string): Promise<void> {
-    const placeIds = await kv.smembers(CATEGORY_PLACES_KEY(categoryId));
+    const placeIds = await kv.smembers(CATEGORY_PLACES_KEY(categoryId)) as string[];
     
     // Remove from category sets
     await kv.del(CATEGORY_PLACES_KEY(categoryId));
