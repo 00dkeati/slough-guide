@@ -16,6 +16,27 @@ import { BusinessCard } from '@/components/business-card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Star, Clock, MapPin, DollarSign, TrendingUp } from 'lucide-react';
 
+type Place = {
+  place_id: string;
+  name: string;
+  slug?: string;
+  rating?: number;
+  address?: string;
+  photos?: string[];
+  categories?: string[];
+  opening_hours?: any;
+  price_level?: number;
+  user_ratings_total?: number;
+  formatted_address?: string;
+  types?: string[];
+  lat?: number;
+  lng?: number;
+  last_fetched?: string;
+  phone?: string;
+  website?: string;
+  neighbourhood?: string;
+};
+
 interface CategoryPageProps {
   params: {
     slug: string;
