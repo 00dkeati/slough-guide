@@ -5,6 +5,7 @@ import { sortPlaces } from './place-utils';
 import { writeFile, readFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
+import { sampleBusinesses } from '@/data/sample-businesses';
 
 interface CacheData {
   places: Record<string, Place>; // place_id -> Place
@@ -227,6 +228,26 @@ class FileCache {
       data.lastRefresh = this.lastRefreshDate.toISOString();
       await this.saveData(data);
     }
+  }
+
+  async initializeWithSampleData(): Promise<void> {
+    console.log('Initializing cache with sample data...');
+    
+    // Clear existing data
+    await this.clearAllData();
+    
+    // Add sample businesses
+    for (const business of sampleBusinesses) {
+      await this.savePlace(business);
+      await this.addPlaceToCategory(business.place_id, business.categories[0]);
+      await this.addPlaceToNeighbourhood(business.place_id, business.neighbourhood);
+    }
+    
+    // Set last refresh time
+    this.setLastRefresh(new Date());
+    await this.saveLastRefresh();
+    
+    console.log(`Initialized cache with ${sampleBusinesses.length} sample businesses`);
   }
 }
 
