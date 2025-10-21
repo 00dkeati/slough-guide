@@ -4,9 +4,12 @@ import { GooglePlaceDetails, GooglePlaceDetailsSchema } from './types';
 const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_PLACES_API;
 const BASE_URL = 'https://maps.googleapis.com/maps/api/place';
 
-if (!GOOGLE_MAPS_API_KEY) {
-  throw new Error('GOOGLE_PLACES_API environment variable is required');
-}
+// Only check for API key when actually making requests (not during build)
+const checkApiKey = () => {
+  if (!GOOGLE_MAPS_API_KEY) {
+    throw new Error('GOOGLE_PLACES_API environment variable is required');
+  }
+};
 
 // Rate limiting: Google allows 50 requests per second
 const RATE_LIMIT_DELAY = 20; // 20ms between requests = 50 requests per second
@@ -40,6 +43,7 @@ export async function placesTextSearch(
   query: string,
   pageToken?: string
 ): Promise<{ results: unknown[]; nextPageToken?: string }> {
+  checkApiKey();
   await rateLimit();
   
   const params = new URLSearchParams({
@@ -82,6 +86,7 @@ export async function placesNearby(
   radius: number = 7000,
   pageToken?: string
 ): Promise<{ results: unknown[]; nextPageToken?: string }> {
+  checkApiKey();
   await rateLimit();
   
   const params = new URLSearchParams({
@@ -120,6 +125,7 @@ export async function placesNearby(
 }
 
 export async function placeDetails(placeId: string): Promise<GooglePlaceDetails> {
+  checkApiKey();
   await rateLimit();
   
   const params = new URLSearchParams({
