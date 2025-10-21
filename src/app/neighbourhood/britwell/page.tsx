@@ -1,13 +1,12 @@
 import { Metadata } from 'next';
-import Link from 'next/link'; from 'next';
 import Link from 'next/link';
 import { BusinessCard } from '../../../components/business-card';
 import { Card, CardContent } from '../../../components/ui/card';
 
 export const metadata: Metadata = {
-  title: `Businesses in Britwell, Slough | Slough Guide`,
-  description: `Discover local businesses in Britwell, Slough. Find restaurants, shops, services, and more in your neighbourhood.`,
-  keywords: `Britwell, Slough, local businesses, Britwell Slough`,
+  title: `Businesses in britwell, Slough | Slough Guide`,
+  description: `Discover local businesses in britwell, Slough. Find restaurants, shops, services, and more in your neighbourhood.`,
+  keywords: `britwell, Slough, local businesses, britwell Slough`,
 };
 
 export default async function NeighbourhoodPage() {
@@ -23,24 +22,24 @@ export default async function NeighbourhoodPage() {
             <span>/</span>
             <Link href="/neighbourhoods" className="hover:text-blue-600">Neighbourhoods</Link>
             <span>/</span>
-            <span className="text-gray-900">Britwell</span>
+            <span className="text-gray-900">britwell</span>
           </div>
           
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Businesses in Britwell
+            Businesses in britwell
           </h1>
           <p className="text-lg text-gray-600 mb-6">
-            Discover local businesses in Britwell, Slough. Find restaurants, shops, services, and more in your neighbourhood.
+            Discover local businesses in britwell, Slough. Find restaurants, shops, services, and more in your neighbourhood.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {businesses.map((business) => (
-            <BusinessCard key={business.placeId} business={business} />
-          ))}
-        </div>
-
-        {businesses.length === 0 && (
+        {businesses.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {businesses.map((business) => (
+              <BusinessCard key={business.id} place={business} />
+            ))}
+          </div>
+        ) : (
           <Card>
             <CardContent className="text-center py-12">
               <p className="text-gray-500">No businesses found in britwell.</p>

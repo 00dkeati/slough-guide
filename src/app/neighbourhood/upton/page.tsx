@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
-import Link from 'next/link'; from 'next';
+import Link from 'next/link';
 import { BusinessCard } from '../../../components/business-card';
-import { Card, CardContent, CardContent } from '../../../components/ui/card';
+import { Card, CardContent } from '../../../components/ui/card';
 
 export const metadata: Metadata = {
-  title: `Businesses in $upton, Slough | Slough Guide`,
-  description: `Discover local businesses in $upton, Slough. Find restaurants, shops, services, and more in your neighbourhood.`,
-  keywords: `$upton, Slough, local businesses, $upton Slough`,
+  title: `Businesses in upton, Slough | Slough Guide`,
+  description: `Discover local businesses in upton, Slough. Find restaurants, shops, services, and more in your neighbourhood.`,
+  keywords: `upton, Slough, local businesses, upton Slough`,
 };
 
 export default async function NeighbourhoodPage() {
@@ -33,13 +33,13 @@ export default async function NeighbourhoodPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {businesses.map((business) => (
-            <BusinessCard key={business.placeId} business={business} />
-          ))}
-        </div>
-
-        {businesses.length === 0 && (
+        {businesses.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {businesses.map((business) => (
+              <BusinessCard key={business.id} place={business} />
+            ))}
+          </div>
+        ) : (
           <Card>
             <CardContent className="text-center py-12">
               <p className="text-gray-500">No businesses found in upton.</p>
