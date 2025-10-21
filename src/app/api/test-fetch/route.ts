@@ -37,17 +37,20 @@ export async function GET() {
         const place = {
           place_id: details.place_id,
           name: details.name,
+          slug: details.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+          types: details.types,
+          lat: details.geometry?.location?.lat || 51.5105,
+          lng: details.geometry?.location?.lng || -0.5950,
+          last_fetched: new Date().toISOString(),
+          categories: ['restaurants'],
           formatted_address: details.formatted_address,
           rating: details.rating,
           user_ratings_total: details.user_ratings_total,
-          types: details.types,
-          slug: details.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-          categories: ['restaurants'],
           neighbourhood: 'Slough',
           photos: details.photos || [],
           opening_hours: details.opening_hours,
           website: details.website,
-          international_phone_number: details.international_phone_number
+          phone: details.international_phone_number
         };
         
         // Save to cache
