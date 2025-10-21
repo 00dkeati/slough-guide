@@ -1,5 +1,5 @@
 import { fetchAllCategories, fetchNeighbourhoodCategories } from './fetch-category';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 
 interface RefreshOptions {
   includeNeighbourhoods?: boolean;
@@ -37,7 +37,7 @@ export async function refreshAllData(options: RefreshOptions = {}): Promise<{
     // Clear existing data if requested
     if (clearExisting) {
       console.log('Clearing existing data...');
-      await KVStore.clearAllData();
+      await cache.clearAll();
     }
 
     // Fetch all categories

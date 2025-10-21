@@ -1,4 +1,4 @@
-import { KVStore } from './kv';
+import { cache } from './cache';
 import { Place, SearchFilters, SearchResults } from './types';
 import { filterPlacesByIntent, sortPlaces } from './place-utils';
 
@@ -12,7 +12,7 @@ export async function searchPlaces(
 
   // If we have a search query, search by name
   if (query && query.trim()) {
-    places = await KVStore.searchPlacesByName(query.trim(), 1000); // Get more results for filtering
+    places = await cache.searchPlacesByName(query.trim(), 1000); // Get more results for filtering
   } else if (filters.category) {
     // If no query but we have a category filter, get category places
     places = await KVStore.getCategoryPlaces(filters.category);

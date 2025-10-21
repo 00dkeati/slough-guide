@@ -1,6 +1,6 @@
 import pMap from 'p-map';
 import { placesTextSearch, placesNearby, batchPlaceDetails, getAllPlaces } from '@/lib/google';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 import { convertGooglePlaceToPlace } from '@/lib/place-utils';
 import { CATEGORIES, getCategoryById } from '@/config/categories';
 import { CITY } from '@/config/city';
@@ -91,7 +91,7 @@ export async function fetchCategoryPlaces({
       const place = convertGooglePlaceToPlace(googlePlace);
       
       // Check if place already exists
-      const existingPlace = await KVStore.getPlace(place.place_id);
+      const existingPlace = await cache.getPlace(place.place_id);
       
       if (existingPlace) {
         // Update existing place
@@ -101,24 +101,23 @@ export async function fetchCategoryPlaces({
           last_fetched: new Date().toISOString(),
         };
         
-        await KVStore.savePlace(updatedPlace);
+        await cache.savePlace(updatedPlace);
         placesUpdated++;
       } else {
         // Add new place
-        await KVStore.savePlace(place);
+        await cache.savePlace(place);
         placesAdded++;
       }
       
       // Add to category
-      await KVStore.addPlaceToCategory(place.place_id, categoryId);
+      await cache.addPlaceToCategory(place.place_id, categoryId);
       
       // Add to neighbourhood if applicable
       if (place.neighbourhood) {
-        await KVStore.addPlaceToNeighbourhood(place.place_id, place.neighbourhood);
+        await cache.addPlaceToNeighbourhood(place.place_id, place.neighbourhood);
       }
       
-      // Update rankings
-      await KVStore.updatePlaceRanking(place);
+      // Note: Rankings are calculated on-demand in memory cache
       
     } catch (error) {
       const errorMsg = `Error processing place ${googlePlace.place_id}: ${error}`;
@@ -128,11 +127,8 @@ export async function fetchCategoryPlaces({
   }
 
   // Update category metadata
-  const totalPlaces = await KVStore.getCategoryPlaceIds(categoryId);
-  await KVStore.updateCategoryMeta(categoryId, {
-    count: totalPlaces.length,
-    lastUpdated: new Date().toISOString(),
-  });
+  const totalPlaces = await cache.getCategoryPlaceIds(categoryId);
+  // Note: Meta data is calculated on-demand in memory cache
 
   console.log(`  Category ${categoryId}: ${placesAdded} added, ${placesUpdated} updated, ${errors.length} errors`);
   

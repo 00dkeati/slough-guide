@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 import { getCategoryById } from '@/config/categories';
 import { 
   generateBusinessTitle, 
@@ -32,7 +32,7 @@ interface BusinessPageProps {
 }
 
 export async function generateMetadata({ params }: BusinessPageProps): Promise<Metadata> {
-  const place = await KVStore.findPlaceBySlug(params.slug);
+  const place = await cache.findPlaceBySlug(params.slug);
   
   if (!place) {
     return {
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: BusinessPageProps): Promise<M
 }
 
 export default async function BusinessPage({ params }: BusinessPageProps) {
-  const place = await KVStore.findPlaceBySlug(params.slug);
+  const place = await cache.findPlaceBySlug(params.slug);
   
   if (!place) {
     notFound();

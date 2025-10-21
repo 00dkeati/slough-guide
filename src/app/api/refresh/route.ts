@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { refreshAllData } from '@/jobs/refresh-all';
+import { cache } from '@/lib/cache';
 
 const REFRESH_SECRET_TOKEN = process.env.REFRESH_SECRET_TOKEN;
 

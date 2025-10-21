@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { refreshAllData } from '@/jobs/refresh-all';
+import { cache } from '@/lib/cache';
 
 // Vercel Cron Job endpoint
 export async function GET(request: NextRequest) {

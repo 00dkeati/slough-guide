@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 import { getCategoryById, CATEGORIES } from '@/config/categories';
 import { 
   generateCategoryTitle, 
@@ -55,7 +55,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   // Get places for this category
-  const allPlaces = await KVStore.getCategoryPlaces(category.id);
+  const allPlaces = await cache.getCategoryPlaces(category.id);
   const topPicks = await getTopPicks(category.id, 10);
 
   // Generate structured data
