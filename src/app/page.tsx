@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { cache } from '@/lib/cache';
+import { sampleBusinesses } from '@/data/sample-businesses';
 import { CATEGORIES, getCategoryById } from '@/config/categories';
 import { CITY } from '@/config/city';
 import { getTopPicks } from '@/lib/search';
@@ -52,8 +53,22 @@ export default async function HomePage() {
   );
 
   // Get stats
-  const totalPlaces = await cache.getAllPlaces();
-  const categoryCounts = await cache.getCategoryCounts();
+  let totalPlaces = await cache.getAllPlaces();
+  let categoryCounts = await cache.getCategoryCounts();
+  
+  // If no data in cache, use sample data
+  if (totalPlaces.length === 0) {
+    console.log('No data in cache, using sample data');
+    totalPlaces = sampleBusinesses;
+    
+    // Calculate category counts from sample data
+    categoryCounts = {};
+    CATEGORIES.forEach(category => {
+      categoryCounts[category.id] = sampleBusinesses.filter(business => 
+        business.categories.includes(category.id)
+      ).length;
+    });
+  }
 
   // Generate structured data
   const breadcrumbData = generateBreadcrumbStructuredData([

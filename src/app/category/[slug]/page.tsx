@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { cache } from '@/lib/cache';
+import { sampleBusinesses } from '@/data/sample-businesses';
 import { getCategoryById, CATEGORIES } from '@/config/categories';
 import { 
   generateCategoryTitle, 
@@ -55,7 +56,16 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   // Get places for this category
-  const allPlaces = await cache.getCategoryPlaces(category.id);
+  let allPlaces = await cache.getCategoryPlaces(category.id);
+  
+  // If no data in cache, use sample data
+  if (allPlaces.length === 0) {
+    console.log('No data in cache, using sample data for category:', category.id);
+    allPlaces = sampleBusinesses.filter(business => 
+      business.categories.includes(category.id)
+    );
+  }
+  
   const topPicks = await getTopPicks(category.id, 10);
 
   // Generate structured data
