@@ -120,7 +120,7 @@ export default async function HomePage() {
               {/* Stats */}
               <div className="flex justify-center gap-8 mt-8 text-blue-100">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">{totalPlaces.toLocaleString()}</div>
+                  <div className="text-2xl font-bold">{totalPlaces.length.toLocaleString()}</div>
                   <div className="text-sm">Businesses</div>
                 </div>
                 <div className="text-center">
