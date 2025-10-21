@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
+// Force new deployment
 export const metadata: Metadata = {
   title: {
     default: 'Slough Guide - Best Local Businesses & Services in Slough, Berkshire',
