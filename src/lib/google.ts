@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { GooglePlaceDetails, GooglePlaceDetailsSchema } from './types';
 
-const GOOGLE_MAPS_API_KEY = process.env.Google_places_api;
+const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 const BASE_URL = 'https://maps.googleapis.com/maps/api/place';
 
 // Only check for API key when actually making requests (not during build)
 const checkApiKey = () => {
   if (!GOOGLE_MAPS_API_KEY) {
-    throw new Error('Google_places_api environment variable is required');
+    throw new Error('GOOGLE_MAPS_API_KEY environment variable is required');
   }
 };
 
