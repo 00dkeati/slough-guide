@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import { searchPlacesAction } from '@/lib/actions';
 import { SearchFilters, SearchResults } from '@/lib/types';
 import { BusinessCard } from '@/components/business-card';
@@ -9,7 +10,7 @@ import { FiltersBar } from '@/components/filters-bar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Search, Loader2 } from 'lucide-react';
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
   
@@ -143,5 +144,18 @@ export default function SearchPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+        <span className="ml-2 text-gray-600">Loading...</span>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
   );
 }
