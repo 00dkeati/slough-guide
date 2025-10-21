@@ -98,7 +98,7 @@ export function BusinessCard({
           {/* Categories */}
           {showCategories && place.types.length > 0 && (
             <div className="flex flex-wrap gap-1 mb-3">
-              {place.types.slice(0, 2).map(typeId => {
+              {place.types.slice(0, 2).map((typeId: any) => {
                 const category = getCategoryById(typeId);
                 return (
                   <Badge key={typeId} variant="outline" className="text-xs">
