@@ -58,7 +58,7 @@ const sampleBusinesses = [
         'Sunday: 5:00 PM – 10:00 PM'
       ]
     },
-    website: null,
+    website: undefined,
     phone: '+44 1753 523456'
   },
   {
