@@ -11,7 +11,7 @@ export interface BusinessGenerationOptions {
 }
 
 export class SloughBusinessGenerator {
-  private businessTemplates: Record<string, any> = {};
+  private businessTemplates: Record<string, Record<string, string[]>> = {};
 
   constructor() {
     this.initializeBusinessTemplates();
@@ -136,7 +136,7 @@ export class SloughBusinessGenerator {
     };
   }
 
-  private generateBusinessName(category: string, template: any): string {
+  private generateBusinessName(category: string, template: Record<string, string[]>): string {
     const nameTemplate = template.names[Math.floor(Math.random() * template.names.length)];
     const cuisine = template.cuisines[Math.floor(Math.random() * template.cuisines.length)];
     const adjective = template.adjectives[Math.floor(Math.random() * template.adjectives.length)];
@@ -212,7 +212,7 @@ export class SloughBusinessGenerator {
     return `https://www.${domain}${extension}`;
   }
 
-  private generateOpeningHours(): any {
+  private generateOpeningHours(): Record<string, boolean | string[]> {
     const hours = [
       {
         open_now: Math.random() > 0.3,

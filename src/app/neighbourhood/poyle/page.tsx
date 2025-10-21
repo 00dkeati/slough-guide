@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
+import Link from 'next/link'; from 'next';
 import { BusinessCard } from '../../../components/business-card';
-import { Card, CardContent, CardHeader, CardTitle } from '../../../components/ui/card';
+import { Card, CardContent, CardContent } from '../../../components/ui/card';
 
 export const metadata: Metadata = {
-  title: `Businesses in ${neighbourhood}, Slough | Slough Guide`,
-  description: `Discover local businesses in ${neighbourhood}, Slough. Find restaurants, shops, services, and more in your neighbourhood.`,
-  keywords: `${neighbourhood}, Slough, local businesses, ${neighbourhood} Slough`,
+  title: `Businesses in $poyle, Slough | Slough Guide`,
+  description: `Discover local businesses in $poyle, Slough. Find restaurants, shops, services, and more in your neighbourhood.`,
+  keywords: `$poyle, Slough, local businesses, $poyle Slough`,
 };
 
 export default async function NeighbourhoodPage() {
@@ -17,18 +18,18 @@ export default async function NeighbourhoodPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-            <a href="/" className="hover:text-blue-600">Slough Guide</a>
+            <Link href="/" className="hover:text-blue-600">Slough Guide</Link>
             <span>/</span>
-            <a href="/neighbourhoods" className="hover:text-blue-600">Neighbourhoods</a>
+            <Link href="/neighbourhoods" className="hover:text-blue-600">Neighbourhoods</Link>
             <span>/</span>
-            <span className="text-gray-900">{neighbourhood}</span>
+            <span className="text-gray-900">poyle</span>
           </div>
           
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Businesses in {neighbourhood}
+            Businesses in poyle
           </h1>
           <p className="text-lg text-gray-600 mb-6">
-            Discover local businesses in {neighbourhood}, Slough. Find restaurants, shops, services, and more in your neighbourhood.
+            Discover local businesses in poyle, Slough. Find restaurants, shops, services, and more in your neighbourhood.
           </p>
         </div>
 
@@ -41,7 +42,7 @@ export default async function NeighbourhoodPage() {
         {businesses.length === 0 && (
           <Card>
             <CardContent className="text-center py-12">
-              <p className="text-gray-500">No businesses found in {neighbourhood}.</p>
+              <p className="text-gray-500">No businesses found in poyle.</p>
             </CardContent>
           </Card>
         )}

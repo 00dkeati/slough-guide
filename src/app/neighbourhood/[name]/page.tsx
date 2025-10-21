@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import Link from 'next/link'; from 'next';
 import { cache } from '@/lib/cache';
 import { CATEGORIES } from '@/config/categories';
 import { CITY } from '@/config/city';
@@ -12,7 +13,7 @@ import {
 } from '@/lib/seo';
 import { BusinessCard } from '@/components/business-card';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardContent } from '@/components/ui/card';
 import { MapPin, Star, Building } from 'lucide-react';
 
 interface NeighbourhoodPageProps {
@@ -98,7 +99,7 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
             <ol className="flex items-center space-x-2 text-sm text-gray-600">
               <li><Link href="/" className="hover:text-gray-900">Home</Link></li>
               <li>/</li>
-              <li className="text-gray-900">{neighbourhood}</li>
+              <li className="text-gray-900">[name]</li>
             </ol>
           </nav>
 
@@ -108,10 +109,10 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
               <MapPin className="w-8 h-8 text-blue-600" />
               <div>
                 <h1 className="text-4xl font-bold text-gray-900">
-                  Best Places in {neighbourhood}, Slough
+                  Best Places in [name], Slough
                 </h1>
                 <p className="text-lg text-gray-600 mt-2">
-                  Discover the best businesses and services in {neighbourhood}
+                  Discover the best businesses and services in [name]
                 </p>
               </div>
             </div>
@@ -128,7 +129,7 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <Star className="w-6 h-6 text-yellow-500" />
-                Top Rated in {neighbourhood}
+                Top Rated in [name]
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {topRatedPlaces.map((place) => (
@@ -142,7 +143,7 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
               <Building className="w-6 h-6 text-blue-600" />
-              Popular Categories in {neighbourhood}
+              Popular Categories in [name]
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {placesByCategory
@@ -173,7 +174,7 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
                           href={`/neighbourhood/${params.name}/${category.id}`}
                           className="text-blue-600 hover:text-blue-700 text-sm font-medium"
                         >
-                          View all {category.label.toLowerCase()} in {neighbourhood} →
+                          View all {category.label.toLowerCase()} in [name] →
                         </Link>
                       </div>
                     </CardContent>
@@ -186,7 +187,7 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
           {neighbourhoodPlaces.length > 0 && (
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                All Businesses in {neighbourhood}
+                All Businesses in [name]
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {neighbourhoodPlaces.map((place) => (
@@ -202,10 +203,10 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
               <CardContent className="text-center py-12">
                 <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  No businesses found in {neighbourhood}
+                  No businesses found in [name]
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  We don&apos;t have any businesses listed for {neighbourhood} yet. Check back soon or explore other areas.
+                  We don&apos;t have any businesses listed for [name] yet. Check back soon or explore other areas.
                 </p>
                 <Link
                   href="/"

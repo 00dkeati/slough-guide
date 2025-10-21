@@ -1,4 +1,4 @@
-import { Place, PlaceSchema } from './types';
+import { Place } from './types';
 import { CATEGORIES } from '@/config/categories';
 import { CITY } from '@/config/city';
 import { sortPlaces } from './place-utils';

@@ -3,7 +3,6 @@
 import { businessGenerator } from '../lib/business-generator';
 import { cache } from '../lib/cache';
 import { CATEGORIES } from '../config/categories';
-import { CITY } from '../config/city';
 
 interface DailyAdditionResult {
   success: boolean;
