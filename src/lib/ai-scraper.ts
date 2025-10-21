@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import { Place, EnrichedPlace } from './types';
+import { EnrichedPlace } from './types';
 
 // AI-powered business scraper for comprehensive data collection
 export class AISloughBusinessScraper {

@@ -1,5 +1,4 @@
 import { Place } from './types';
-import { CATEGORIES } from '../config/categories';
 import { CITY } from '../config/city';
 
 export interface BusinessGenerationOptions {
