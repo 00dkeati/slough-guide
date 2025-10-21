@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 import { CATEGORIES } from '@/config/categories';
 import { CITY } from '@/config/city';
 import { 
@@ -59,7 +59,7 @@ export default async function NeighbourhoodPage({ params }: NeighbourhoodPagePro
   }
 
   // Get all places in this neighbourhood
-  const neighbourhoodPlaces = await KVStore.getNeighbourhoodPlaces(neighbourhood);
+  const neighbourhoodPlaces = await cache.getNeighbourhoodPlaces(neighbourhood);
   
   // Get places by category
   const placesByCategory = await Promise.all(

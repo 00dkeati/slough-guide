@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { CITY } from '@/config/city';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 import { generateMetaTags } from '@/lib/seo';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin } from 'lucide-react';
@@ -13,7 +13,7 @@ export const metadata: Metadata = generateMetaTags({
 });
 
 export default async function NeighbourhoodsPage() {
-  const neighbourhoodCounts = await KVStore.getNeighbourhoodCounts();
+  const neighbourhoodCounts = await cache.getNeighbourhoodCounts();
 
   return (
     <div className="min-h-screen bg-gray-50">

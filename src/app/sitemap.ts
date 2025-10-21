@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 import { CATEGORIES } from '@/config/categories';
 import { CITY } from '@/config/city';
 
@@ -73,12 +73,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Business pages (top 5000 by rating)
   let businessPages: MetadataRoute.Sitemap = [];
   try {
-    const allPlaces = await KVStore.getPlaceCount();
-    if (allPlaces > 0) {
+    const allPlaces = await cache.getAllPlaces();
+    if (allPlaces.length > 0) {
       // Get top rated places from each category
       const topPlaces = await Promise.all(
         CATEGORIES.slice(0, 10).map(async (category) => {
-          const places = await KVStore.getTopRatedPlaces(category.id, 50, 5);
+          const places = await cache.getTopRatedPlaces(category.id, 50, 5);
           return places.map((place) => ({
             url: `${baseUrl}/business/${place.slug}`,
             lastModified: new Date(place.last_fetched),

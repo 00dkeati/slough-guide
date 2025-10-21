@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 import { CATEGORIES, getCategoryById } from '@/config/categories';
 import { CITY } from '@/config/city';
 import { getTopPicks } from '@/lib/search';
@@ -53,7 +53,7 @@ export default async function HomePage() {
 
   // Get stats
   const totalPlaces = await KVStore.getPlaceCount();
-  const categoryCounts = await KVStore.getCategoryCounts();
+  const categoryCounts = await cache.getCategoryCounts();
 
   // Generate structured data
   const breadcrumbData = generateBreadcrumbStructuredData([

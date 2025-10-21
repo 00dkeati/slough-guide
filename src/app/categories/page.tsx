@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { CATEGORIES } from '@/config/categories';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 import { generateMetaTags } from '@/lib/seo';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = generateMetaTags({
 });
 
 export default async function CategoriesPage() {
-  const categoryCounts = await KVStore.getCategoryCounts();
+  const categoryCounts = await cache.getCategoryCounts();
 
   return (
     <div className="min-h-screen bg-gray-50">

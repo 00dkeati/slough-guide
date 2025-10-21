@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { KVStore } from '@/lib/kv';
+import { cache } from '@/lib/cache';
 import { getCategoryById } from '@/config/categories';
 import { CITY } from '@/config/city';
 import { 
@@ -71,7 +71,7 @@ export default async function NeighbourhoodCategoryPage({ params }: Neighbourhoo
   }
 
   // Get places for this neighbourhood and category
-  const places = await KVStore.getNeighbourhoodCategoryPlaces(neighbourhood, category.id);
+  const places = await cache.getNeighbourhoodCategoryPlaces(neighbourhood, category.id);
   
   // Sort by rating
   const sortedPlaces = places.sort((a, b) => (b.rating || 0) - (a.rating || 0));
