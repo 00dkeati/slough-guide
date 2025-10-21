@@ -116,7 +116,7 @@ export class KVStore {
     limit: number = 10,
     minReviews: number = 5
   ): Promise<Place[]> {
-    const placeIds = await kv.zrevrange(RANKING_RATING_KEY(categoryId), 0, limit - 1);
+    const placeIds = await kv.zrange(RANKING_RATING_KEY(categoryId), 0, limit - 1, { rev: true });
     const places = await this.getPlaces(placeIds);
     
     // Filter by minimum reviews
@@ -129,7 +129,7 @@ export class KVStore {
     categoryId: string,
     limit: number = 10
   ): Promise<Place[]> {
-    const placeIds = await kv.zrevrange(RANKING_REVIEWS_KEY(categoryId), 0, limit - 1);
+    const placeIds = await kv.zrange(RANKING_REVIEWS_KEY(categoryId), 0, limit - 1, { rev: true });
     return await this.getPlaces(placeIds);
   }
 
