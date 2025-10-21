@@ -60,14 +60,14 @@ export async function fetchCategoryPlaces({
       // Combine and deduplicate results
       const allResults = [...textSearchResults, ...nearbyResults];
       const uniqueResults = allResults.filter((place, index, self) => 
-        index === self.findIndex(p => p.place_id === place.place_id)
+        index === self.findIndex((p: any) => p.place_id === (place as any).place_id)
       );
       
       console.log(`    Found ${uniqueResults.length} unique ${googleType} places`);
       
       // Add place IDs to our set
       for (const result of uniqueResults) {
-        uniquePlaceIds.add(result.place_id);
+        uniquePlaceIds.add((result as any).place_id);
       }
       
     } catch (error) {
