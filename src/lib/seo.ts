@@ -65,22 +65,23 @@ export function generateNeighbourhoodDescription(neighbourhood: string, category
 }
 
 export function generateBusinessTitle(place: Place): string {
-  const primaryCategory = place.categories[0];
+  const primaryCategory = place.categories?.[0] || place.types?.[0] || 'business';
   const category = getCategoryById(primaryCategory);
   return `${place.name} – ${category?.label || primaryCategory} in Slough | Reviews, Hours, Phone`;
 }
 
 export function generateBusinessDescription(place: Place): string {
-  const category = getCategoryById(place.categories[0]);
+  const primaryCategory = place.categories?.[0] || place.types?.[0] || 'business';
+  const category = getCategoryById(primaryCategory);
   const rating = place.rating ? ` Rated ${place.rating}/5` : '';
   const reviews = place.user_ratings_total ? ` with ${place.user_ratings_total} reviews` : '';
   
-  return `${place.name} is a ${category?.label?.toLowerCase() || place.categories[0]} in Slough.${rating}${reviews}. Check opening hours, contact details and more.`;
+  return `${place.name} is a ${category?.label?.toLowerCase() || primaryCategory} in Slough.${rating}${reviews}. Check opening hours, contact details and more.`;
 }
 
 // Structured data generators
 export function generateLocalBusinessStructuredData(place: Place): LocalBusiness {
-  const primaryCategory = place.categories[0];
+  const primaryCategory = place.categories?.[0] || place.types?.[0] || 'business';
   const category = getCategoryById(primaryCategory);
   
   const structuredData: LocalBusiness = {

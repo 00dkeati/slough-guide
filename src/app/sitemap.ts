@@ -79,12 +79,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const topPlaces = await Promise.all(
         CATEGORIES.slice(0, 10).map(async (category) => {
           const places = await cache.getTopRatedPlaces(category.id, 50, 5);
-          return places.map((place) => ({
-            url: `${baseUrl}/business/${place.slug}`,
-            lastModified: new Date(place.last_fetched),
-            changeFrequency: 'weekly' as const,
-            priority: 0.6,
-          }));
+          return places.map((place) => {
+            // Validate the date string
+            const lastModified = place.last_fetched ? new Date(place.last_fetched) : new Date();
+            // Check if the date is valid
+            const validDate = !isNaN(lastModified.getTime()) ? lastModified : new Date();
+            
+            return {
+              url: `${baseUrl}/business/${place.slug}`,
+              lastModified: validDate,
+              changeFrequency: 'weekly' as const,
+              priority: 0.6,
+            };
+          });
         })
       );
       businessPages = topPlaces.flat().slice(0, 5000);

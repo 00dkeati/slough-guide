@@ -87,7 +87,7 @@ export const EnrichedPlaceSchema = PlaceSchema.extend({
   aiGeneratedDescription: z.string(),
   scrapedReviews: z.array(ReviewSchema),
   additionalInfo: z.record(z.string(), z.any()),
-  socialMediaLinks: z.record(z.string()),
+  socialMediaLinks: z.record(z.string(), z.string()),
   amenities: z.array(z.string()),
   seoContent: SEOContentSchema.optional(),
   lastEnriched: z.string(),
