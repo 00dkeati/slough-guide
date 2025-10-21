@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { refreshAllData } from '@/jobs/refresh-all';
 
 // Public endpoint for data refresh (no authentication required)
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     console.log('Starting public data refresh...');
     

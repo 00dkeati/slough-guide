@@ -7,7 +7,19 @@ import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function DataRefreshPage() {
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{
+    success: boolean;
+    message: string;
+    summary?: {
+      totalPlacesAdded: number;
+      totalPlacesUpdated: number;
+      totalErrors: number;
+      categoriesProcessed: number;
+      neighbourhoodsProcessed: number;
+      duration: number;
+    };
+    errors?: string[];
+  } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const triggerRefresh = async () => {
