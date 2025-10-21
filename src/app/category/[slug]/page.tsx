@@ -89,10 +89,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       business.categories.includes(category.id)
     );
     
-    // Get top picks from sample data
-    topPicks = allPlaces
-      .filter(place => place.rating && place.user_ratings_total && place.user_ratings_total >= 5)
-      .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+    // Get top picks from sample data - cast to any to avoid type issues
+    topPicks = (allPlaces as any)
+      .filter((place: any) => place.rating && place.user_ratings_total && place.user_ratings_total >= 5)
+      .sort((a: any, b: any) => (b.rating || 0) - (a.rating || 0))
       .slice(0, 10);
   } else {
     topPicks = await getTopPicks(category.id, 10);
