@@ -127,7 +127,6 @@ export async function fetchCategoryPlaces({
   }
 
   // Update category metadata
-  const totalPlaces = await cache.getCategoryPlaceIds(categoryId);
   // Note: Meta data is calculated on-demand in memory cache
 
   console.log(`  Category ${categoryId}: ${placesAdded} added, ${placesUpdated} updated, ${errors.length} errors`);

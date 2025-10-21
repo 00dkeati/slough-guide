@@ -70,7 +70,7 @@ export default async function BusinessPage({ params }: BusinessPageProps) {
   const openingHours = formatOpeningHours(place);
 
   // Get related places in the same neighbourhood and category
-  const relatedPlaces = await KVStore.getNeighbourhoodCategoryPlaces(
+  const relatedPlaces = await cache.getNeighbourhoodCategoryPlaces(
     place.neighbourhood || '',
     place.categories[0]
   );
