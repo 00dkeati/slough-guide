@@ -78,12 +78,23 @@ export default async function HomePage() {
     
     let additionalBusinesses: any[] = [];
     try {
-      additionalBusinesses = await generator.generateBusinesses({ count: 100 });
+      // Start with a smaller number to avoid timeout issues
+      const generationPromise = generator.generateBusinesses({ count: 20 });
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Generation timeout')), 10000)
+      );
+      
+      additionalBusinesses = await Promise.race([generationPromise, timeoutPromise]) as any[];
       console.log(`Generated ${additionalBusinesses.length} additional businesses`);
     } catch (genError) {
-      console.error('Business generation failed, trying smaller batch:', genError);
+      console.error('Business generation failed, trying even smaller batch:', genError);
       try {
-        additionalBusinesses = await generator.generateBusinesses({ count: 10 });
+        const fallbackPromise = generator.generateBusinesses({ count: 5 });
+        const fallbackTimeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Fallback timeout')), 5000)
+        );
+        
+        additionalBusinesses = await Promise.race([fallbackPromise, fallbackTimeoutPromise]) as any[];
         console.log(`Generated ${additionalBusinesses.length} businesses in fallback`);
       } catch (fallbackError) {
         console.error('Fallback generation also failed:', fallbackError);
