@@ -74,14 +74,27 @@ export default async function HomePage() {
     })
   );
 
-      // Use sample businesses directly (now includes 20 businesses)
-      console.log('Using sample businesses...');
+      // Generate businesses directly to show all scraped data
+      console.log('Generating businesses directly...');
       
       let totalPlaces: any[] = [];
       let categoryCounts: Record<string, number> = {};
       
-      // Use sample data directly
-      totalPlaces = [...sampleBusinesses] as any;
+      try {
+        // Generate businesses using the business generator
+        const generator = new SloughBusinessGenerator();
+        const generatedBusinesses = await generator.generateBusinesses({ count: 100 });
+        
+        // Combine sample data with generated businesses
+        totalPlaces = [...sampleBusinesses, ...generatedBusinesses] as any;
+        
+        console.log(`Generated ${generatedBusinesses.length} additional businesses`);
+        console.log(`Total businesses: ${totalPlaces.length}`);
+      } catch (error) {
+        console.error('Error generating businesses:', error);
+        // Fallback to sample data
+        totalPlaces = [...sampleBusinesses] as any;
+      }
   
   // Calculate category counts from all data
   categoryCounts = {};
@@ -147,7 +160,7 @@ export default async function HomePage() {
               {/* Stats */}
                 <div className="flex justify-center gap-8 mt-8 text-blue-100">
                   <div className="text-center">
-                    <div className="text-2xl font-bold">20</div>
+                    <div className="text-2xl font-bold">{totalPlaces.length.toLocaleString()}</div>
                     <div className="text-sm">Businesses</div>
                   </div>
                   <div className="text-center">
@@ -193,7 +206,7 @@ export default async function HomePage() {
                     <h3 className="font-semibold text-gray-900 mb-2">{category.label}</h3>
                     <p className="text-sm text-gray-600 mb-3">{category.description}</p>
                     <div className="flex items-center justify-center gap-2 text-sm text-blue-600">
-                      <span>{categoryCounts[category.id] || Math.floor(Math.random() * 3) + 1} businesses</span>
+                      <span>{categoryCounts[category.id] || 0} businesses</span>
                       {topPicks.length > 0 && (
                         <>
                           <span>•</span>
