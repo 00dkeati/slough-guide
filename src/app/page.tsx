@@ -72,10 +72,13 @@ export default async function HomePage() {
     // Calculate category counts from all data (including generated businesses)
     categoryCounts = {};
     CATEGORIES.forEach(category => {
-      categoryCounts[category.id] = totalPlaces.filter((business: any) => 
+      const count = totalPlaces.filter((business: any) => 
         business.categories && business.categories.includes(category.id)
       ).length;
+      categoryCounts[category.id] = count;
+      console.log(`Category ${category.id}: ${count} businesses`);
     });
+    console.log(`Total places: ${totalPlaces.length}`);
   }
 
   // Generate structured data
