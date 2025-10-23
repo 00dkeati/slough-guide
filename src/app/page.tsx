@@ -191,6 +191,7 @@ export default async function HomePage() {
   console.log(`Total businesses: ${totalPlaces.length}`);
   console.log('Category counts:', categoryCounts);
   console.log('Page rendered at:', new Date(timestamp).toISOString());
+  console.log('Current time:', new Date().toISOString());
 
   // Generate structured data
   const breadcrumbData = generateBreadcrumbStructuredData([
@@ -253,6 +254,9 @@ export default async function HomePage() {
                   <div className="text-2xl font-bold">{CITY.neighbourhoods.length}</div>
                   <div className="text-sm">Areas</div>
                 </div>
+              </div>
+              <div className="text-center mt-4 text-blue-200 text-xs">
+                Rendered at: {new Date().toISOString()}
               </div>
             </div>
           </div>
