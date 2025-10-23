@@ -41,6 +41,9 @@ let requestCount = 0;
 // Force dynamic rendering with random element
 const randomId = Math.random().toString(36).substring(7);
 
+// Cache busting - force fresh deployment
+const cacheBuster = Date.now();
+
 // Featured categories for the home page
 const FEATURED_CATEGORIES = [
   'restaurants',
@@ -156,7 +159,7 @@ export default async function HomePage() {
                   </div>
                 </div>
                 <div className="text-center mt-4 text-blue-200 text-xs">
-                  Rendered at: {new Date().toISOString()} | Request #{requestCount} | ID: {randomId}
+                  Rendered at: {new Date().toISOString()} | Request #{requestCount} | ID: {randomId} | Cache: {cacheBuster}
                 </div>
             </div>
           </div>
