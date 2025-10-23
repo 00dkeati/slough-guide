@@ -337,6 +337,9 @@ export class SloughBusinessGenerator {
         };
 
         const categoryId = categoryMap[categoryKey] || categoryKey;
+        
+        // Ensure we have a valid category ID
+        const validCategoryId = CATEGORIES.find(cat => cat.id === categoryId) ? categoryId : 'restaurants';
 
         const business: Place = {
           place_id: `generated_${Date.now()}_${i}`,
@@ -346,7 +349,7 @@ export class SloughBusinessGenerator {
           lat,
           lng,
           last_fetched: new Date().toISOString(),
-          categories: [categoryId],
+          categories: [validCategoryId],
           formatted_address: address,
           vicinity: neighbourhood,
           phone,
