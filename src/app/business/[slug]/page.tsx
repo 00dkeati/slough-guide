@@ -32,7 +32,8 @@ interface BusinessPageProps {
 }
 
 export async function generateMetadata({ params }: BusinessPageProps): Promise<Metadata> {
-  const place = await cache.findPlaceBySlug(params.slug);
+  const { slug } = await params;
+  const place = await cache.findPlaceBySlug(slug);
   
   if (!place) {
     return {
@@ -58,7 +59,8 @@ export async function generateMetadata({ params }: BusinessPageProps): Promise<M
 }
 
 export default async function BusinessPage({ params }: BusinessPageProps) {
-  const place = await cache.findPlaceBySlug(params.slug);
+  const { slug } = await params;
+  const place = await cache.findPlaceBySlug(slug);
   
   if (!place) {
     notFound();
@@ -276,12 +278,10 @@ export default async function BusinessPage({ params }: BusinessPageProps) {
                 </CardHeader>
                 <CardContent>
                   <div className="relative h-48 bg-gray-200 rounded-lg overflow-hidden">
-                    <Image
+                    <img
                       src={`https://maps.googleapis.com/maps/api/staticmap?center=${place.lat},${place.lng}&zoom=15&size=400x200&markers=${place.lat},${place.lng}&key=${process.env.GOOGLE_MAPS_API_KEY}`}
                       alt={`Map showing ${place.name} location`}
-                      fill
-                      className="object-cover"
-                      sizes="400px"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <p className="text-sm text-gray-600 mt-2">
