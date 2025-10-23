@@ -56,16 +56,24 @@ export default async function HomePage() {
   let totalPlaces = await cache.getAllPlaces();
   let categoryCounts = await cache.getCategoryCounts();
   
-  // If no data in cache, use sample data
+  // If no data in cache, use sample data + generate more businesses
   if (totalPlaces.length === 0) {
-    console.log('No data in cache, using sample data');
-    totalPlaces = sampleBusinesses as any;
+    console.log('No data in cache, using sample data + generating more');
     
-    // Calculate category counts from sample data
+    // Use sample data as base
+    totalPlaces = [...sampleBusinesses] as any;
+    
+    // Generate additional businesses to make it more realistic
+    const { SloughBusinessGenerator } = await import('@/lib/business-generator');
+    const generator = new SloughBusinessGenerator();
+    const additionalBusinesses = await generator.generateBusinesses({ count: 100 });
+    totalPlaces = [...totalPlaces, ...additionalBusinesses] as any;
+    
+    // Calculate category counts from all data
     categoryCounts = {};
     CATEGORIES.forEach(category => {
-      categoryCounts[category.id] = (sampleBusinesses as any).filter((business: any) => 
-        business.categories.includes(category.id)
+      categoryCounts[category.id] = totalPlaces.filter((business: any) => 
+        business.categories && business.categories.includes(category.id)
       ).length;
     });
   }
