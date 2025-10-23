@@ -2,9 +2,7 @@ import { Place } from './types';
 import { CATEGORIES } from '@/config/categories';
 import { CITY } from '@/config/city';
 import { sortPlaces } from './place-utils';
-import { writeFile, readFile, mkdir } from 'fs/promises';
-import { existsSync } from 'fs';
-import path from 'path';
+import { kv } from '@vercel/kv';
 import { sampleBusinesses } from '@/data/sample-businesses';
 
 interface CacheData {
@@ -16,26 +14,10 @@ interface CacheData {
 }
 
 class FileCache {
-  private cacheDir = path.join(process.cwd(), 'cache');
-  private dataFile = path.join(this.cacheDir, 'data.json');
-
-  constructor() {
-    this.ensureCacheDir();
-  }
-
-  private async ensureCacheDir() {
-    if (!existsSync(this.cacheDir)) {
-      await mkdir(this.cacheDir, { recursive: true });
-    }
-  }
-
   private async loadData(): Promise<CacheData> {
     try {
-      if (!existsSync(this.dataFile)) {
-        return this.getEmptyData();
-      }
-      const data = await readFile(this.dataFile, 'utf-8');
-      return JSON.parse(data);
+      const data = await kv.get<CacheData>('slough-guide-cache');
+      return data || this.getEmptyData();
     } catch (error) {
       console.error('Error loading cache data:', error);
       return this.getEmptyData();
@@ -44,8 +26,7 @@ class FileCache {
 
   private async saveData(data: CacheData): Promise<void> {
     try {
-      await this.ensureCacheDir();
-      await writeFile(this.dataFile, JSON.stringify(data, null, 2));
+      await kv.set('slough-guide-cache', data);
     } catch (error) {
       console.error('Error saving cache data:', error);
     }
