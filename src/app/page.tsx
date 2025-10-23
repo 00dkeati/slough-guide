@@ -69,17 +69,35 @@ export default async function HomePage() {
   try {
     // Use sample data as base
     totalPlaces = [...sampleBusinesses] as any;
+    console.log(`Starting with ${totalPlaces.length} sample businesses`);
     
     // Generate additional businesses
+    console.log('Creating business generator...');
     const generator = new SloughBusinessGenerator();
-    const additionalBusinesses = await generator.generateBusinesses({ count: 100 });
+    console.log('Generating additional businesses...');
+    
+    let additionalBusinesses: any[] = [];
+    try {
+      additionalBusinesses = await generator.generateBusinesses({ count: 100 });
+      console.log(`Generated ${additionalBusinesses.length} additional businesses`);
+    } catch (genError) {
+      console.error('Business generation failed, trying smaller batch:', genError);
+      try {
+        additionalBusinesses = await generator.generateBusinesses({ count: 10 });
+        console.log(`Generated ${additionalBusinesses.length} businesses in fallback`);
+      } catch (fallbackError) {
+        console.error('Fallback generation also failed:', fallbackError);
+        additionalBusinesses = [];
+      }
+    }
     
     // Add generated businesses to totalPlaces
     totalPlaces = [...totalPlaces, ...additionalBusinesses] as any;
     
-    console.log(`Generated ${totalPlaces.length} businesses total`);
+    console.log(`Total businesses: ${totalPlaces.length}`);
   } catch (error) {
-    console.log('Generation error, using sample data:', error);
+    console.error('Generation error:', error);
+    console.log('Using sample data only');
     totalPlaces = [...sampleBusinesses] as any;
   }
   
