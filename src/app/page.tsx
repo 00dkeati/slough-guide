@@ -62,6 +62,9 @@ export default async function HomePage() {
   // Call API to generate businesses
   console.log('Calling API to generate businesses...');
   
+  let totalPlaces: any[] = [];
+  let categoryCounts: Record<string, number> = {};
+  
   try {
     const response = await fetch(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'}/api/generate-businesses`, {
       cache: 'no-store'

@@ -281,6 +281,11 @@ class FileCache {
     await this.saveData(emptyData);
   }
 
+  async clearAllData(): Promise<void> {
+    const emptyData = this.getEmptyData();
+    await this.saveData(emptyData);
+  }
+
   setLastRefresh(date: Date): void {
     // This will be saved on next data operation
     this.lastRefreshDate = date;
