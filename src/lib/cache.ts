@@ -17,10 +17,19 @@ class FileCache {
   private async loadData(): Promise<CacheData> {
     try {
       const data = await kv.get<CacheData>('slough-guide-cache');
-      return data || this.getEmptyData();
+      if (data && Object.keys(data.places).length > 0) {
+        return data;
+      }
+      // If no data or empty, initialize with sample data
+      console.log('No data in Vercel KV, initializing with sample data');
+      const sampleData = this.initializeWithSampleDataSync();
+      await this.saveData(sampleData);
+      return sampleData;
     } catch (error) {
       console.error('Error loading cache data:', error);
-      return this.getEmptyData();
+      // Fallback to sample data
+      const sampleData = this.initializeWithSampleDataSync();
+      return sampleData;
     }
   }
 
@@ -49,6 +58,63 @@ class FileCache {
       data.neighbourhoodPlaceIds[nh] = [];
     });
 
+    return data;
+  }
+
+  private initializeWithSampleDataSync(): CacheData {
+    console.log('Initializing cache with sample data...');
+
+    const data: CacheData = {
+      places: {},
+      categoryPlaceIds: {},
+      neighbourhoodPlaceIds: {},
+      nameIndex: {},
+      lastRefresh: new Date().toISOString(),
+    };
+
+    // Initialize category and neighbourhood arrays
+    CATEGORIES.forEach(cat => {
+      data.categoryPlaceIds[cat.id] = [];
+    });
+    CITY.neighbourhoods.forEach(nh => {
+      data.neighbourhoodPlaceIds[nh] = [];
+    });
+
+    // Add sample businesses
+    for (const business of sampleBusinesses) {
+      data.places[business.place_id] = business;
+
+      // Add to categories based on types
+      const categoryMap: Record<string, string> = {
+        'restaurant': 'restaurants',
+        'meal_takeaway': 'takeaways',
+        'cafe': 'cafes',
+        'bar': 'pubs',
+        'gym': 'gyms',
+        'hair_care': 'barbers',
+        'beauty_salon': 'hairdressers',
+        'plumber': 'plumbers'
+      };
+
+      // Find the appropriate category
+      const category = business.types.find(type => categoryMap[type]);
+      if (category) {
+        const categoryId = categoryMap[category];
+        data.categoryPlaceIds[categoryId].push(business.place_id);
+      }
+
+      // Add to neighbourhood
+      data.neighbourhoodPlaceIds['Slough'].push(business.place_id);
+
+      // Add to name index
+      const firstLetter = business.name.charAt(0).toLowerCase();
+      if (!data.nameIndex[firstLetter]) {
+        data.nameIndex[firstLetter] = [];
+      }
+      data.nameIndex[firstLetter].push(business.place_id);
+    }
+    
+    console.log(`Initialized with ${sampleBusinesses.length} sample businesses.`);
     return data;
   }
 
