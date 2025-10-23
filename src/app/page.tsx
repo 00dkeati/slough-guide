@@ -222,14 +222,20 @@ export default async function HomePage() {
               ))}
             </div>
 
-            <div className="text-center mt-8">
-              <Link
-                href="/categories"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                View All Categories
-              </Link>
-            </div>
+                <div className="text-center mt-8">
+                  <Link
+                    href="/all-businesses"
+                    className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors mr-4"
+                  >
+                    View All {totalPlaces.length.toLocaleString()} Businesses
+                  </Link>
+                  <Link
+                    href="/categories"
+                    className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    Browse Categories
+                  </Link>
+                </div>
           </div>
         </section>
 
