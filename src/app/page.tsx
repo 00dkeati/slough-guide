@@ -26,6 +26,10 @@ export const metadata: Metadata = generateMetaTags({
   canonical: '/',
 });
 
+// Force dynamic rendering to show generated businesses
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // Featured categories for the home page
 const FEATURED_CATEGORIES = [
   'restaurants',
