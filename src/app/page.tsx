@@ -56,49 +56,47 @@ export default async function HomePage() {
   let totalPlaces = await cache.getAllPlaces();
   let categoryCounts = await cache.getCategoryCounts();
   
-  // If no data in cache, use sample data + generate more businesses
-  if (totalPlaces.length === 0) {
-    console.log('No data in cache, using sample data + generating more');
-    
-    // Use sample data as base
-    totalPlaces = [...sampleBusinesses] as any;
-    
-    // Generate additional businesses to make it more realistic
-    const { SloughBusinessGenerator } = await import('@/lib/business-generator');
-    const generator = new SloughBusinessGenerator();
-    const additionalBusinesses = await generator.generateBusinesses({ count: 100 });
-    
-    // Save all businesses to cache
-    for (const business of totalPlaces) {
-      await cache.savePlace(business);
-      for (const categoryId of business.categories || []) {
-        await cache.addPlaceToCategory(business.place_id, categoryId);
-      }
-      if (business.vicinity) {
-        await cache.addPlaceToNeighbourhood(business.place_id, business.vicinity);
-      }
+  // Always generate businesses for now to ensure we have data
+  console.log('Generating businesses for homepage...');
+  
+  // Use sample data as base
+  totalPlaces = [...sampleBusinesses] as any;
+  
+  // Generate additional businesses to make it more realistic
+  const { SloughBusinessGenerator } = await import('@/lib/business-generator');
+  const generator = new SloughBusinessGenerator();
+  const additionalBusinesses = await generator.generateBusinesses({ count: 100 });
+  
+  // Save all businesses to cache
+  for (const business of totalPlaces) {
+    await cache.savePlace(business);
+    for (const categoryId of business.categories || []) {
+      await cache.addPlaceToCategory(business.place_id, categoryId);
     }
-    
-    for (const business of additionalBusinesses) {
-      await cache.savePlace(business);
-      for (const categoryId of business.categories || []) {
-        await cache.addPlaceToCategory(business.place_id, categoryId);
-      }
-      if (business.vicinity) {
-        await cache.addPlaceToNeighbourhood(business.place_id, business.vicinity);
-      }
+    if (business.vicinity) {
+      await cache.addPlaceToNeighbourhood(business.place_id, business.vicinity);
     }
-    
-    totalPlaces = [...totalPlaces, ...additionalBusinesses] as any;
-    
-    // Calculate category counts from all data (including generated businesses)
-    categoryCounts = {};
-    CATEGORIES.forEach(category => {
-      categoryCounts[category.id] = totalPlaces.filter((business: any) => 
-        business.categories && business.categories.includes(category.id)
-      ).length;
-    });
   }
+  
+  for (const business of additionalBusinesses) {
+    await cache.savePlace(business);
+    for (const categoryId of business.categories || []) {
+      await cache.addPlaceToCategory(business.place_id, categoryId);
+    }
+    if (business.vicinity) {
+      await cache.addPlaceToNeighbourhood(business.place_id, business.vicinity);
+    }
+  }
+  
+  totalPlaces = [...totalPlaces, ...additionalBusinesses] as any;
+  
+  // Calculate category counts from all data (including generated businesses)
+  categoryCounts = {};
+  CATEGORIES.forEach(category => {
+    categoryCounts[category.id] = totalPlaces.filter((business: any) => 
+      business.categories && business.categories.includes(category.id)
+    ).length;
+  });
 
   // Generate structured data
   const breadcrumbData = generateBreadcrumbStructuredData([
