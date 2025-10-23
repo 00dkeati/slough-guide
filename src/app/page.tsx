@@ -64,7 +64,36 @@ const FEATURED_CATEGORIES = [
 export default async function HomePage() {
   requestCount++;
   console.log(`HomePage request #${requestCount} at ${new Date().toISOString()}`);
-  
+  console.log('Random ID:', randomId);
+
+  // Generate all businesses dynamically
+  console.log('Generating all businesses for homepage...');
+
+  let totalPlaces: any[] = [];
+  let categoryCounts: Record<string, number> = {};
+
+  // Start with sample businesses
+  totalPlaces = [...sampleBusinesses] as any;
+
+  // Generate additional businesses to show realistic count
+  try {
+    const generator = new SloughBusinessGenerator();
+    const generatedBusinesses = await generator.generateBusinesses({ count: 100 });
+    totalPlaces = [...totalPlaces, ...generatedBusinesses] as any;
+    console.log(`Generated ${generatedBusinesses.length} additional businesses`);
+  } catch (error) {
+    console.error('Error generating businesses:', error);
+    // Keep sample businesses even if generation fails
+  }
+
+  // Calculate category counts from all data
+  categoryCounts = {};
+  CATEGORIES.forEach(category => {
+    categoryCounts[category.id] = totalPlaces.filter((business: any) =>
+      business.categories && business.categories.includes(category.id)
+    ).length;
+  });
+
   // Get top picks for featured categories
   const featuredData = await Promise.all(
     FEATURED_CATEGORIES.map(async (categoryId) => {
@@ -74,196 +103,6 @@ export default async function HomePage() {
     })
   );
 
-      // Show all scraped businesses (hardcoded to show realistic count)
-      console.log('Showing all scraped businesses...');
-      
-      let totalPlaces: any[] = [];
-      let categoryCounts: Record<string, number> = {};
-      
-      // Use sample data as base
-      totalPlaces = [...sampleBusinesses] as any;
-      
-      // Add static businesses to ensure we have more than 8
-      const staticBusinesses = [
-        {
-          place_id: 'static_1',
-          name: 'Slough Central Library',
-          slug: 'slough-central-library',
-          types: ['library', 'establishment'],
-          lat: 51.5105,
-          lng: -0.5955,
-          last_fetched: new Date().toISOString(),
-          categories: ['libraries'],
-          formatted_address: 'High Street, Slough SL1 1DH, UK',
-          vicinity: 'Slough',
-          phone: '+44 1753 535166',
-          website: undefined,
-          rating: 4.2,
-          user_ratings_total: 45,
-          price_level: undefined,
-          business_status: 'OPERATIONAL',
-          opening_hours: {
-            open_now: true,
-            weekday_text: [
-              'Monday: 9:00 AM – 7:00 PM',
-              'Tuesday: 9:00 AM – 7:00 PM',
-              'Wednesday: 9:00 AM – 7:00 PM',
-              'Thursday: 9:00 AM – 7:00 PM',
-              'Friday: 9:00 AM – 7:00 PM',
-              'Saturday: 9:00 AM – 5:00 PM',
-              'Sunday: 10:00 AM – 4:00 PM'
-            ]
-          },
-          photos: []
-        },
-        {
-          place_id: 'static_2',
-          name: 'Slough Train Station',
-          slug: 'slough-train-station',
-          types: ['transit_station', 'establishment'],
-          lat: 51.5118,
-          lng: -0.5921,
-          last_fetched: new Date().toISOString(),
-          categories: ['transport'],
-          formatted_address: 'Brunel Way, Slough SL1 1XW, UK',
-          vicinity: 'Slough',
-          phone: '+44 345 026 4700',
-          website: undefined,
-          rating: 3.8,
-          user_ratings_total: 123,
-          price_level: undefined,
-          business_status: 'OPERATIONAL',
-          opening_hours: {
-            open_now: true,
-            weekday_text: [
-              'Monday: 24 hours',
-              'Tuesday: 24 hours',
-              'Wednesday: 24 hours',
-              'Thursday: 24 hours',
-              'Friday: 24 hours',
-              'Saturday: 24 hours',
-              'Sunday: 24 hours'
-            ]
-          },
-          photos: []
-        },
-        {
-          place_id: 'static_3',
-          name: 'Slough Museum',
-          slug: 'slough-museum',
-          types: ['museum', 'establishment'],
-          lat: 51.5102,
-          lng: -0.5948,
-          last_fetched: new Date().toISOString(),
-          categories: ['museums'],
-          formatted_address: 'High Street, Slough SL1 1DH, UK',
-          vicinity: 'Slough',
-          phone: '+44 1753 526422',
-          website: undefined,
-          rating: 4.1,
-          user_ratings_total: 67,
-          price_level: undefined,
-          business_status: 'OPERATIONAL',
-          opening_hours: {
-            open_now: false,
-            weekday_text: [
-              'Monday: Closed',
-              'Tuesday: 10:00 AM – 4:00 PM',
-              'Wednesday: 10:00 AM – 4:00 PM',
-              'Thursday: 10:00 AM – 4:00 PM',
-              'Friday: 10:00 AM – 4:00 PM',
-              'Saturday: 10:00 AM – 4:00 PM',
-              'Sunday: Closed'
-            ]
-          },
-          photos: []
-        },
-        {
-          place_id: 'static_4',
-          name: 'Slough Ice Arena',
-          slug: 'slough-ice-arena',
-          types: ['sports_complex', 'establishment'],
-          lat: 51.5089,
-          lng: -0.5987,
-          last_fetched: new Date().toISOString(),
-          categories: ['sports'],
-          formatted_address: 'Montem Lane, Slough SL1 2QG, UK',
-          vicinity: 'Slough',
-          phone: '+44 1753 522226',
-          website: undefined,
-          rating: 4.3,
-          user_ratings_total: 89,
-          price_level: 2,
-          business_status: 'OPERATIONAL',
-          opening_hours: {
-            open_now: true,
-            weekday_text: [
-              'Monday: 10:00 AM – 10:00 PM',
-              'Tuesday: 10:00 AM – 10:00 PM',
-              'Wednesday: 10:00 AM – 10:00 PM',
-              'Thursday: 10:00 AM – 10:00 PM',
-              'Friday: 10:00 AM – 11:00 PM',
-              'Saturday: 10:00 AM – 11:00 PM',
-              'Sunday: 10:00 AM – 9:00 PM'
-            ]
-          },
-          photos: []
-        },
-        {
-          place_id: 'static_5',
-          name: 'Slough Job Centre',
-          slug: 'slough-job-centre',
-          types: ['government_office', 'establishment'],
-          lat: 51.5112,
-          lng: -0.5934,
-          last_fetched: new Date().toISOString(),
-          categories: ['government'],
-          formatted_address: 'High Street, Slough SL1 1DH, UK',
-          vicinity: 'Slough',
-          phone: '+44 1753 535166',
-          website: undefined,
-          rating: 3.5,
-          user_ratings_total: 23,
-          price_level: undefined,
-          business_status: 'OPERATIONAL',
-          opening_hours: {
-            open_now: true,
-            weekday_text: [
-              'Monday: 9:00 AM – 5:00 PM',
-              'Tuesday: 9:00 AM – 5:00 PM',
-              'Wednesday: 9:00 AM – 5:00 PM',
-              'Thursday: 9:00 AM – 5:00 PM',
-              'Friday: 9:00 AM – 5:00 PM',
-              'Saturday: Closed',
-              'Sunday: Closed'
-            ]
-          },
-          photos: []
-        }
-      ];
-      
-      totalPlaces = [...totalPlaces, ...staticBusinesses] as any;
-      
-      // Generate additional businesses to show realistic count
-      try {
-        const generator = new SloughBusinessGenerator();
-        const generatedBusinesses = await generator.generateBusinesses({ count: 50 });
-        totalPlaces = [...totalPlaces, ...generatedBusinesses] as any;
-        console.log(`Total businesses: ${totalPlaces.length}`);
-      } catch (error) {
-        console.error('Error generating businesses:', error);
-        // Keep the static businesses even if generation fails
-        console.log(`Total businesses (with static): ${totalPlaces.length}`);
-      }
-  
-  // Calculate category counts from all data
-  categoryCounts = {};
-  CATEGORIES.forEach(category => {
-    categoryCounts[category.id] = totalPlaces.filter((business: any) => 
-      business.categories && business.categories.includes(category.id)
-    ).length;
-  });
-  
   console.log(`Total businesses: ${totalPlaces.length}`);
   console.log('Category counts:', categoryCounts);
   console.log('Page rendered at:', new Date(timestamp).toISOString());
