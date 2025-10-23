@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { sampleBusinesses } from '@/data/sample-businesses';
-import { CATEGORIES, getCategoryById } from '@/config/categories';
-import { CITY } from '@/config/city';
-import { getTopPicks } from '@/lib/search';
 import { BusinessCard } from '@/components/business-card';
 import { SloughBusinessGenerator } from '@/lib/business-generator';
+import { CATEGORIES } from '@/config/categories';
+import { CITY } from '@/config/city';
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
