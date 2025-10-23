@@ -38,6 +38,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const timestamp = Date.now();
 let requestCount = 0;
 
+// Force dynamic rendering with random element
+const randomId = Math.random().toString(36).substring(7);
+
 // Featured categories for the home page
 const FEATURED_CATEGORIES = [
   'restaurants',
@@ -322,6 +325,7 @@ export default async function HomePage() {
   console.log('Category counts:', categoryCounts);
   console.log('Page rendered at:', new Date(timestamp).toISOString());
   console.log('Current time:', new Date().toISOString());
+  console.log('Random ID:', randomId);
 
   // Generate structured data
   const breadcrumbData = generateBreadcrumbStructuredData([
@@ -385,9 +389,9 @@ export default async function HomePage() {
                   <div className="text-sm">Areas</div>
                 </div>
               </div>
-              <div className="text-center mt-4 text-blue-200 text-xs">
-                Rendered at: {new Date().toISOString()} | Request #{requestCount}
-              </div>
+                <div className="text-center mt-4 text-blue-200 text-xs">
+                  Rendered at: {new Date().toISOString()} | Request #{requestCount} | ID: {randomId}
+                </div>
             </div>
           </div>
         </section>
