@@ -8,6 +8,7 @@ import { getTopPicks } from '@/lib/search';
 import { BusinessCard } from '@/components/business-card';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { SloughBusinessGenerator } from '@/lib/business-generator';
 import { 
   generateMetaTags,
   generateBreadcrumbStructuredData
@@ -59,27 +60,26 @@ export default async function HomePage() {
     })
   );
 
-  // Call API to generate businesses
-  console.log('Calling API to generate businesses...');
+  // Generate businesses directly
+  console.log('Generating businesses directly...');
   
   let totalPlaces: any[] = [];
   let categoryCounts: Record<string, number> = {};
   
   try {
-    const response = await fetch(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'}/api/generate-businesses`, {
-      cache: 'no-store'
-    });
+    // Use sample data as base
+    totalPlaces = [...sampleBusinesses] as any;
     
-    if (response.ok) {
-      const data = await response.json();
-      totalPlaces = data.businesses;
-      console.log(`API generated ${totalPlaces.length} businesses`);
-    } else {
-      console.log('API failed, using sample data');
-      totalPlaces = [...sampleBusinesses] as any;
-    }
+    // Generate additional businesses
+    const generator = new SloughBusinessGenerator();
+    const additionalBusinesses = await generator.generateBusinesses({ count: 100 });
+    
+    // Add generated businesses to totalPlaces
+    totalPlaces = [...totalPlaces, ...additionalBusinesses] as any;
+    
+    console.log(`Generated ${totalPlaces.length} businesses total`);
   } catch (error) {
-    console.log('API error, using sample data:', error);
+    console.log('Generation error, using sample data:', error);
     totalPlaces = [...sampleBusinesses] as any;
   }
   
