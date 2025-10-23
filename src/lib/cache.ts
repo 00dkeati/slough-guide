@@ -16,7 +16,7 @@ interface CacheData {
 }
 
 class FileCache {
-  private cacheDir = '/tmp/slough-guide-cache';
+  private cacheDir = path.join(process.cwd(), 'cache');
   private dataFile = path.join(this.cacheDir, 'data.json');
 
   constructor() {
