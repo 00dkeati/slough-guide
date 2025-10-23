@@ -98,7 +98,7 @@ export default async function AllBusinessesPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Businesses</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {totalPlaces.slice(0, 12).map((business) => (
-              <BusinessCard key={business.place_id} business={business} />
+              <BusinessCard key={business.place_id} place={business} />
             ))}
           </div>
         </div>
