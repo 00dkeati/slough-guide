@@ -2,8 +2,9 @@ import { Place } from './types';
 import { CATEGORIES } from '@/config/categories';
 import { CITY } from '@/config/city';
 import { sortPlaces } from './place-utils';
-import { kv } from '@vercel/kv';
 import { sampleBusinesses } from '@/data/sample-businesses';
+import fs from 'fs';
+import path from 'path';
 
 interface CacheData {
   places: Record<string, Place>; // place_id -> Place
@@ -13,29 +14,51 @@ interface CacheData {
   lastRefresh: string | null;
 }
 
+const cacheDir = path.join(process.cwd(), 'cache');
+const cacheFile = path.join(cacheDir, 'data.json');
+
 class FileCache {
+  private async ensureCacheDir(): Promise<void> {
+    if (!fs.existsSync(cacheDir)) {
+      fs.mkdirSync(cacheDir, { recursive: true });
+    }
+  }
+
   private async loadData(): Promise<CacheData> {
     try {
-      const data = await kv.get<CacheData>('slough-guide-cache');
-      if (data && Object.keys(data.places).length > 0) {
-        return data;
+      await this.ensureCacheDir();
+      
+      if (!fs.existsSync(cacheFile)) {
+        console.log('Cache file does not exist, initializing with sample data');
+        const sampleData = this.initializeWithSampleDataSync();
+        await this.saveData(sampleData);
+        return sampleData;
       }
-      // If no data or empty, initialize with sample data
-      console.log('No data in Vercel KV, initializing with sample data');
-      const sampleData = this.initializeWithSampleDataSync();
-      await this.saveData(sampleData);
-      return sampleData;
+
+      const fileContent = fs.readFileSync(cacheFile, 'utf-8');
+      const data = JSON.parse(fileContent) as CacheData;
+      
+      if (!data.places || Object.keys(data.places).length === 0) {
+        console.log('Cache file is empty, initializing with sample data');
+        const sampleData = this.initializeWithSampleDataSync();
+        await this.saveData(sampleData);
+        return sampleData;
+      }
+
+      return data;
     } catch (error) {
       console.error('Error loading cache data:', error);
       // Fallback to sample data
       const sampleData = this.initializeWithSampleDataSync();
+      await this.saveData(sampleData);
       return sampleData;
     }
   }
 
   private async saveData(data: CacheData): Promise<void> {
     try {
-      await kv.set('slough-guide-cache', data);
+      await this.ensureCacheDir();
+      fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2));
     } catch (error) {
       console.error('Error saving cache data:', error);
     }
@@ -253,7 +276,7 @@ class FileCache {
     return counts;
   }
 
-  async clearAllData(): Promise<void> {
+  async clearCache(): Promise<void> {
     const emptyData = this.getEmptyData();
     await this.saveData(emptyData);
   }
@@ -281,7 +304,7 @@ class FileCache {
     console.log('Initializing cache with sample data...');
     
     // Clear existing data
-    await this.clearAllData();
+    await this.clearCache();
     
     // Add sample businesses
     for (const business of sampleBusinesses) {
