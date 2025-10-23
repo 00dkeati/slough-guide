@@ -69,7 +69,7 @@ export default async function HomePage() {
     const additionalBusinesses = await generator.generateBusinesses({ count: 100 });
     totalPlaces = [...totalPlaces, ...additionalBusinesses] as any;
     
-    // Calculate category counts from all data
+    // Calculate category counts from all data (including generated businesses)
     categoryCounts = {};
     CATEGORIES.forEach(category => {
       categoryCounts[category.id] = totalPlaces.filter((business: any) => 
