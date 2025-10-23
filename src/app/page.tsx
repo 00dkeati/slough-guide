@@ -67,6 +67,28 @@ export default async function HomePage() {
     const { SloughBusinessGenerator } = await import('@/lib/business-generator');
     const generator = new SloughBusinessGenerator();
     const additionalBusinesses = await generator.generateBusinesses({ count: 100 });
+    
+    // Save all businesses to cache
+    for (const business of totalPlaces) {
+      await cache.savePlace(business);
+      for (const categoryId of business.categories || []) {
+        await cache.addPlaceToCategory(business.place_id, categoryId);
+      }
+      if (business.vicinity) {
+        await cache.addPlaceToNeighbourhood(business.place_id, business.vicinity);
+      }
+    }
+    
+    for (const business of additionalBusinesses) {
+      await cache.savePlace(business);
+      for (const categoryId of business.categories || []) {
+        await cache.addPlaceToCategory(business.place_id, categoryId);
+      }
+      if (business.vicinity) {
+        await cache.addPlaceToNeighbourhood(business.place_id, business.vicinity);
+      }
+    }
+    
     totalPlaces = [...totalPlaces, ...additionalBusinesses] as any;
     
     // Calculate category counts from all data (including generated businesses)
