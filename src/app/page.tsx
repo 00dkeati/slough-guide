@@ -13,6 +13,7 @@ import {
   generateMetaTags,
   generateBreadcrumbStructuredData
 } from '@/lib/seo';
+import { VERSION, BUILD_TIME, CACHE_BUSTER } from '@/lib/version';
 import { 
   Search, 
   MapPin, 
@@ -159,7 +160,7 @@ export default async function HomePage() {
                   </div>
                 </div>
                 <div className="text-center mt-4 text-blue-200 text-xs">
-                  Rendered at: {new Date().toISOString()} | Request #{requestCount} | ID: {randomId} | Cache: {cacheBuster}
+                  Rendered at: {new Date().toISOString()} | Request #{requestCount} | ID: {randomId} | Cache: {cacheBuster} | Version: {VERSION} | Build: {BUILD_TIME} | Buster: {CACHE_BUSTER}
                 </div>
             </div>
           </div>
