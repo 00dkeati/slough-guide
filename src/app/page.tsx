@@ -67,22 +67,13 @@ export default async function HomePage() {
     })
   );
 
-  // Fetch business count from API
-  console.log('Fetching business count from API...');
-  
-  let totalPlaces: any[] = [];
-  let categoryCounts: Record<string, number> = {};
-  
-  try {
-    const response = await fetch(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'}/api/business-count`, {
-      cache: 'no-store'
-    });
-    
-    if (response.ok) {
-      const data = await response.json();
-      console.log(`API returned ${data.count} businesses at ${data.timestamp}`);
+      // Generate businesses directly without API dependency
+      console.log('Generating businesses directly...');
       
-      // Use sample data as base and add static businesses
+      let totalPlaces: any[] = [];
+      let categoryCounts: Record<string, number> = {};
+      
+      // Use sample data as base
       totalPlaces = [...sampleBusinesses] as any;
       
       // Add static additional businesses
@@ -181,18 +172,143 @@ export default async function HomePage() {
           business_status: 'OPERATIONAL',
           opening_hours: { open_now: true, weekday_text: ['Monday: 6:00 AM – 10:00 PM'] },
           photos: []
+        },
+        {
+          place_id: 'static_6',
+          name: 'Tony\'s Barber Shop',
+          slug: 'tonys-barber-shop',
+          types: ['hair_care'],
+          lat: 51.5108,
+          lng: -0.5942,
+          last_fetched: new Date().toISOString(),
+          categories: ['barbers'],
+          formatted_address: 'Church Street, Slough SL1 1DH, UK',
+          vicinity: 'Slough',
+          phone: '+44 1753 527890',
+          rating: 4.5,
+          user_ratings_total: 67,
+          price_level: 1,
+          business_status: 'OPERATIONAL',
+          opening_hours: { open_now: true, weekday_text: ['Monday: 9:00 AM – 6:00 PM'] },
+          photos: []
+        },
+        {
+          place_id: 'static_7',
+          name: 'Belle Hair Salon',
+          slug: 'belle-hair-salon',
+          types: ['hair_care'],
+          lat: 51.5112,
+          lng: -0.5935,
+          last_fetched: new Date().toISOString(),
+          categories: ['hairdressers'],
+          formatted_address: 'High Street, Slough SL1 1DH, UK',
+          vicinity: 'Slough',
+          phone: '+44 1753 528901',
+          rating: 4.4,
+          user_ratings_total: 123,
+          price_level: 2,
+          business_status: 'OPERATIONAL',
+          opening_hours: { open_now: true, weekday_text: ['Monday: 9:00 AM – 7:00 PM'] },
+          photos: []
+        },
+        {
+          place_id: 'static_8',
+          name: 'Quick Fix Plumbing',
+          slug: 'quick-fix-plumbing',
+          types: ['plumber'],
+          lat: 51.5128,
+          lng: -0.5920,
+          last_fetched: new Date().toISOString(),
+          categories: ['plumbers'],
+          formatted_address: 'Trading Estate, Slough SL1 4QP, UK',
+          vicinity: 'Slough',
+          phone: '+44 1753 529012',
+          rating: 4.6,
+          user_ratings_total: 89,
+          price_level: 2,
+          business_status: 'OPERATIONAL',
+          opening_hours: { open_now: true, weekday_text: ['Monday: 8:00 AM – 5:00 PM'] },
+          photos: []
+        },
+        {
+          place_id: 'static_9',
+          name: 'Spark Electric',
+          slug: 'spark-electric',
+          types: ['electrician'],
+          lat: 51.5132,
+          lng: -0.5915,
+          last_fetched: new Date().toISOString(),
+          categories: ['electricians'],
+          formatted_address: 'Trading Estate, Slough SL1 4QP, UK',
+          vicinity: 'Slough',
+          phone: '+44 1753 530123',
+          rating: 4.7,
+          user_ratings_total: 156,
+          price_level: 2,
+          business_status: 'OPERATIONAL',
+          opening_hours: { open_now: true, weekday_text: ['Monday: 8:00 AM – 5:00 PM'] },
+          photos: []
+        },
+        {
+          place_id: 'static_10',
+          name: 'Clean Car Wash',
+          slug: 'clean-car-wash',
+          types: ['car_wash'],
+          lat: 51.5135,
+          lng: -0.5910,
+          last_fetched: new Date().toISOString(),
+          categories: ['car_wash'],
+          formatted_address: 'Trading Estate, Slough SL1 4QP, UK',
+          vicinity: 'Slough',
+          phone: '+44 1753 531234',
+          rating: 4.3,
+          user_ratings_total: 234,
+          price_level: 1,
+          business_status: 'OPERATIONAL',
+          opening_hours: { open_now: true, weekday_text: ['Monday: 8:00 AM – 6:00 PM'] },
+          photos: []
+        },
+        {
+          place_id: 'static_11',
+          name: 'Slough Taxi Service',
+          slug: 'slough-taxi-service',
+          types: ['taxi_stand'],
+          lat: 51.5105,
+          lng: -0.5948,
+          last_fetched: new Date().toISOString(),
+          categories: ['taxi'],
+          formatted_address: 'High Street, Slough SL1 1DH, UK',
+          vicinity: 'Slough',
+          phone: '+44 1753 532345',
+          rating: 4.2,
+          user_ratings_total: 178,
+          price_level: 2,
+          business_status: 'OPERATIONAL',
+          opening_hours: { open_now: true, weekday_text: ['Monday: 24 hours'] },
+          photos: []
+        },
+        {
+          place_id: 'static_12',
+          name: 'Premier Inn Slough',
+          slug: 'premier-inn-slough',
+          types: ['lodging'],
+          lat: 51.5095,
+          lng: -0.5965,
+          last_fetched: new Date().toISOString(),
+          categories: ['hotels'],
+          formatted_address: 'Queensmere Shopping Centre, Slough SL1 1DB, UK',
+          vicinity: 'Slough',
+          phone: '+44 1753 533456',
+          rating: 4.1,
+          user_ratings_total: 312,
+          price_level: 2,
+          business_status: 'OPERATIONAL',
+          opening_hours: { open_now: true, weekday_text: ['Monday: 24 hours'] },
+          photos: []
         }
       ];
       
       totalPlaces = [...totalPlaces, ...staticBusinesses] as any;
-    } else {
-      console.log('API failed, using sample data');
-      totalPlaces = [...sampleBusinesses] as any;
-    }
-  } catch (error) {
-    console.error('API error, using sample data:', error);
-    totalPlaces = [...sampleBusinesses] as any;
-  }
   
   // Calculate category counts from all data
   categoryCounts = {};
