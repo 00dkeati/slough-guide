@@ -36,6 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 // Add a timestamp to force dynamic rendering
 const timestamp = Date.now();
+let requestCount = 0;
 
 // Featured categories for the home page
 const FEATURED_CATEGORIES = [
@@ -54,6 +55,9 @@ const FEATURED_CATEGORIES = [
 ];
 
 export default async function HomePage() {
+  requestCount++;
+  console.log(`HomePage request #${requestCount} at ${new Date().toISOString()}`);
+  
   // Get top picks for featured categories
   const featuredData = await Promise.all(
     FEATURED_CATEGORIES.map(async (categoryId) => {
@@ -259,7 +263,7 @@ export default async function HomePage() {
                 </div>
               </div>
               <div className="text-center mt-4 text-blue-200 text-xs">
-                Rendered at: {new Date().toISOString()}
+                Rendered at: {new Date().toISOString()} | Request #{requestCount}
               </div>
             </div>
           </div>
