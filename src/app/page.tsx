@@ -59,21 +59,28 @@ export default async function HomePage() {
     })
   );
 
-  // Always generate businesses since file cache doesn't persist in Vercel
-  console.log('Generating businesses for homepage...');
+  // Call API to generate businesses
+  console.log('Calling API to generate businesses...');
   
-  // Use sample data as base
-  totalPlaces = [...sampleBusinesses] as any;
+  try {
+    const response = await fetch(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'}/api/generate-businesses`, {
+      cache: 'no-store'
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      totalPlaces = data.businesses;
+      console.log(`API generated ${totalPlaces.length} businesses`);
+    } else {
+      console.log('API failed, using sample data');
+      totalPlaces = [...sampleBusinesses] as any;
+    }
+  } catch (error) {
+    console.log('API error, using sample data:', error);
+    totalPlaces = [...sampleBusinesses] as any;
+  }
   
-  // Generate additional businesses to make it more realistic
-  const { SloughBusinessGenerator } = await import('@/lib/business-generator');
-  const generator = new SloughBusinessGenerator();
-  const additionalBusinesses = await generator.generateBusinesses({ count: 100 });
-  
-  // Add generated businesses to totalPlaces
-  totalPlaces = [...totalPlaces, ...additionalBusinesses] as any;
-  
-  // Calculate category counts from all data (including generated businesses)
+  // Calculate category counts from all data
   categoryCounts = {};
   CATEGORIES.forEach(category => {
     categoryCounts[category.id] = totalPlaces.filter((business: any) => 
@@ -81,7 +88,7 @@ export default async function HomePage() {
     ).length;
   });
   
-  console.log(`Generated ${totalPlaces.length} businesses total`);
+  console.log(`Total businesses: ${totalPlaces.length}`);
   console.log('Category counts:', categoryCounts);
   console.log('Page rendered at:', new Date(timestamp).toISOString());
 
