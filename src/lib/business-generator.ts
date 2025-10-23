@@ -1,5 +1,6 @@
 import { Place } from './types';
 import { CITY } from '../config/city';
+import { CATEGORIES } from '../config/categories';
 
 export interface BusinessGenerationOptions {
   count: number;
