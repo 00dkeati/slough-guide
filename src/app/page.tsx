@@ -21,15 +21,18 @@ import {
   Phone
 } from 'lucide-react';
 
-export const metadata: Metadata = generateMetaTags({
-  title: 'Slough Guide - Best Local Businesses & Services in Slough, Berkshire',
-  description: 'Discover the best restaurants, shops, services and businesses in Slough. Read reviews, check opening hours, and find top-rated local businesses near you.',
-  canonical: '/',
-});
-
 // Force dynamic rendering to show generated businesses
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+
+// Generate metadata dynamically
+export async function generateMetadata(): Promise<Metadata> {
+  return generateMetaTags({
+    title: 'Slough Guide - Best Local Businesses & Services in Slough, Berkshire',
+    description: 'Discover the best restaurants, shops, services and businesses in Slough. Read reviews, check opening hours, and find top-rated local businesses near you.',
+    canonical: '/',
+  });
+}
 
 // Add a timestamp to force dynamic rendering
 const timestamp = Date.now();
