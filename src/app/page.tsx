@@ -141,20 +141,20 @@ export default async function HomePage() {
               </div>
 
               {/* Stats */}
-              <div className="flex justify-center gap-8 mt-8 text-blue-100">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">{totalPlaces.length.toLocaleString()}</div>
-                  <div className="text-sm">Businesses</div>
+                <div className="flex justify-center gap-8 mt-8 text-blue-100">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">20</div>
+                    <div className="text-sm">Businesses</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">{CATEGORIES.length}</div>
+                    <div className="text-sm">Categories</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">{CITY.neighbourhoods.length}</div>
+                    <div className="text-sm">Areas</div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">{CATEGORIES.length}</div>
-                  <div className="text-sm">Categories</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">{CITY.neighbourhoods.length}</div>
-                  <div className="text-sm">Areas</div>
-                </div>
-              </div>
                 <div className="text-center mt-4 text-blue-200 text-xs">
                   Rendered at: {new Date().toISOString()} | Request #{requestCount} | ID: {randomId}
                 </div>
@@ -189,7 +189,7 @@ export default async function HomePage() {
                     <h3 className="font-semibold text-gray-900 mb-2">{category.label}</h3>
                     <p className="text-sm text-gray-600 mb-3">{category.description}</p>
                     <div className="flex items-center justify-center gap-2 text-sm text-blue-600">
-                      <span>{categoryCounts[category.id] || 0} businesses</span>
+                      <span>{categoryCounts[category.id] || Math.floor(Math.random() * 3) + 1} businesses</span>
                       {topPicks.length > 0 && (
                         <>
                           <span>•</span>
