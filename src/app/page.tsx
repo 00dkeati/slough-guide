@@ -52,51 +52,29 @@ export default async function HomePage() {
     })
   );
 
-  // Get stats
-  let totalPlaces = await cache.getAllPlaces();
-  let categoryCounts = await cache.getCategoryCounts();
-  
   // Always generate businesses for now to ensure we have data
   console.log('Generating businesses for homepage...');
   
   // Use sample data as base
-  totalPlaces = [...sampleBusinesses] as any;
+  let totalPlaces = [...sampleBusinesses] as any;
   
   // Generate additional businesses to make it more realistic
   const { SloughBusinessGenerator } = await import('@/lib/business-generator');
   const generator = new SloughBusinessGenerator();
   const additionalBusinesses = await generator.generateBusinesses({ count: 100 });
   
-  // Save all businesses to cache
-  for (const business of totalPlaces) {
-    await cache.savePlace(business);
-    for (const categoryId of business.categories || []) {
-      await cache.addPlaceToCategory(business.place_id, categoryId);
-    }
-    if (business.vicinity) {
-      await cache.addPlaceToNeighbourhood(business.place_id, business.vicinity);
-    }
-  }
-  
-  for (const business of additionalBusinesses) {
-    await cache.savePlace(business);
-    for (const categoryId of business.categories || []) {
-      await cache.addPlaceToCategory(business.place_id, categoryId);
-    }
-    if (business.vicinity) {
-      await cache.addPlaceToNeighbourhood(business.place_id, business.vicinity);
-    }
-  }
-  
   totalPlaces = [...totalPlaces, ...additionalBusinesses] as any;
   
   // Calculate category counts from all data (including generated businesses)
-  categoryCounts = {};
+  let categoryCounts = {};
   CATEGORIES.forEach(category => {
     categoryCounts[category.id] = totalPlaces.filter((business: any) => 
       business.categories && business.categories.includes(category.id)
     ).length;
   });
+  
+  console.log(`Generated ${totalPlaces.length} businesses total`);
+  console.log('Category counts:', categoryCounts);
 
   // Generate structured data
   const breadcrumbData = generateBreadcrumbStructuredData([
