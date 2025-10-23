@@ -247,5 +247,377 @@ export const sampleBusinesses = [
       ]
     },
     photos: []
+  },
+  {
+    place_id: 'sample_9',
+    name: 'The Golden Dragon',
+    slug: 'the-golden-dragon',
+    types: ['restaurant', 'food', 'establishment'],
+    lat: 51.5115,
+    lng: -0.5945,
+    last_fetched: new Date().toISOString(),
+    categories: ['restaurants'],
+    formatted_address: 'High Street, Slough SL1 1DH, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 521234',
+    website: undefined,
+    rating: 4.3,
+    user_ratings_total: 89,
+    price_level: 2,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 12:00 PM – 10:00 PM',
+        'Tuesday: 12:00 PM – 10:00 PM',
+        'Wednesday: 12:00 PM – 10:00 PM',
+        'Thursday: 12:00 PM – 10:00 PM',
+        'Friday: 12:00 PM – 11:00 PM',
+        'Saturday: 12:00 PM – 11:00 PM',
+        'Sunday: 12:00 PM – 9:00 PM'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_10',
+    name: 'Slough Pizza Palace',
+    slug: 'slough-pizza-palace',
+    types: ['meal_takeaway', 'food', 'establishment'],
+    lat: 51.5120,
+    lng: -0.5930,
+    last_fetched: new Date().toISOString(),
+    categories: ['takeaways'],
+    formatted_address: 'Windsor Road, Slough SL1 2EJ, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 523456',
+    website: undefined,
+    rating: 4.1,
+    user_ratings_total: 156,
+    price_level: 1,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 5:00 PM – 11:00 PM',
+        'Tuesday: 5:00 PM – 11:00 PM',
+        'Wednesday: 5:00 PM – 11:00 PM',
+        'Thursday: 5:00 PM – 11:00 PM',
+        'Friday: 5:00 PM – 12:00 AM',
+        'Saturday: 5:00 PM – 12:00 AM',
+        'Sunday: 5:00 PM – 10:00 PM'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_11',
+    name: 'Cafe Central',
+    slug: 'cafe-central',
+    types: ['cafe', 'food', 'establishment'],
+    lat: 51.5098,
+    lng: -0.5958,
+    last_fetched: new Date().toISOString(),
+    categories: ['cafes'],
+    formatted_address: 'Queensmere Shopping Centre, Slough SL1 1DB, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 524567',
+    website: undefined,
+    rating: 4.2,
+    user_ratings_total: 234,
+    price_level: 2,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 7:00 AM – 7:00 PM',
+        'Tuesday: 7:00 AM – 7:00 PM',
+        'Wednesday: 7:00 AM – 7:00 PM',
+        'Thursday: 7:00 AM – 7:00 PM',
+        'Friday: 7:00 AM – 8:00 PM',
+        'Saturday: 8:00 AM – 8:00 PM',
+        'Sunday: 9:00 AM – 6:00 PM'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_12',
+    name: 'The Crown Inn',
+    slug: 'the-crown-inn',
+    types: ['bar', 'food', 'establishment'],
+    lat: 51.5102,
+    lng: -0.5952,
+    last_fetched: new Date().toISOString(),
+    categories: ['pubs'],
+    formatted_address: 'High Street, Slough SL1 1DH, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 525678',
+    website: undefined,
+    rating: 4.0,
+    user_ratings_total: 178,
+    price_level: 2,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: false,
+      weekday_text: [
+        'Monday: 12:00 PM – 11:00 PM',
+        'Tuesday: 12:00 PM – 11:00 PM',
+        'Wednesday: 12:00 PM – 11:00 PM',
+        'Thursday: 12:00 PM – 11:00 PM',
+        'Friday: 12:00 PM – 12:00 AM',
+        'Saturday: 12:00 PM – 12:00 AM',
+        'Sunday: 12:00 PM – 10:30 PM'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_13',
+    name: 'FitLife Gym',
+    slug: 'fitlife-gym',
+    types: ['gym', 'health', 'establishment'],
+    lat: 51.5125,
+    lng: -0.5925,
+    last_fetched: new Date().toISOString(),
+    categories: ['gyms'],
+    formatted_address: 'Trading Estate, Slough SL1 4QP, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 526789',
+    website: undefined,
+    rating: 4.4,
+    user_ratings_total: 312,
+    price_level: 2,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 6:00 AM – 10:00 PM',
+        'Tuesday: 6:00 AM – 10:00 PM',
+        'Wednesday: 6:00 AM – 10:00 PM',
+        'Thursday: 6:00 AM – 10:00 PM',
+        'Friday: 6:00 AM – 10:00 PM',
+        'Saturday: 8:00 AM – 8:00 PM',
+        'Sunday: 8:00 AM – 8:00 PM'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_14',
+    name: 'Belle Hair Salon',
+    slug: 'belle-hair-salon',
+    types: ['hair_care', 'beauty_salon', 'establishment'],
+    lat: 51.5112,
+    lng: -0.5935,
+    last_fetched: new Date().toISOString(),
+    categories: ['hairdressers'],
+    formatted_address: 'High Street, Slough SL1 1DH, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 528901',
+    website: undefined,
+    rating: 4.4,
+    user_ratings_total: 123,
+    price_level: 2,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 9:00 AM – 7:00 PM',
+        'Tuesday: 9:00 AM – 7:00 PM',
+        'Wednesday: 9:00 AM – 7:00 PM',
+        'Thursday: 9:00 AM – 7:00 PM',
+        'Friday: 9:00 AM – 8:00 PM',
+        'Saturday: 9:00 AM – 6:00 PM',
+        'Sunday: 10:00 AM – 4:00 PM'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_15',
+    name: 'Quick Fix Plumbing',
+    slug: 'quick-fix-plumbing',
+    types: ['plumber', 'home_goods_store', 'establishment'],
+    lat: 51.5128,
+    lng: -0.5920,
+    last_fetched: new Date().toISOString(),
+    categories: ['plumbers'],
+    formatted_address: 'Trading Estate, Slough SL1 4QP, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 529012',
+    website: undefined,
+    rating: 4.6,
+    user_ratings_total: 89,
+    price_level: 2,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 8:00 AM – 5:00 PM',
+        'Tuesday: 8:00 AM – 5:00 PM',
+        'Wednesday: 8:00 AM – 5:00 PM',
+        'Thursday: 8:00 AM – 5:00 PM',
+        'Friday: 8:00 AM – 5:00 PM',
+        'Saturday: 9:00 AM – 4:00 PM',
+        'Sunday: Emergency only'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_16',
+    name: 'Spark Electric',
+    slug: 'spark-electric',
+    types: ['electrician', 'home_goods_store', 'establishment'],
+    lat: 51.5132,
+    lng: -0.5915,
+    last_fetched: new Date().toISOString(),
+    categories: ['electricians'],
+    formatted_address: 'Trading Estate, Slough SL1 4QP, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 530123',
+    website: undefined,
+    rating: 4.7,
+    user_ratings_total: 156,
+    price_level: 2,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 8:00 AM – 5:00 PM',
+        'Tuesday: 8:00 AM – 5:00 PM',
+        'Wednesday: 8:00 AM – 5:00 PM',
+        'Thursday: 8:00 AM – 5:00 PM',
+        'Friday: 8:00 AM – 5:00 PM',
+        'Saturday: 9:00 AM – 4:00 PM',
+        'Sunday: Emergency only'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_17',
+    name: 'Clean Car Wash',
+    slug: 'clean-car-wash',
+    types: ['car_wash', 'establishment'],
+    lat: 51.5135,
+    lng: -0.5910,
+    last_fetched: new Date().toISOString(),
+    categories: ['car_wash'],
+    formatted_address: 'Trading Estate, Slough SL1 4QP, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 531234',
+    website: undefined,
+    rating: 4.3,
+    user_ratings_total: 234,
+    price_level: 1,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 8:00 AM – 6:00 PM',
+        'Tuesday: 8:00 AM – 6:00 PM',
+        'Wednesday: 8:00 AM – 6:00 PM',
+        'Thursday: 8:00 AM – 6:00 PM',
+        'Friday: 8:00 AM – 6:00 PM',
+        'Saturday: 8:00 AM – 5:00 PM',
+        'Sunday: 9:00 AM – 4:00 PM'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_18',
+    name: 'Slough Taxi Service',
+    slug: 'slough-taxi-service',
+    types: ['taxi_stand', 'establishment'],
+    lat: 51.5105,
+    lng: -0.5948,
+    last_fetched: new Date().toISOString(),
+    categories: ['taxi'],
+    formatted_address: 'High Street, Slough SL1 1DH, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 532345',
+    website: undefined,
+    rating: 4.2,
+    user_ratings_total: 178,
+    price_level: 2,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 24 hours',
+        'Tuesday: 24 hours',
+        'Wednesday: 24 hours',
+        'Thursday: 24 hours',
+        'Friday: 24 hours',
+        'Saturday: 24 hours',
+        'Sunday: 24 hours'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_19',
+    name: 'Premier Inn Slough',
+    slug: 'premier-inn-slough',
+    types: ['lodging', 'establishment'],
+    lat: 51.5095,
+    lng: -0.5965,
+    last_fetched: new Date().toISOString(),
+    categories: ['hotels'],
+    formatted_address: 'Queensmere Shopping Centre, Slough SL1 1DB, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 533456',
+    website: 'https://www.premierinn.com',
+    rating: 4.1,
+    user_ratings_total: 312,
+    price_level: 2,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 24 hours',
+        'Tuesday: 24 hours',
+        'Wednesday: 24 hours',
+        'Thursday: 24 hours',
+        'Friday: 24 hours',
+        'Saturday: 24 hours',
+        'Sunday: 24 hours'
+      ]
+    },
+    photos: []
+  },
+  {
+    place_id: 'sample_20',
+    name: 'Slough Medical Centre',
+    slug: 'slough-medical-centre',
+    types: ['hospital', 'health', 'establishment'],
+    lat: 51.5108,
+    lng: -0.5942,
+    last_fetched: new Date().toISOString(),
+    categories: ['doctors'],
+    formatted_address: 'Church Street, Slough SL1 1DH, UK',
+    vicinity: 'Slough',
+    phone: '+44 1753 534567',
+    website: undefined,
+    rating: 4.5,
+    user_ratings_total: 89,
+    price_level: 1,
+    business_status: 'OPERATIONAL',
+    opening_hours: {
+      open_now: true,
+      weekday_text: [
+        'Monday: 8:00 AM – 6:00 PM',
+        'Tuesday: 8:00 AM – 6:00 PM',
+        'Wednesday: 8:00 AM – 6:00 PM',
+        'Thursday: 8:00 AM – 6:00 PM',
+        'Friday: 8:00 AM – 6:00 PM',
+        'Saturday: 9:00 AM – 1:00 PM',
+        'Sunday: Closed'
+      ]
+    },
+    photos: []
   }
 ];
