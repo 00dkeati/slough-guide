@@ -30,6 +30,9 @@ export const metadata: Metadata = generateMetaTags({
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+// Add a timestamp to force dynamic rendering
+const timestamp = Date.now();
+
 // Featured categories for the home page
 const FEATURED_CATEGORIES = [
   'restaurants',
@@ -80,6 +83,7 @@ export default async function HomePage() {
   
   console.log(`Generated ${totalPlaces.length} businesses total`);
   console.log('Category counts:', categoryCounts);
+  console.log('Page rendered at:', new Date(timestamp).toISOString());
 
   // Generate structured data
   const breadcrumbData = generateBreadcrumbStructuredData([
