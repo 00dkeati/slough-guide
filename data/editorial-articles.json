@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "best-restaurants-slough-2026",
+    "slug": "best-restaurants-slough-2026",
+    "title": "Best Restaurants in Slough 2026",
+    "category": "Food & Drink",
+    "description": "Discover the top-rated restaurants in Slough for 2026.",
+    "publishedAt": "2026-02-10"
+  },
+  {
+    "id": "best-cafes-slough-2026",
+    "slug": "best-cafes-slough-2026",
+    "title": "Best Cafes in Slough 2026",
+    "category": "Food & Drink",
+    "description": "The best coffee shops and cafes in Slough.",
+    "publishedAt": "2026-02-10"
+  },
+  {
+    "id": "best-gyms-slough-2026",
+    "slug": "best-gyms-slough-2026",
+    "title": "Best Gyms in Slough 2026",
+    "category": "Health & Fitness",
+    "description": "Find the best gyms and fitness centres in Slough.",
+    "publishedAt": "2026-02-10"
+  },
+  {
+    "id": "best-plumbers-slough-2026",
+    "slug": "best-plumbers-slough-2026",
+    "title": "Best Plumbers in Slough 2026",
+    "category": "Home Services",
+    "description": "Trusted plumbers in Slough for 2026.",
+    "publishedAt": "2026-02-10"
+  },
+  {
+    "id": "langley-guide-2026",
+    "slug": "langley-guide-2026",
+    "title": "Langley Guide 2026",
+    "category": "Area Guides",
+    "description": "Everything you need to know about Langley, Slough.",
+    "publishedAt": "2026-02-10"
+  }
+]
