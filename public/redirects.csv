@@ -1,0 +1,4 @@
+from,to,status
+/old-article,/new-article,307
+/outdated-page,https://www.example.com/fresh,302
+/broken,/fixed

@@ -1,0 +1,2211 @@
+[
+  {
+    "place_id": "ChIJmbW3IjBpdEgRabk0fsJUA0c",
+    "name": "WDS Detailing Paint Correction & Ceramic Coating Specialists",
+    "address": "36 Pyrford Cl, Slough SL1 6GJ, UK",
+    "area": "Slough",
+    "phone": "07557 978373",
+    "rating": 5,
+    "review_count": 100,
+    "lat": 50.8932896,
+    "lng": -1.032491,
+    "website": "https://wdsdetailing.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2000"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2000"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2000"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2000"
+          },
+          "open": {
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 8:00 PM",
+        "Tuesday: 8:00 AM – 8:00 PM",
+        "Wednesday: 8:00 AM – 8:00 PM",
+        "Thursday: 8:00 AM – 8:00 PM",
+        "Friday: 8:00 AM – 8:00 PM",
+        "Saturday: 8:00 AM – 8:00 PM",
+        "Sunday: 8:00 AM – 8:00 PM"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Katie Osborne",
+        "author_url": "https://www.google.com/maps/contrib/109165334081167778626/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLNmrNYT523hHduZob4iwTEaBH4faifoUMNeHc9uZLM3k1MZQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 months ago",
+        "text": "We’ve had four vehicles done by Will now, and each time the service has been excellent—the cars look brand new. We’re very impressed. Will is professional, reliable, and completes every job to the highest standard. We’ll definitely continue using his services. Thank you, Will!",
+        "time": 1764016579,
+        "translated": false
+      },
+      {
+        "author_name": "Mark Newman",
+        "author_url": "https://www.google.com/maps/contrib/111555033405610485487/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWZnXmtuXQa-LkIkUdDaYud-R3dvLPLhzONmi4bbhfsFzlh_48=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "5 months ago",
+        "text": "Will is a real professional with an eye for detail. He made a wonderful job of my detail clean and ceramic coating. I would have no hesitation in recommending him.",
+        "time": 1757012759,
+        "translated": false
+      },
+      {
+        "author_name": "Steve Pollard",
+        "author_url": "https://www.google.com/maps/contrib/108676529629098978357/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWWNpbe8sQu75lvM0hCg2wXw_xPnbCT52EHBFlUKwq8CAFBBzGd=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "4 months ago",
+        "text": "It’s rare people exceed your expectations…. This was one of those situations… great comms, great service…. Highly Recommended… got my trusty defender back to pristine - as new look 🙌🙌🙌 bravo",
+        "time": 1757603910,
+        "translated": false
+      },
+      {
+        "author_name": "Nathan Ford",
+        "author_url": "https://www.google.com/maps/contrib/102124452598567122193/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWwj4ytXG7C0DE771C1IPdzv7BH_w2JhA03AB7o75rXf8ovm8M=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "10 months ago",
+        "text": "From initial contact to completion of the work Will was excellent. He carried out a full detail of my van, machine polish and applied a ceramic coating. The results are incredible! A truly professional service that I highly recommend!",
+        "time": 1743925348,
+        "translated": false
+      },
+      {
+        "author_name": "Andrew Chandler",
+        "author_url": "https://www.google.com/maps/contrib/109240623041080261803/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLpbJ0_WBcxzTy90vsWQcr0bd2AeJ8cTj2JdwCntSb7J4o-SA=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 months ago",
+        "text": "WDS have been cleaning our Cars for a few years now at our home in Bedhampton. Will is always polite and punctual for appointments, the service is always very professional with the attention to detail and the finished result leaving the cars looking like showroom condition. They have also so managed the ceramic coating of our cars, and we were very happy with the result. We are very happy to recommend WDS.",
+        "time": 1764015925,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJpTywLYlDdEgRQHvdZwzMBY0",
+    "name": "DynamixDetailing|Paint Correction Ceramic Coating Specialist",
+    "address": "18 Mill Rd, Chalvey, Slough SL1 6PA, UK",
+    "area": "Slough",
+    "phone": "07951 422719",
+    "rating": 5,
+    "review_count": 99,
+    "lat": 50.87410759999999,
+    "lng": -1.0370762,
+    "website": "http://www.dynamixdetailing.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1700"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1700"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1700"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1700"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1700"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1700"
+          },
+          "open": {
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 5:00 PM",
+        "Tuesday: 8:00 AM – 5:00 PM",
+        "Wednesday: 8:00 AM – 5:00 PM",
+        "Thursday: 8:00 AM – 5:00 PM",
+        "Friday: 8:00 AM – 5:00 PM",
+        "Saturday: 8:00 AM – 5:00 PM",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "lewis skids",
+        "author_url": "https://www.google.com/maps/contrib/115064927879689660253/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLdcs8Ke77LH5_3nA8cUy7RTsLMIriGdzoZp9Ztm57c76QtnA=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a month ago",
+        "text": "Got in touch with Dynamix detailing after I had a leak in my car and had a build up of mould.\n\nAfter a quick reply we had an in depth chat about what route would be the best to tackle the mould and remove and possible stains or smell that come with it.\n\nHe got straight to work on getting the car sorted. Not only was the mould cleaned but  all other stains and dirt had been remove, an in depth clean within the car has left it looking brand new. Couldn’t be happier with the outcome\n\nFraser had an extremely professional and honest opinion about my car and has really impressed me with what has been done. Look forward to using him again the future.",
+        "time": 1765473415,
+        "translated": false
+      },
+      {
+        "author_name": "Joe Myers",
+        "author_url": "https://www.google.com/maps/contrib/110980517062021272840/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWyHwomto0DfxTx1mGeqZ1QIteZSfHneppwLNNPgu74lb8H0j8=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "6 months ago",
+        "text": "Wow I am speechless what can I say, I’ve got Fraser in for a stage 1 deep clean, he spent 13 hours of pure hard work and making everything perfection, he did the ceramic coating which is lovely and did the machine polishing which has made my car brand new, if your looking for someone for a clean, Fraser is definitely the best in the game, he turned my car into a brand new showroom car, I’ll be coming to Fraser from now on. Thankyou Fraser 🤝🏽",
+        "time": 1754049562,
+        "translated": false
+      },
+      {
+        "author_name": "Callum Hyett",
+        "author_url": "https://www.google.com/maps/contrib/115255961009087171377/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXnft_paZrT-tHdgwtn-OcDDCEEaHjVxWeXXCTVErK5qx_ioquP=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "5 months ago",
+        "text": "Having a best mate as a detailer has its perks🔥 seeing Fraser go from strength to strength with his work over the years is really good to see! He puts his absolute best into each clean and detail without cutting any corners.\nThe pictures speak for themselves! he brought my dull looking paint back to life, like it’s just left the spray shop! Can’t argue with that. As always 1000% recommended",
+        "time": 1756402752,
+        "translated": false
+      },
+      {
+        "author_name": "April Smith",
+        "author_url": "https://www.google.com/maps/contrib/100488636042251629127/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLIeLzwv1mEriW3wIui_uDNrB5uZ8mfmtQMmhAejFCCnFQqlXA=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "I had a great experience getting my ceramic coating done by Fraser. Not only was it affordable, but the attention to detail was impressive. He really went above and beyond, kept me updated the whole time, and even took extra steps I didn’t expect. If you’re looking for someone who really cares about the quality of their work and provides that little bit of extra service, I definitely recommend Fraser.",
+        "time": 1759948569,
+        "translated": false
+      },
+      {
+        "author_name": "Anne Dance",
+        "author_url": "https://www.google.com/maps/contrib/101068681480961131748/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIoK8ctEnh7yFbFBFbY0o1mVxmmzLHjIDEEshOoneuHaRxjAg=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "Fraser came out to valet my car. It had several scratches and was not as clean as I like inside. Fraser told me he would have it looking better than new and boy did he deliver.\nHe worked so hard for an entire day (and I mean the full 12 hours).\nThe result is a car that looks as good as any of the new cars I’ve owned in my time.\nSo happy and will definitely be using Fraser again.\nWhat a lovely young man.",
+        "time": 1722940979,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJy16sCJeidUgRIwqrHacAYd4",
+    "name": "PAINTING HANDS",
+    "address": "PAINTING HANDS, Woodside, 14 Bulkington Ave, Worthing BN14 7HL, UK",
+    "area": "Unknown",
+    "phone": "07500 816690",
+    "rating": 5,
+    "review_count": 68,
+    "lat": 50.8213168,
+    "lng": -0.3812399,
+    "website": "https://www.paintinghands.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1700"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1700"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1700"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1700"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1700"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1700"
+          },
+          "open": {
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 5:00 PM",
+        "Tuesday: 8:00 AM – 5:00 PM",
+        "Wednesday: 8:00 AM – 5:00 PM",
+        "Thursday: 8:00 AM – 5:00 PM",
+        "Friday: 8:00 AM – 5:00 PM",
+        "Saturday: 8:00 AM – 5:00 PM",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Andrew Fisher",
+        "author_url": "https://www.google.com/maps/contrib/114164818670520199423/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVxBtrXqTO2BPmP-v7JTHZ6PySl1Rjfx2aSLeq_T0ZhGbzH967e=s128-c0x00000000-cc-rp-mo-ba2",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "Painting Hands have been professional, polite, produced superb work in good time, and are very customer-orientated.  I would not hesitate to use their services again and I would strongly recommend them.\n\nI contacted them on 18.09.25.  They visited on 19.09.25 and produced a quote by 21.09.25 for full external repainting of lots of complex timber windows, a timber conservatory, iron gutters soffits and downpipes, main front and back doors and a large timber garage front doors and side door too.\n\nThey started work on 29.09.25 and completed the work by 20.10.25.  This is not an easy time of year to be painting external timber but they have produced a marvellous job sanding and filling some broken and soggy timbers.  They have really brought the outside of our house back to life and it is only just over a month since first contacting them!\n\nFred has been so polite and understanding and interested in the work and doing a good job.  His team is a credit to their profession.",
+        "time": 1761340557,
+        "translated": false
+      },
+      {
+        "author_name": "Marion Anton",
+        "author_url": "https://www.google.com/maps/contrib/112590161376587512475/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJnbDTDd72RDAsw_fY8kJRGX1UZZQOfzf1-rBfc4o1AHl81TA=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "4 months ago",
+        "text": "Excellent work again from Painting Hands.\nVery happy with results.  Professional and hard working team. Definitely would recommend.",
+        "time": 1759307788,
+        "translated": false
+      },
+      {
+        "author_name": "Ciaran V",
+        "author_url": "https://www.google.com/maps/contrib/104708036476775716660/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIVmwPgcuWxY19u0lSy8iq5fe_WlNd-V55gkJw8P7sOljptZQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "Fred did a great job painting our new garage and sanding and varnishing the wooden ceiling beams inside. The process from start to finish was very professional and we're really happy with the final product!",
+        "time": 1738503712,
+        "translated": false
+      },
+      {
+        "author_name": "Dan Robinson",
+        "author_url": "https://www.google.com/maps/contrib/101582962349121372005/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKi81OcFuhMfwLLj10DsDuMzDSwrRAkyT84Kf4wUQ4NPMdZSm3C=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "Fred has done an amazing job with our kitchen, utility, pantry, toilet/shower room and exterior of house. He really cares and delivers to a high quality. He was also a pleasure to deal with. Delivers absolutely as he promises, turns up bang on time and a fair price. Genuinely cannot ask for more. We have the rest of the house lined up for him eventually....! Thank you Fred.\n\nNovember 2024 - Just had the team back to do exterior work - 4 large sets of say windows and exterior fascias. Great job done. Thank you team!",
+        "time": 1732985687,
+        "translated": false
+      },
+      {
+        "author_name": "Chris Geddes",
+        "author_url": "https://www.google.com/maps/contrib/108617217285336593376/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKYCFc54WYN4HObz1G4f4OI8J8cMZ5iGtSTvK4wYmmfVHsEQQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "Painting Hands did a fantastic job painting the outside of our house. We couldn’t be happier with the results.\nThe project was completed on time and on budget. They were professional and friendly and they couldn’t have more thorough. Their attention to detail and quality of workmanship was apparent throughout; nothing was too much trouble for them and we were always kept fully informed of any issues as they arose.\nI wouldn’t hesitate to recommend Painting Hands to others.",
+        "time": 1716928175,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJ8WbI7MsDdkgRftR4uJKMmN8",
+    "name": "Busy Brush Painters & Decorators",
+    "address": "60 Dunoon Rd, London SE23 3TF, UK",
+    "area": "Unknown",
+    "phone": "07939 120842",
+    "rating": 4.9,
+    "review_count": 66,
+    "lat": 51.44803539999999,
+    "lng": -0.0532428,
+    "website": "http://www.busybrush.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1730"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1730"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1730"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1730"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1730"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1200"
+          },
+          "open": {
+            "day": 6,
+            "time": "0900"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 5:30 PM",
+        "Tuesday: 8:00 AM – 5:30 PM",
+        "Wednesday: 8:00 AM – 5:30 PM",
+        "Thursday: 8:00 AM – 5:30 PM",
+        "Friday: 8:00 AM – 5:30 PM",
+        "Saturday: 9:00 AM – 12:00 PM",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Katie Hemus",
+        "author_url": "https://www.google.com/maps/contrib/112030369454372864476/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIMOuLB0VOu8e3gERAbolFMxasgk0JZZbKNOe_VdE5si6_-WQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "5 months ago",
+        "text": "I highly recommend Busy Brush, they are incredibly professional, flexible and the finish is excellent. From start to finish the process has been so easy, Andy and the team super responsive and lovely to work with! Thank you!",
+        "time": 1756464318,
+        "translated": false
+      },
+      {
+        "author_name": "Rob Shearer",
+        "author_url": "https://www.google.com/maps/contrib/105076838210975980656/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLPQ6S1VQ0SO7Rvc5vPNHAu3tgVOXpIIJGpDAriOIC0sb9HiA=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "We are really pleased with the decorating done by the Busy Brush Team. We used them to do three rooms in 2021 and a further two rooms in 2025. Each time they’ve been tidy, hard working and reliable. We are really happy with the workmanship and will definitely use them a third time in the future!",
+        "time": 1762103950,
+        "translated": false
+      },
+      {
+        "author_name": "Rebecca X",
+        "author_url": "https://www.google.com/maps/contrib/106185826172591025750/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJSNMcRqVzvP8zmR1FuqC9D7eWNflawaSal0UPt56ZHCCb2Aw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "This is the third time I’ve used Andrew and Henry - they are gradually transforming my whole house. Exceptional attention to detail and also very trustworthy so I felt comfortable leaving them in my home alone. Super friendly and excellent work. There’s more to do in my house - so they will be back!",
+        "time": 1708893118,
+        "translated": false
+      },
+      {
+        "author_name": "Marc Owens",
+        "author_url": "https://www.google.com/maps/contrib/114639250897925800802/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjX73lP5pj7n3ptV-OSjR1o_Rp_XIKf3vOePfw-JojmbAL_oQdQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "Highly recommend Andrew, and the team at Busy Brush. Contractors like this are hard to come by these days.\n\n✅ Turned up on time (on the right day)\n✅ Great communication\n✅ Excellent level of work\n✅ Attention to detail\n✅ Reasonably priced (Won't try to rip you off)\n✅ Friendly\n\nHenry did a great job of stripping layers of paint from our front door and returning it back to the original wood whilst ensuring the detail was maintained. Above and beyond level of service. Will definitely use them for future projects.",
+        "time": 1709216621,
+        "translated": false
+      },
+      {
+        "author_name": "M G",
+        "author_url": "https://www.google.com/maps/contrib/107958754450835406454/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIiJ-VOlivpN-oFuEL4edughnMkHuTUsnH3j-tCbFyF12yFTQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "100% recommend Andrew and Henry, they've redecorated our entire house and our only regret is not doing the work sooner - everything looks brand new! They patched up the many cracks we had in the walls, repaired skirting boards and trims, fitted and repaired cornicing, and finished off with painting to a high standard. They were also super tidy and polite whenever they were round, and as a bonus, they have great chat :) Thanks both!!",
+        "time": 1738141705,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJX0xi_jmJ8EMR516LYXfkvRQ",
+    "name": "MLP Plastering",
+    "address": "12 Queens Grove, Chalvey, Slough SL1 5HR, UK",
+    "area": "Slough",
+    "phone": "07496 916275",
+    "rating": 5,
+    "review_count": 65,
+    "lat": 50.8675323,
+    "lng": -1.0368471,
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1700"
+          },
+          "open": {
+            "day": 0,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1800"
+          },
+          "open": {
+            "day": 1,
+            "time": "0730"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1800"
+          },
+          "open": {
+            "day": 2,
+            "time": "0730"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1800"
+          },
+          "open": {
+            "day": 3,
+            "time": "0730"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1800"
+          },
+          "open": {
+            "day": 4,
+            "time": "0730"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1800"
+          },
+          "open": {
+            "day": 5,
+            "time": "0730"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1600"
+          },
+          "open": {
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 7:30 AM – 6:00 PM",
+        "Tuesday: 7:30 AM – 6:00 PM",
+        "Wednesday: 7:30 AM – 6:00 PM",
+        "Thursday: 7:30 AM – 6:00 PM",
+        "Friday: 7:30 AM – 6:00 PM",
+        "Saturday: 8:00 AM – 4:00 PM",
+        "Sunday: 9:00 AM – 5:00 PM"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Katie Brooks",
+        "author_url": "https://www.google.com/maps/contrib/101447552715341888124/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWgcQG41sOFPgCYyD_XXZKeZyj-RvCk3vCf3cKaXRzT1FqVYyu1=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 months ago",
+        "text": "Max did an excellent job plastering our archway after we had a wall removed and boxing up a door. He was polite, clean and tidy and we barely noticed he was in the house. Very respectful of our home which was greatly appreciated, would highly recommend. Thanks again Max, looking forward to working with you again in the future.",
+        "time": 1763041553,
+        "translated": false
+      },
+      {
+        "author_name": "Graham",
+        "author_url": "https://www.google.com/maps/contrib/110740869194167610461/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKe2MZNUTcnqASzsYE3hmZFrlWeuD96ny6kkYg_LZeNOco_rg=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "Max came round to plaster/skim our new garden room walls & ceiling all within one day & what an excellent job he has done, very professional, nice guy, neat and tidy.\nIf you want any plastering doing I would definitely recommend Max from MLP Plastering 👏👏👏👏👏👍⭐️⭐️⭐️⭐️⭐️\nThanks Max\nMr & Mrs S",
+        "time": 1761645668,
+        "translated": false
+      },
+      {
+        "author_name": "Lucy Claydon",
+        "author_url": "https://www.google.com/maps/contrib/114963658596598729840/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocI7QYr9YJQjMKZVGjCFAiJjKMRWNaQfwmn9X8FrsijOJsZVhw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a month ago",
+        "text": "Very efficient plasterer. Really quick & easy to get a quote from & contact. Did an amazing job considering the state of the walls - thank you!",
+        "time": 1766436281,
+        "translated": false
+      },
+      {
+        "author_name": "Kai",
+        "author_url": "https://www.google.com/maps/contrib/108349191979691353574/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIKcA8LWjv05i7Tss1lACEBcEz7pZOppDzXlfDtybbhQ3pz8w=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "6 months ago",
+        "text": "From first contact to completion, Max was very efficient, working to a very high standard and a pleasure to have in the home working. I would happily recommend to all family and friends. And, will be using him again in the future. Thank you again.",
+        "time": 1754588650,
+        "translated": false
+      },
+      {
+        "author_name": "Amy Hounsome",
+        "author_url": "https://www.google.com/maps/contrib/113517378559231054725/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLq0tatHw9hIc5ruKU19h_zPGyE7cF0o-T-KMK19FihMkMraQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "Max at MLP Plastering has been absolutely brilliant! The quality of his work is excellent, very clean and tidy. Great at communicating and works very hard, getting the job done on time. Super grateful for all his hard work and would definitely recommend and use him again.",
+        "time": 1761560933,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJxeqFkc9FdEgRE-7C0lD4BIQ",
+    "name": "GT ProDone Car Body Repairs",
+    "address": "Unit 1, Havant Business Centre, Harts Farm Way, Havant PO9 1HU, UK",
+    "area": "Havant",
+    "phone": "07576 841541",
+    "rating": 5,
+    "review_count": 49,
+    "lat": 50.8476162,
+    "lng": -0.9962198999999998,
+    "website": "http://gtprodone.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1700"
+          },
+          "open": {
+            "day": 1,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1700"
+          },
+          "open": {
+            "day": 2,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1700"
+          },
+          "open": {
+            "day": 3,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1700"
+          },
+          "open": {
+            "day": 4,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1700"
+          },
+          "open": {
+            "day": 5,
+            "time": "0900"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 9:00 AM – 5:00 PM",
+        "Tuesday: 9:00 AM – 5:00 PM",
+        "Wednesday: 9:00 AM – 5:00 PM",
+        "Thursday: 9:00 AM – 5:00 PM",
+        "Friday: 9:00 AM – 5:00 PM",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Ann Hill",
+        "author_url": "https://www.google.com/maps/contrib/106367719443503341332/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJ2ERZL_myE-s6QOLBylAPTKiy8itOHWoxMDg7TCSQUcZcaOg=s128-c0x00000000-cc-rp-mo-ba3",
+        "rating": 5,
+        "relative_time_description": "4 months ago",
+        "text": "I visited this place recently and I was overwhelmed by the absolute kindness and above and beyond attention to myself and the repair to my car. I was met with a kind smile and I was put at my ease and made comfortable while Tamy sorted my car bodywork. Her partner Genadiy was also very kind and welcoming. Well done to you lovely couple, skilful work carried out quickly and efficiently, and I was treated with care and respect. Thank you so much. I wouldn't hesitate to use this place again and I would absolutely",
+        "time": 1759583579,
+        "translated": false
+      },
+      {
+        "author_name": "Ian Veal",
+        "author_url": "https://www.google.com/maps/contrib/108841779789618627397/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUvI0jR-8mFVVoDvgbL085djNd_0ftIOAcYVE2oqPnjzFoDK94=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "4 months ago",
+        "text": "I caught and graunched the nearside rear door (on the round metal rail attached to a tall concrete pillar) as I was slowly turning into a tight space in Tesco's, Havant, car park.\n\nHowever, I was visiting GT ProDone Ltd within 30 minutes and Tamy and Genadiy assured me they would be able repair the damage.\n\nIn less than a week they rang to say my car was ready.  I can honestly say I could not detect any sign of a repair to the door and the paint matched perfectly (also when comparing with the undamaged offside rear door).\n\nI just had my little Ford, but there was a Bentley customer and a Tesla customer also putting their trust with Genadiy and Tamy in the workshop too.\n\nI am definitely recommending the professionalism with solid results from GT ProDone Ltd - thank you so much.",
+        "time": 1757967907,
+        "translated": false
+      },
+      {
+        "author_name": "james harradine",
+        "author_url": "https://www.google.com/maps/contrib/114284209795518031548/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIBNBMFmwoeee9IRp-zH47KjxcYjLrMJ6pQJh_sbrgQbIeAMQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "Professional service from start to finish. Constantly updated with the progress of the repairs. Price was very reasonable and even fixed a small dent free of charge. Would highly recommend.",
+        "time": 1762169465,
+        "translated": false
+      },
+      {
+        "author_name": "Jack Singleton",
+        "author_url": "https://www.google.com/maps/contrib/101851353110730803665/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKhSfzawX9LNaXvKXQcRuiM4r9s_wr7QvkhtCx-JZwAMiUvCLs=s128-c0x00000000-cc-rp-mo-ba2",
+        "rating": 5,
+        "relative_time_description": "5 months ago",
+        "text": "GT ProDone did an excellent job respraying my bumpers and bonnet. The car actually looks better than when it left the factory! I will definitely use them again in future. Thanks again Tamy and Kenny!",
+        "time": 1757091384,
+        "translated": false
+      },
+      {
+        "author_name": "Dan G",
+        "author_url": "https://www.google.com/maps/contrib/118435671304406584268/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIa49sIecp_Zt9sTuDydxpm6Zbfr7S43Cr5e_k_X7bjR6_enQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "6 months ago",
+        "text": "Excellent service from GT Prodone, I highly recommend. They’re friendly, enthusiastic, honest and all at a very reasonable price. Went out of their way to fix a problem caused by another local body shop company and explained what they had done with expert knowledge and photos of each step. Good people, I only wish I had gone to them first👌",
+        "time": 1752507637,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJ2c6yPr5bdEgRzRgcQ0Kc_QM",
+    "name": "The Decorating Lady. Hayling Island",
+    "address": "Briarwood Gardens, Hayling Island PO11 9BB, UK",
+    "area": "Unknown",
+    "phone": "07789 765319",
+    "rating": 4.9,
+    "review_count": 45,
+    "lat": 50.78995320000001,
+    "lng": -0.9805411999999999,
+    "website": "https://www.decoratinglady.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1630"
+          },
+          "open": {
+            "day": 1,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1630"
+          },
+          "open": {
+            "day": 2,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1630"
+          },
+          "open": {
+            "day": 3,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1630"
+          },
+          "open": {
+            "day": 4,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1630"
+          },
+          "open": {
+            "day": 5,
+            "time": "0830"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:30 AM – 4:30 PM",
+        "Tuesday: 8:30 AM – 4:30 PM",
+        "Wednesday: 8:30 AM – 4:30 PM",
+        "Thursday: 8:30 AM – 4:30 PM",
+        "Friday: 8:30 AM – 4:30 PM",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Liz T",
+        "author_url": "https://www.google.com/maps/contrib/101677876122044334620/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKxZs-xmiX5ZO_r6su3N_xkLEKRlDfZm8CL4fzl5ZwblgILpw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 months ago",
+        "text": "I 100% recommend Claire. She is an amazing decorator - very knowledgeable, experienced and skilled.  We have used her 4 times now, for different houses and have already booked her in for January 2026 as we have had a massive leak from our roof and the water staining is vast.  She uses specialist treatments and paints for water damaged areas. She is polite, efficient and always leaves the workspace clean and tidy between coats. She always turned up on time and I wouldn’t hesitate in recommending her to anyone!",
+        "time": 1764672342,
+        "translated": false
+      },
+      {
+        "author_name": "Charlie Phethean",
+        "author_url": "https://www.google.com/maps/contrib/105123032185458016005/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKHPn4VxSgIvF1T7cl4t1YsHAPuibWA4KHMr9pc1F67ixN5zg=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 months ago",
+        "text": "We recently refurbished a house in Sussex and we asked the Decorating Lady (Claire) to decorate throughout. She was extremely hard-working, reliable and personable and we thrilled with her professionalism and attention to detail. The house looked absolutely amazing when she had finished, all done to an extremely high standard! We would highly recommend her services!!",
+        "time": 1764670844,
+        "translated": false
+      },
+      {
+        "author_name": "Ros Barnes",
+        "author_url": "https://www.google.com/maps/contrib/106762437971070323035/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocL2ESRdx3eEu50wl_1ny_csbnp_0KETfWf0rxM_HXSTmtoUIw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 weeks ago",
+        "text": "Claire has just decorated my living area/conservatory and hallway, she has done an amazing job and I am thrilled with the end result. I have no hesitation in recommending her to anyone looking for a reliable, professional decorator.  You won’t be disappointed.",
+        "time": 1768674293,
+        "translated": false
+      },
+      {
+        "author_name": "Tracey Dunn",
+        "author_url": "https://www.google.com/maps/contrib/108630821476536158310/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJNPzv0IgmiLoDl6_NhyYACQCHHC5gW8QJ0DKDV0EoSUG_CoQ=s128-c0x00000000-cc-rp-mo-ba2",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "Claire has just finished our bedroom, bathroom. Both rooms have been completed to an exceptional  standard. She was  punctual and conscientious and both rooms were left very clean and tidy.  We would have no hesitation in recommending her to others. Her quotation was very reasonably priced.  We are so pleased with the work we have already booked in for further decorating work.",
+        "time": 1761920467,
+        "translated": false
+      },
+      {
+        "author_name": "Joanna Ferguson",
+        "author_url": "https://www.google.com/maps/contrib/112938291096654154655/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIjv0feuhALXOJ1kJ29zUA7WjLq9sfRJlPe9iGJI-2nfjU1GQ=s128-c0x00000000-cc-rp-mo-ba2",
+        "rating": 5,
+        "relative_time_description": "12 months ago",
+        "text": "Professional, punctual and hardworking.\nClaire has done a fabulous job of our staircase… filling, sanding and painting the handrails, base rails, newel posts and spindles to an excellent standard. It was certainly not a straightforward job made even harder by me wanting two different colours! I wouldn’t hesitate to recommend her and would certainly use her again.",
+        "time": 1738779083,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJhygCKynU2Y4R0exHH3Mxszo",
+    "name": "Fin and Olive Decorating and Carpentry Ltd",
+    "address": "Cherque farm, Lee-on-the-Solent PO13 8FF, UK",
+    "area": "Unknown",
+    "phone": "07342 944966",
+    "rating": 5,
+    "review_count": 35,
+    "lat": 50.8016012,
+    "lng": -1.1870596,
+    "website": "http://www.finandolive.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2100"
+          },
+          "open": {
+            "day": 0,
+            "time": "0600"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2100"
+          },
+          "open": {
+            "day": 1,
+            "time": "0600"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2100"
+          },
+          "open": {
+            "day": 2,
+            "time": "0600"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2100"
+          },
+          "open": {
+            "day": 3,
+            "time": "0600"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2100"
+          },
+          "open": {
+            "day": 4,
+            "time": "0600"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2100"
+          },
+          "open": {
+            "day": 5,
+            "time": "0600"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2100"
+          },
+          "open": {
+            "day": 6,
+            "time": "0600"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 6:00 AM – 9:00 PM",
+        "Tuesday: 6:00 AM – 9:00 PM",
+        "Wednesday: 6:00 AM – 9:00 PM",
+        "Thursday: 6:00 AM – 9:00 PM",
+        "Friday: 6:00 AM – 9:00 PM",
+        "Saturday: 6:00 AM – 9:00 PM",
+        "Sunday: 6:00 AM – 9:00 PM"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Sarah Barnes-Bailey",
+        "author_url": "https://www.google.com/maps/contrib/115242534132693068989/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVnKrpok7DlDb68YZmzh_JkKELKqR6ShDjP4WrVHDkVqQSC1jf3=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "in the last week",
+        "text": "I used Fin and Olive this week to supply and fit Solid Oak doors with Chrome handles. I am so pleased and my home is transformed!!\nMatt and Freddie were excellent and hard working. The quality of work is exceptional in every way.\nI appreciate you need to wait to get the work done but is worth it.\nI would recommend Matt and Freddie 100%.",
+        "time": 1769844618,
+        "translated": false
+      },
+      {
+        "author_name": "Essam",
+        "author_url": "https://www.google.com/maps/contrib/101127178003977696496/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJQhfMOYo2jthDsxD2dbEI0cMd272ikxoZxddzlCArsuujYrg=s128-c0x00000000-cc-rp-mo-ba2",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "Fin and Olive were our main decorator on our recent renovation. From start to finish Matt has been a pleasure to have on the project. He went through the paint options, helped us select colours, and advised on the finish. He was super flexible when the build experienced inevitable delays; this is much appreciated and caused him no end of headaches! We’re delighted with the result and would like to thank the team for their efforts. We had a few complexities on timings and other elements as mentioned, but Matt addressed these to ensure the outcome was achieved without compromise.",
+        "time": 1761393683,
+        "translated": false
+      },
+      {
+        "author_name": "lesley aston",
+        "author_url": "https://www.google.com/maps/contrib/104026609762318507967/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKLB6-g4YSsSqXyCJZ_p6EnObp9XGnNbYl7P92WUsqR0wPnDg=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 years ago",
+        "text": "Matt is very friendly, creative and professional.\nHe takes great pride in his work and this shows by the end results he produces.\nMatt has completely transformed our hall stairs and landing. He added panelling and a new banister.\nWe discussed the colour choices together and he came up with some great ideas.\nMatt has also painted all of the doors in the house, the lounge and some of the ceilings in other rooms.\nI would highly recommend matt and we can’t wait for him to do more work in our home in the future.\nThank you Matt, you and your work have been amazing!",
+        "time": 1684762672,
+        "translated": false
+      },
+      {
+        "author_name": "John Kirman",
+        "author_url": "https://www.google.com/maps/contrib/111433083266754608011/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKGbPQjmW6KzfmvT6IaRfA5Pf0XH8KPdOmPUuoodL9mW7UYRw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "This is the second time we have used Fin and Olive and I couldn't recommend them highly enough. Matt and his team carried out extensive works in our lounge including new flooring,skirting ,opening up the previously boxed in fireplace and laying a new Hearth.\nMatt designed and built a floor to ceiling storage and shelving unit into  a previously wasted space in an alcove. We couldn't be happier with the Finn and Olive team ,the standard of workmanship and the professional way they conduct themselves means I wouldn't hesitate to recommend them to anyone looking for domestic work.",
+        "time": 1760187069,
+        "translated": false
+      },
+      {
+        "author_name": "Gillian Phillips",
+        "author_url": "https://www.google.com/maps/contrib/106764072449818902367/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocK0cT74D3S-QsyoXy3U3PnDEURN1JJtMv-AJIwuEMmP_fNTOQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 years ago",
+        "text": "Matt is fabulous. From the outset Matt provided professional advice and made great design suggestions that have totally enhanced our home.\nMatt panelled and then painted the hall entrance and upstairs with meticulous detail and was always checking I was happy with the work. Matt takes great pride in his work which is clearly obvious from the quality finish. Matt communicates really well responding in a timely manner. I have no hesitation recommending Matt @ Fin&Olive decorating and wish Matt every success.",
+        "time": 1669455061,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJq6qaqgYrdEgRqCS4V0O6c5U",
+    "name": "Fix & Brush",
+    "address": "2 Canada Ave, Farnborough GU14 0FJ, UK",
+    "area": "Unknown",
+    "phone": "07535 834263",
+    "rating": 5,
+    "review_count": 34,
+    "lat": 51.29401559999999,
+    "lng": -0.7836359,
+    "website": "https://www.fixandbrush.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1700"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1700"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1700"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1700"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1630"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 5:00 PM",
+        "Tuesday: 8:00 AM – 5:00 PM",
+        "Wednesday: 8:00 AM – 5:00 PM",
+        "Thursday: 8:00 AM – 5:00 PM",
+        "Friday: 8:00 AM – 4:30 PM",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Christine Brown",
+        "author_url": "https://www.google.com/maps/contrib/114426012134909465946/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXauNSZYq0-axKa5yHMGpsz3pbsHBeTiaejLSpud4oarBt9p_zFlA=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "🏆‘Best in Class’ Craftsmen🏆\nI can thoroughly recommend the Fix and Brush Team. They decorated our kitchen to an exceptionally high standard. The cupboard doors were removed and taken away to their studio to be  stripped and spray painted. This gave them a finish to make them look brand new and the carcasses were painted to the same standard. The worktops were sanded, the ceiling and walls were prepped and painted, so the end result is very impressive. On top of all that they are thoroughly nice guys to work with and we will certainly employ them again in the future! The team is led by David, who is fanatical about attention to detail, materials, and tools which I guess comes from his degree in architectural modelling. 🤩",
+        "time": 1709930115,
+        "translated": false
+      },
+      {
+        "author_name": "Helen Roberts",
+        "author_url": "https://www.google.com/maps/contrib/109170997117872837487/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocL0lkbLdJ4bk32yLNwSflgOqgJyiuFDSXEp1Upha6Hihz_S4A=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "We were replacing our much loved front door and I asked a question on a local Facebook site about paint as I wanted a wood door to retain the character of our house. David posted a very informative reply with excellent advice re ambient external painting conditions. He is extremely knowledgeable, friendly and amazing at what he does. The finish on my new door is incredible, highly recommend 😊",
+        "time": 1715248845,
+        "translated": false
+      },
+      {
+        "author_name": "Dan Dan",
+        "author_url": "https://www.google.com/maps/contrib/110447094968084667507/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJ0gY0g7-AdYakFhPKtd6YQskrXgllYXxxAXisliUi7PhpRQg=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "5 months ago",
+        "text": "Outstanding job on our fence, very professional, great price too. Highly recommended and will use again.",
+        "time": 1757103929,
+        "translated": false
+      },
+      {
+        "author_name": "Alex Vickers",
+        "author_url": "https://www.google.com/maps/contrib/105353640311631338333/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWxM0XshBGRUhAew6VKbnR48p3BYYeUGI8GXbrG4tX_LCm9WMm5=s128-c0x00000000-cc-rp-mo-ba3",
+        "rating": 5,
+        "relative_time_description": "2 years ago",
+        "text": "I recently reached out to Fix & Brush/Luxurious Finish to see if they could help me refresh some of my furniture, since I'm all about the reduce, reuse, recycle philosophy. I also needed some decorating works done, and I was happy to find that David and Tammy were super friendly and helpful. They responded quickly and provided me with all the information I needed. The final finish was amazing! I would definitely recommend their services to anyone, and I'm already planning on using them again in the future. ⭐️⭐️⭐️⭐️⭐️",
+        "time": 1699893925,
+        "translated": false
+      },
+      {
+        "author_name": "Alexander Weller",
+        "author_url": "https://www.google.com/maps/contrib/113154813093102551396/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjW6tAWhSMDFhyay3Yof7GTMv57D6qODMZvftOgOOPVAuTgbgtF3=s128-c0x00000000-cc-rp-mo-ba4",
+        "rating": 5,
+        "relative_time_description": "5 years ago",
+        "text": "Fix and Brush were fantastic. Competitively priced and the standard of the finished work is beyond reproach. Fix and Brush arrived promptly every day and were tidy, professional and friendly.The owner David is a perfectionist and every element had to be right. Unlike other trades we have used before anything we had to buy such as the paints were clearly explained including quantities, brands, type etc taking all the stress out of things. We could not be happier and thoroughly recommend David and his team for decorating.",
+        "time": 1600160108,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJyXICwoIpdEgR64HfL_v95yg",
+    "name": "Salt Decorators",
+    "address": "32 Wintney St, Fleet GU51 1AN, UK",
+    "area": "Unknown",
+    "phone": "07580 757611",
+    "rating": 5,
+    "review_count": 30,
+    "lat": 51.2918262,
+    "lng": -0.8556815999999999,
+    "website": "https://www.saltdecorators.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1800"
+          },
+          "open": {
+            "day": 0,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1800"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1800"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1800"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1800"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1800"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1800"
+          },
+          "open": {
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 6:00 PM",
+        "Tuesday: 8:00 AM – 6:00 PM",
+        "Wednesday: 8:00 AM – 6:00 PM",
+        "Thursday: 8:00 AM – 6:00 PM",
+        "Friday: 8:00 AM – 6:00 PM",
+        "Saturday: 8:00 AM – 6:00 PM",
+        "Sunday: 9:00 AM – 6:00 PM"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Wendy Glover",
+        "author_url": "https://www.google.com/maps/contrib/109060271046300155090/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJzhEdHuAoGJ8vBMPCm_CrI0At1uP0mJtgZfHhV4AiMHjV1=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "Brett did a fantastic job hanging feature wallpaper in our lounge. He was friendly, punctual, and responsive when arranging the work. The finish looks great, he left everything clean and tidy, and the price was very reasonable too. Highly recommended!",
+        "time": 1760801296,
+        "translated": false
+      },
+      {
+        "author_name": "Robert Dunn",
+        "author_url": "https://www.google.com/maps/contrib/116852070885926461563/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKi4soK_XSJqny-QdOEV5rx6FjrR5UNRhYdeRU_yi8bNCnu2A=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "in the last week",
+        "text": "Brett has recently decorated our hallway, stairs and landing. His work is faultless and looks great. He was always polite and considerate and always left the areas clean and tidy. I can highly recommend Brett and will use him again without hesitation.",
+        "time": 1769871664,
+        "translated": false
+      },
+      {
+        "author_name": "Shona Naomi",
+        "author_url": "https://www.google.com/maps/contrib/115275041364400292888/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWnnusnMTdoDgESSwH11eAMps_6rxfrKD2LP7iu56jgmyf2K2U=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "Brett did an amazing job painting my living room! The walls are old and uneven, but Brett hid all the imperfections and the finish is perfect. He was really  easy to communicate with and left everything neat and clean. I’m really happy with how it turned out and would definitely hire him again and recommend.",
+        "time": 1761124123,
+        "translated": false
+      },
+      {
+        "author_name": "Joe Killen",
+        "author_url": "https://www.google.com/maps/contrib/116218659559924538053/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJwHmQwkdsOxXDoXjk5-gFA6uzapdvw3C4roZOwBKAxMa_JXw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "4 months ago",
+        "text": "Brett painted two large bedrooms for us over 2 days and we are really happy with his work. Clean, tidy and his experience / professionalism shows in his work. Also an easy going guy very comfortable to sit and chat to whilst giving us good honest advice. Would definitely recommend",
+        "time": 1757420324,
+        "translated": false
+      },
+      {
+        "author_name": "Ian Reynolds",
+        "author_url": "https://www.google.com/maps/contrib/108918206124820416915/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLnU9Ek99hPNZ-x00Pb_xZlqgCSVnB76MG5cQhhYTP1AIj0UQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "Brett did fantastic job wallpapering our master bedroom. In spite of it being an old house with uneven walls, you can't see any joins Great finish. We were really pleased and we are using him again very soon! We would definitely recommend him. Thanks Ian",
+        "time": 1734774822,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJW8P2W-VFdEgRLnVtGhYhdGM",
+    "name": "CJ Premium Valeting",
+    "address": "Main Rd, Emsworth PO10 8AU, UK",
+    "area": "Emsworth",
+    "phone": "07510 991460",
+    "rating": 5,
+    "review_count": 29,
+    "lat": 50.8475095,
+    "lng": -0.9370139999999999,
+    "website": "http://www.cjpremiumvaleting.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "2000"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2000"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2000"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2000"
+          },
+          "open": {
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 8:00 PM",
+        "Tuesday: 8:00 AM – 8:00 PM",
+        "Wednesday: 8:00 AM – 8:00 PM",
+        "Thursday: 8:00 AM – 8:00 PM",
+        "Friday: 8:00 AM – 8:00 PM",
+        "Saturday: 8:00 AM – 8:00 PM",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "William Allen",
+        "author_url": "https://www.google.com/maps/contrib/100403907139315677621/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjX3nB3M8YIoUo61tcMsnGc_bv4p8s6o53zasH2aZGDC3uRukgIz=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a month ago",
+        "text": "Eddie is extremely professional, detail-oriented, and a pleasure to work with. He takes the time to do the job thoroughly and clearly takes pride in the quality of his work. His pricing is very fair for the level of service provided, and the results speak for themselves. I would highly recommend him to anyone looking to have their car professionally cleaned or detailed.",
+        "time": 1766070712,
+        "translated": false
+      },
+      {
+        "author_name": "Kath Morgan",
+        "author_url": "https://www.google.com/maps/contrib/100152906301127692202/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXRgLuNJQOfhfnIcKJT_dhL7KcA9d5bjc63siOGo5YG6KkvsyQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a month ago",
+        "text": "Eddie did an amazing job valeting my car. The service was excellent and my Mini looked brand new by the time he’d finished! I will definitely use Eddie and CJ Premium Valeting again. Thank you! 🤩",
+        "time": 1765982988,
+        "translated": false
+      },
+      {
+        "author_name": "michelle hardy",
+        "author_url": "https://www.google.com/maps/contrib/114201520138426622716/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIfqu4fk4Lgj8Zyjr24aK7hubrKziK5zeuNreNmRZUbU9dmDw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "10 months ago",
+        "text": "Jake provided a very professional and friendly service.  I had a paint decontamination, deep exterior and interior clean and a ceramic coating. It feels like a brand new car off the forecourt. I would use them again and highly recommend  😊",
+        "time": 1743095191,
+        "translated": false
+      },
+      {
+        "author_name": "Darren Crassweller",
+        "author_url": "https://www.google.com/maps/contrib/109282155250177268880/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocI9sxtceQgMY8T_fxahYIlzqcavK00ECeuq62vy8Lyu54rJ-g=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a week ago",
+        "text": "Chris and the team of Eddie were brilliant and the van looks amazing. I couldn't ask for a better finish and clean. Spotless. Would definitely recommend. Thankyou.",
+        "time": 1769378828,
+        "translated": false
+      },
+      {
+        "author_name": "David Smith",
+        "author_url": "https://www.google.com/maps/contrib/105583735511185224498/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUEAe67wCn3UyeEx7QA2SINgBcHthimlGSOgzUjHUEOUVeFHTI6=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a month ago",
+        "text": "Eddy came to our work place and did a cracking job of my car. Inside and our was gleaming, he also left a couple of air fresheners on the pasenger seat which was a lovely touch. Many thanks. Dave",
+        "time": 1766072185,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJ_-jjSj9FdEgR4WVaCO_i-Jo",
+    "name": "DWPM (Darren Wright Property Maintenance Limited)",
+    "address": "8 Oak Tree Cl, Rowlands Castle, Rowland's Castle PO9 6FB, UK",
+    "area": "Unknown",
+    "phone": "07584 033881",
+    "rating": 5,
+    "review_count": 26,
+    "lat": 50.8850506,
+    "lng": -0.9668277999999998,
+    "website": "http://www.dwpm.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1700"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1700"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1700"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1700"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1700"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1700"
+          },
+          "open": {
+            "day": 6,
+            "time": "0900"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 5:00 PM",
+        "Tuesday: 8:00 AM – 5:00 PM",
+        "Wednesday: 8:00 AM – 5:00 PM",
+        "Thursday: 8:00 AM – 5:00 PM",
+        "Friday: 8:00 AM – 5:00 PM",
+        "Saturday: 9:00 AM – 5:00 PM",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "James Hawley",
+        "author_url": "https://www.google.com/maps/contrib/111423391621069988605/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJ9DgPKuMBJAM9ZKfXnyy5pWyzLPVIelNpxIeZRvnNl8MUc1A=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "I have used Darren and his team now multiple times for work at my home and wouldn’t consider using anyone else moving forward.\nThey have completed a range of jobs for me from internal room painting to external fence repair and painting.\nAlways prompt, professional & trustworthy.",
+        "time": 1761557073,
+        "translated": false
+      },
+      {
+        "author_name": "Gracie Cliffe",
+        "author_url": "https://www.google.com/maps/contrib/117683505030623629695/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjW1OnYohXt9oUYDC8NLaQXVV7b1_TSl35SgM0lGks0kXbRNx30=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "Darren and his team recently repainted my flat and not only did they do it all in one day, but the attention to detail and care for my belongings didn’t go unnoticed. They took the time to take photos of my furniture to ensure they put it back in the right spot which was so appreciated and saved me a job later! The flat looks so much brighter and fresher and given that it wasn’t an urgent repair, I really felt like they prioritised my job! I’ve had Darren’s help for over 4 years now and I always feel completely comfortable leaving my flat in DWPMs hand!",
+        "time": 1761501450,
+        "translated": false
+      },
+      {
+        "author_name": "Hannah Boyd-Brown",
+        "author_url": "https://www.google.com/maps/contrib/105432047228721835207/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIvXd6oErgPaU-HeLp59MY3v9BiHY3GL5q5MyB6fCODaRxO8Q=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a month ago",
+        "text": "Darren and his team painted our hallway and living room, including all of the wood work and doors. We were so happy with the result that we asked for them to come back the following week to do the kitchen. Very happy with their work and would recommend.",
+        "time": 1765920746,
+        "translated": false
+      },
+      {
+        "author_name": "Dean Holdway",
+        "author_url": "https://www.google.com/maps/contrib/110075223476625215256/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUK8CpdgHvDLQPRpg6KKlkGFZagaUlWZGEFN-wslqDmnREHHXi5=s128-c0x00000000-cc-rp-mo-ba4",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "Had Darren round for a couple of days to mist coat fresh plaster and finishing off the ceilings and some cupboards,\nCeilings are perfectly white! His timing was excellent and also has a very friendly personality,\nWill be having him back when we have picked the colours and fixed the woodwork,    Highly recommend, you won’t be disappointed!",
+        "time": 1725026672,
+        "translated": false
+      },
+      {
+        "author_name": "Tracie French",
+        "author_url": "https://www.google.com/maps/contrib/112999092699512582504/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLt90CWmOCGjksLRQX3skziRo5gdIc-iFTgyB3xfS3Ugl0j8VE=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "5 months ago",
+        "text": "Darren and his team were punctual, clean, and efficient. They very professionally filled some difficult cracks and damaged woodwork. They cut in very smartly and accurately when given a very dark wall paint. Would 100% recommend.",
+        "time": 1756800919,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJmeb1uORFdEgR22CYV4BU4L4",
+    "name": "Bird Property Services",
+    "address": "1 Lapwing Cl, Slough SL2 9EQ, UK",
+    "area": "Slough",
+    "phone": "07554 434313",
+    "rating": 5,
+    "review_count": 24,
+    "lat": 50.91264460000001,
+    "lng": -1.0128724,
+    "website": "https://www.birdpropertyservices.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "2000"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2000"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2000"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1700"
+          },
+          "open": {
+            "day": 6,
+            "time": "0900"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 8:00 PM",
+        "Tuesday: 8:00 AM – 8:00 PM",
+        "Wednesday: 8:00 AM – 8:00 PM",
+        "Thursday: 8:00 AM – 8:00 PM",
+        "Friday: 8:00 AM – 8:00 PM",
+        "Saturday: 9:00 AM – 5:00 PM",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Eclipse Eternal",
+        "author_url": "https://www.google.com/maps/contrib/106337049503360303703/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjV7IHhiBE0uCcMssZHHbCNMgAFPGbNl-2tDSaB5a7lnZ2otLxY=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a month ago",
+        "text": "Outcome looks great, very happy with the paint work done. Adrian and Dan were friendly and got the job done quickly and thoroughly. They managed to make my bedroom nice to be in again. Would recommend, thanks for the help 👍",
+        "time": 1766425516,
+        "translated": false
+      },
+      {
+        "author_name": "Paul Cooper",
+        "author_url": "https://www.google.com/maps/contrib/100089749079220570128/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIv08DNPrpYY1keXOHMojFEdtdfJrZ4HKJTq3FkHAp0mFLrjlU=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 months ago",
+        "text": "Adrian and Dan were amazing, taking on extra trades were needed to get my house now looking fantastic. They were flexible, professional and immensely helpful and I'm very impressed with the quality of painting and cosmetic work.",
+        "time": 1764192681,
+        "translated": false
+      },
+      {
+        "author_name": "Chris Parker",
+        "author_url": "https://www.google.com/maps/contrib/116703898638473043364/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLryfeeK88Tm0-MoZWlWKqYdAfYkFbudNdqbIPYYUcfzwhm6A=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "4 months ago",
+        "text": "Delighted to have Adrian & Dan here completely redecorating our front room, including managing trades where necessary.   All work completed to a very high standard and we are delighted with the outcome.",
+        "time": 1759487924,
+        "translated": false
+      },
+      {
+        "author_name": "peter wiggins",
+        "author_url": "https://www.google.com/maps/contrib/104176300629967070317/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJdub9qNz4l8zd1WBGkaq8iCWDzjBC15TucOrDfP-Cp3_AF4w=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "We were impressed with the complete renovation of my property. The work undertaken was done professionally to a high standard. We have no hesitation recommending Mr Bird and his company.",
+        "time": 1760265984,
+        "translated": false
+      },
+      {
+        "author_name": "Chris Sinnett",
+        "author_url": "https://www.google.com/maps/contrib/113934879993547000375/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWetTVcgsmSEhnm1aGip84aC9anNyc93ZDyTbeX67Cm1qC1xRK1=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "I had a reasonably large bedroom and a living room 'feature wall' redecorated by Adrian. He offered good advise on some historic mold and damp damage, treated it and completed the decoration work to an excellent standard. He was clean and tidy, completed ahead of schedule, and the quote was accurate and reasonable. Would highly recommend him.",
+        "time": 1714407316,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJAzvFu3k1dEgRQCm-6cfN2pg",
+    "name": "County Decorators",
+    "address": "30 Newtown Rd, Liphook GU30 7DX, UK",
+    "area": "Unknown",
+    "phone": "07817 804352",
+    "rating": 5,
+    "review_count": 20,
+    "lat": 51.0725237,
+    "lng": -0.8011328999999999,
+    "website": "https://www.countydecorators.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1800"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1800"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1800"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1800"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1800"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 6:00 PM",
+        "Tuesday: 8:00 AM – 6:00 PM",
+        "Wednesday: 8:00 AM – 6:00 PM",
+        "Thursday: 8:00 AM – 6:00 PM",
+        "Friday: 8:00 AM – 6:00 PM",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Alan Brown",
+        "author_url": "https://www.google.com/maps/contrib/100243973931539985167/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIWPE-Guu9efi1XiwmcmUhdKdB_zYDQHhfpc828BtHBKxs48A=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 months ago",
+        "text": "County Decorators did a great and very thorough job in repairing and painting our lounge ceiling after a water leak. They arrived on time, prepared the area thoroughly and covered up everything very well. The result was a perfect ceiling again. Would thoroughly recommend them.",
+        "time": 1764842412,
+        "translated": false
+      },
+      {
+        "author_name": "M L",
+        "author_url": "https://www.google.com/maps/contrib/101911262454677522044/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocI--nehtvcNYLdUI1iDyMxGQug7Th9HfbYRtiph02gMuWUJfI2k=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "County Decorators recently completed a large four-week exterior painting project for us, and we couldn’t be happier with the results. From start to finish, they were extremely easy to deal with and a real pleasure to have around the house.\n\nKeith and Kelvin were both highly professional, conscientious, and clearly take great pride in their work. Their attention to detail and commitment to producing a very high standard of finish was evident throughout the job. The whole process was smooth and stress-free thanks to their friendly, reliable, and considerate approach.\n\nWe can highly recommend County Decorators to anyone looking for top-quality workmanship and a team that’s genuinely a pleasure to work with.",
+        "time": 1760108619,
+        "translated": false
+      },
+      {
+        "author_name": "John Hamilton",
+        "author_url": "https://www.google.com/maps/contrib/109488975391456096007/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIaE_y3kFn3JqPIHM3M87_jos0jwQ3Wsu1FPtd0gmNFW3OWrw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "4 months ago",
+        "text": "Keith and Kelvin completed the exterior painting of our house, working quietly and efficiently to a very high standard.  The work was finished within the anticipated time frame despite extremely hot weather and an encounter with wasps!",
+        "time": 1757427381,
+        "translated": false
+      },
+      {
+        "author_name": "SkyWay Messages",
+        "author_url": "https://www.google.com/maps/contrib/109302666124989874694/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKy4-IBPxgnqYLCoB7yxBdzUG7LKYtEGL74uSy1cj88dQ2LGQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "11 months ago",
+        "text": "Very pleased with the decorating of our bedroom. The work was undertaken professionally and with the minimum of disruption. The decorators were pleasant and friendly and always kept us informed of their progress. The final result was excellent. Having used them on previous occasions as well, we would have no hesitation in recommending them to others.",
+        "time": 1739266300,
+        "translated": false
+      },
+      {
+        "author_name": "Susan Slater",
+        "author_url": "https://www.google.com/maps/contrib/106434453261986252744/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKdQDLHf_ddUDxV9uFv4N12zbCgrqyauqfXa8iUrdY8Yloiyw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "So happy that we chose Keith and his team again to paint the outside of our surgery.\nThey take real pride in the work they do, they were there on time every day. Would thoroughly recommend them for any decorating jobs you need undertaking.",
+        "time": 1726212295,
+        "translated": false
+      }
+    ]
+  },
+  {
+    "place_id": "ChIJbSZ9gOVFdEgRuv4go7wyplU",
+    "name": "A+ Design & Build South",
+    "address": "36 Highclere Ave, Havant PO9 4RB, UK",
+    "area": "Havant",
+    "phone": "07912 039031",
+    "rating": 5,
+    "review_count": 18,
+    "lat": 50.8668646,
+    "lng": -0.9908055000000001,
+    "website": "https://aplussouth.co.uk/",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1730"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1730"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1730"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1730"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "0530"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:00 AM – 5:30 PM",
+        "Tuesday: 8:00 AM – 5:30 PM",
+        "Wednesday: 8:00 AM – 5:30 PM",
+        "Thursday: 8:00 AM – 5:30 PM",
+        "Friday: 8:00 AM – 5:30 AM",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "reviews": [
+      {
+        "author_name": "Mike Turner",
+        "author_url": "https://www.google.com/maps/contrib/110552393578139648964/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLTndnZ7VU2-oy2K5k06oPY4WjhVp44y44qSZpzQeRL1MD26A=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 months ago",
+        "text": "I am a stickler for expecting work to be done properly, and I have to admit that Steve and his gang more than fulfilled my expectations. Steve visited measured up and designed the bathroom with lots of good ideas; these were supplied in several cad designs which we accepted, we also visited one of his recent clients. All the materials used in our installation including all the units, shower pump, vanity mirror, tiling and flooring are all of very high quality. The workmanship which included the plastering, plumbing, electrics and decorating are also first class. My wife and myself are very pleased with the whole project and would not hesitate to recommend Steve and his team at A+ Design and Build South.",
+        "time": 1764006272,
+        "translated": false
+      },
+      {
+        "author_name": "Sam “Smithers” Richards",
+        "author_url": "https://www.google.com/maps/contrib/102107201075213544396/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVkzs2WHmcDT-AQ1LPZNSXLSpQdjZNnui65YhPZmBOJQmJbgFyQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "6 months ago",
+        "text": "We recently used A+ Design and Build South to remodel both our upstairs and downstairs bathrooms, and we couldn’t be more pleased with the results. The craftsmanship was outstanding, and the attention to detail really shows in the finished work.\n\nThe team was incredibly responsive to any changes we requested along the way and impressed us with innovative solutions that worked seamlessly with the existing architecture and pipework. Communication throughout the project was excellent, and there were no hidden costs, everything was clear and transparent.\n\nEveryone on the team was punctual, respectful, and tidy, making the whole process smooth and stress-free. We would have no hesitation in recommending A+ Design and Build South and will definitely consider them for future projects.",
+        "time": 1753703693,
+        "translated": false
+      },
+      {
+        "author_name": "Sarah Warwick",
+        "author_url": "https://www.google.com/maps/contrib/112405330209283814316/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLEJpiAOkHWZEsp9NBB_myp1H9Q4seGg9bFqK-XNkMWdqJQDQ=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 months ago",
+        "text": "I have just had a new bathroom done by A+ Design and i am so delighted with it.  The attention to detail right from the get go was really impressive.  I had been to other companies who said i couldn't have what i wanted but Steve was completely knowledgable and gave us the bathroom we wanted.  Jack one of the fitters was an absolute delight, everyone was so nice and cleared up every day before they left.  The end result was stunning, such a high quality.  I also wanted to add that Steve and Jack went the extra mile and helped with things that cropped up along the way  Thank you so much, will definitely work with them for any new projects. :)",
+        "time": 1764000868,
+        "translated": false
+      },
+      {
+        "author_name": "Hayley Sparks",
+        "author_url": "https://www.google.com/maps/contrib/110709238529528388590/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJhgpG1xUt9P8DGgUL8kPedNSGecE9zpjb1c44YHWQIyt7T8g=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 months ago",
+        "text": "⭐️⭐️⭐️⭐️⭐️ Absolutely Outstanding from Start to Finish!\n\nFrom the very beginning at the design stage, the team at A+ Design & Build South were incredible. They took the time to listen, advise, and create a design that exceeded all my expectations. When it came to bringing that design to life, the results were simply outstanding — my bathroom is now absolutely stunning!\n\nJack turned up every single day and worked tirelessly, even when unexpected obstacles came up due to the old bathroom layout. Nothing was ever too much trouble, and his dedication and craftsmanship were second to none. Steve was equally amazing — his attention to detail was unlike anything I’ve ever seen, and he made sure everything was perfect.\n\nA huge thank you also to Tony, Paul, and Sam for their input and support along the way — it really was a team effort. I genuinely cannot recommend A+ Design & Build South highly enough. I’ll definitely be using them again for future projects — and with a big one potentially coming up, I’m really looking forward to working with them all again.\n\nThank you so much, Steve, Jack, Tony, Paul & Sam — you’ve transformed my bathroom and I couldn’t be happier!",
+        "time": 1760958952,
+        "translated": false
+      },
+      {
+        "author_name": "NES Wellness",
+        "author_url": "https://www.google.com/maps/contrib/114811467465638930131/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWoOGs9n4aig1xGpgGhkI9xV02Neq2wv3_0k8QYWCYq8Pm5fqo=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "Steve and his team are masters at what they do! They are hard working, reliable, honest and trustworthy. I can’t thank them enough for the complete renovation of the ground floor of my house which included new kitchen, boiler, flooring, brick and wooden feature walls and plastering. They finished on time and on budget. I cannot recommend them highly enough!",
+        "time": 1733266307,
+        "translated": false
+      }
+    ]
+  }
+]

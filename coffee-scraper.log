@@ -1,0 +1,98 @@
+
+> waterlooville-directory@0.1.0 scrape:coffee
+> tsx scripts/scrapeCoffeeShops.ts
+
+✅ OpenAI API: Configured
+✅ Manus API: Configured
+
+☕ COFFEE SHOPS REVIEW SCRAPER
+==================================================
+
+Found 20 coffee shops
+
+
+[1/20] Cowplain Cafe & Restaurant
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[2/20] Little Bay Eatery
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[3/20] Cafe Havana
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[4/20] Coffee Ville
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[5/20] Chandlers
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[6/20] All About The Grind
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[7/20] Olives Cafe
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[8/20] Poppins Waterlooville
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[9/20] The Bakehouse @ Denmead Limited
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[10/20] Beechwood Kitchen & Kiosks
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[11/20] Costa Coffee
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[12/20] Babyccinos Play cafe
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[13/20] The Village Bakery
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[14/20] Costa Coffee
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[15/20] The Old Forge Tea Room Hambledon.
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[16/20] M&S Café
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[17/20] Aviary Cafe
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[18/20] Brewsters Cafe
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[19/20] Crookley Park Estate
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+[20/20] Cafe Dilara
+      📍 Google Maps...
+      ⚠️  Business page not found
+
+==================================================
+✅ COMPLETE!
+Coffee shops: 20
+Total reviews: 0
+Average: 0.0 per shop

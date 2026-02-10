@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "kingston-plumbing-heating-slough",
+    "name": "Kingston Plumbing & Heating",
+    "phone": "07950 913631",
+    "area": "Chalvey, Widley, Slough",
+    "rating": 5,
+    "reviews": 42,
+    "website": "http://www.kingstonph.co.uk/",
+    "review1": "Excellent service. Nik installed a new boiler and cylinder for us in the loft. Very professional and efficient with seamless coordination of sub-contractors.",
+    "review2": "Impressed with his knowledge and the quality of his workmanship. Would definitely recommend Nik.",
+    "review3": "Clean and tidy, the work was complete within the timeframe and to a high degree."
+  },
+  {
+    "slug": "hw-heating-slough",
+    "name": "HW Heating",
+    "phone": "07979 148856",
+    "area": "Slough",
+    "rating": 5,
+    "reviews": 24,
+    "website": "https://www.facebook.com/hwheating.co.uk",
+    "review1": "I found an issue with my bathroom plumbing and they were round my house in less than 15 minutes. I really cannot recommend them enough!",
+    "review2": "Very polite, friendly, clean and tidy. He was also very thorough in checking everything was still working as it should.",
+    "review3": "Very professional service and reasonable price."
+  },
+  {
+    "slug": "hg-plumbing-heating-denmead",
+    "name": "H G Plumbing and Heating Services",
+    "phone": "07928 967548",
+    "area": "Cippenham, Slough",
+    "rating": 5,
+    "reviews": 34,
+    "website": "http://hgplumbing.co.uk/",
+    "review1": "Harry from HG Plumbing replaced our entire heating system. His attention to detail really showed in the final result.",
+    "review2": "Superb service from Harry at very reasonable rate. Highly professional, engaging and tidy, no mess.",
+    "review3": "We called Harry at 9am to a leaky pipe. He arrived at 9.30 and fixed it. Cannot ask for better than that!"
+  },
+  {
+    "slug": "macaulay-plumbing-slough",
+    "name": "MacAulay Plumbing",
+    "phone": "07834 406948",
+    "area": "Slough",
+    "rating": 5,
+    "reviews": 12,
+    "website": "https://sitelift.site/macaulayplumbingmaintenance/",
+    "review1": "Robert responded very quickly and was able to fit me in the following day. His skill, professionalism and work ethic was superb.",
+    "review2": "He was reliable, honest, professional and I cannot fault his workmanship. No more leaks!",
+    "review3": "Very professional and reliable, highly recommended."
+  },
+  {
+    "slug": "amk-boiler-service-slough",
+    "name": "A.M.K. Boiler Service and Repair",
+    "phone": "07717 840980",
+    "area": "Chalvey, Slough",
+    "rating": 5,
+    "reviews": 67,
+    "website": null,
+    "review1": "Mark fixed the problem very quickly after I called with the emergency. Mark not only is a reliable plumber but also puts himself out to help in emergency situations.",
+    "review2": "He is friendly, trustworthy and does an excellent job. I would not hesitate to recommend him to anyone.",
+    "review3": "He diagnosed and fixed a long term issue that other plumbers had failed to rectify. This meant we finally had a nice warm house!"
+  },
+  {
+    "slug": "panda-gas-services-slough",
+    "name": "Panda Gas Services",
+    "phone": "07962 426606",
+    "area": "Slough",
+    "rating": 5,
+    "reviews": 81,
+    "website": "http://www.pandaplumbing.co.uk/",
+    "review1": "Nathan was very efficient. He explained everything clearly and helped me to choose the right product.",
+    "review2": "Nathan installed our boiler 7-8 years ago and has serviced it every year since. We have always found him to be reliable, professional, friendly and helpful.",
+    "review3": "Their work is top quality with competitive pricing. I have no hesitation in recommending them."
+  },
+  {
+    "slug": "dm-gas-heating-havant",
+    "name": "DM Gas And Heating LTD",
+    "phone": "07468 485642",
+    "area": "Havant",
+    "rating": 5,
+    "reviews": 76,
+    "website": "https://www.dmgasandheating.co.uk/",
+    "review1": "Danny provided a quote on the same day, and completed all work the following week. Very clean, tidy and prompt. Danny has provided an A-Class service throughout.",
+    "review2": "Danny got in touch within minutes and came round the following morning. He did a fantastic job remedying all the issues.",
+    "review3": "They worked cheerfully and efficiently throughout the installation. They left us with clean and tidy work areas."
+  },
+  {
+    "slug": "jml-plumbing-heating-havant",
+    "name": "JML Plumbing & Heating",
+    "phone": "07951 893687",
+    "area": "Havant",
+    "rating": 4.9,
+    "reviews": 34,
+    "website": null,
+    "review1": "James carried out the work at short notice and with no fuss. He did it to a high standard and at an affordable price.",
+    "review2": "He was beyond kind and took the time to make sure my family and I could be warm tonight. Seeing as I only called him at 5pm, I cannot tell you how impressed I am.",
+    "review3": "James is a very knowledgeable polite and straight talking young man. Forever grateful."
+  },
+  {
+    "slug": "pompey-plumb-portsmouth",
+    "name": "Pompey Plumb Ltd",
+    "phone": "07498 964660",
+    "area": "Southsea, Portsmouth",
+    "rating": 4.9,
+    "reviews": 56,
+    "website": "https://pompeyplumb.co.uk/",
+    "review1": "Matt understood the problem, educated me on what needed to be done and then came back to fit a new tap. Kind, attentive with transparent pricing.",
+    "review2": "Matthew sorted a leak under the sink today, he was friendly and resolved the issue super quickly.",
+    "review3": "Excellent service. Good communication. Helpful, polite. Reasonable charge."
+  },
+  {
+    "slug": "rmws-plumbing-heating-portsmouth",
+    "name": "RMWS Plumbing & Heating",
+    "phone": "07847 565158",
+    "area": "Southsea, Portsmouth",
+    "rating": 5,
+    "reviews": 32,
+    "website": "http://www.rmwsplumbing.co.uk/",
+    "review1": "Rob has completed several jobs for us, all to a very high standard. He is efficient, punctual, very polite, friendly and reliable.",
+    "review2": "Rob was quick to diagnose and rectify the plumbing problem. Tidy worker and cleaned up afterwards. Sensible prices too.",
+    "review3": "Rob was the highest rated on a local google search. He was in and out within the hour, leak fixed and even taught me how to use our boiler correctly."
+  }
+]

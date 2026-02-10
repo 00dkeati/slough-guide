@@ -1,0 +1,75 @@
+[
+  {
+    "id": "biz-1",
+    "name": "Slough Plumbing Services",
+    "slug": "slough-plumbing-services",
+    "tagline": "Your local plumbing experts - 24/7 emergency callouts",
+    "category": "plumbers",
+    "area": "slough",
+    "phone": "023 9259 1234",
+    "email": "info@sloughplumbing.co.uk",
+    "website": "https://sloughplumbing.co.uk",
+    "address": "45 London Road",
+    "postcode": "SL1 7SR",
+    "lat": 50.8806,
+    "lng": -1.0303,
+    "description": "Professional plumbing services covering Slough and surrounding areas. From emergency repairs to full bathroom installations, our Gas Safe registered engineers are here to help.",
+    "yearEstablished": 2005,
+    "services": [
+      "Emergency Callouts",
+      "Boiler Installation",
+      "Bathroom Fitting",
+      "Leak Repairs",
+      "Drain Unblocking",
+      "Central Heating"
+    ],
+    "specialties": [
+      "Boiler Servicing",
+      "Power Flushing",
+      "Underfloor Heating"
+    ],
+    "certifications": [
+      "Gas Safe Registered",
+      "Oftec Registered",
+      "Worcester Bosch Accredited"
+    ],
+    "priceRange": "££",
+    "avgJobCost": "£80-150 per hour",
+    "freeConsultation": true,
+    "opening_hours_json": "{\"monday\":\"7:00 AM - 8:00 PM\",\"tuesday\":\"7:00 AM - 8:00 PM\",\"wednesday\":\"7:00 AM - 8:00 PM\",\"thursday\":\"7:00 AM - 8:00 PM\",\"friday\":\"7:00 AM - 8:00 PM\",\"saturday\":\"8:00 AM - 6:00 PM\",\"sunday\":\"Emergency Only\"}",
+    "emergencyService": true,
+    "appointmentOnly": false,
+    "rating": 4.8,
+    "review_count": 127,
+    "featured": true,
+    "features": [
+      "Free Parking",
+      "Card Payments",
+      "Online Booking",
+      "Same Day Service",
+      "No Call Out Fee"
+    ],
+    "payment_methods": [
+      "Cash",
+      "Card",
+      "Bank Transfer",
+      "Finance Available"
+    ],
+    "languages": [
+      "English"
+    ],
+    "yearsInBusiness": 19,
+    "jobsCompleted": 5000,
+    "responseTime": "Usually responds within 1 hour",
+    "images": [
+      "/images/businesses/slough-plumbing-1.jpg",
+      "/images/businesses/slough-plumbing-2.jpg",
+      "/images/businesses/slough-plumbing-3.jpg"
+    ],
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z",
+    "lastVerified": "2024-01-10T00:00:00Z",
+    "parking": "street",
+    "directions": "Located on London Road, opposite Tesco Express. Look for the van with our logo."
+  }
+]

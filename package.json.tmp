@@ -1,0 +1,5 @@
+  "scripts": {
+    "scrape:test": "ts-node scripts/scrapeSingleBusiness.ts",
+    "scrape:all": "ts-node scripts/scrapeYellData.ts",
+    "scrape:merge": "ts-node scripts/mergeScrapedData.ts"
+  }

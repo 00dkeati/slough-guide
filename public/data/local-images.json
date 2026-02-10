@@ -1,0 +1,31 @@
+{
+  "hero": [
+    {
+      "url": "/images/slough/slough-precinct.jpg",
+      "alt": "Slough town center precinct",
+      "credit": "Wikimedia Commons",
+      "caption": "The heart of Slough"
+    },
+    {
+      "url": "/images/slough/slough-street.jpg",
+      "alt": "London Road, Slough",
+      "credit": "Wikimedia Commons",
+      "caption": "Local businesses on London Road"
+    }
+  ],
+  "areas": {
+    "slough": {
+      "url": "/images/slough/slough-precinct.jpg",
+      "alt": "Slough shopping precinct"
+    },
+    "cowplain": {
+      "url": "/images/slough/cowplain.jpg",
+      "alt": "Langley suburb"
+    }
+  },
+  "placeholders": {
+    "category": "https://placehold.co/600x400/3b82f6/ffffff?text={category}",
+    "area": "https://placehold.co/800x600/10b981/ffffff?text={area}",
+    "business": "https://placehold.co/400x300/8b5cf6/ffffff?text={business}"
+  }
+}

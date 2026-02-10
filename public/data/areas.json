@@ -1,0 +1,74 @@
+[
+  {
+    "id": "area-1",
+    "name": "Slough Central",
+    "slug": "slough-central",
+    "description": "The main town centre with shopping and business district"
+  },
+  {
+    "id": "area-2",
+    "name": "Langley",
+    "slug": "langley",
+    "description": "Suburban area with good schools and transport links"
+  },
+  {
+    "id": "area-3",
+    "name": "Cippenham",
+    "slug": "cippenham",
+    "description": "Residential suburb west of Slough town centre"
+  },
+  {
+    "id": "area-4",
+    "name": "Chalvey",
+    "slug": "chalvey",
+    "description": "Historic area near the town centre"
+  },
+  {
+    "id": "area-5",
+    "name": "Britwell",
+    "slug": "britwell",
+    "description": "Residential estate north of Slough"
+  },
+  {
+    "id": "area-6",
+    "name": "Colnbrook",
+    "slug": "colnbrook",
+    "description": "Village near Heathrow Airport"
+  },
+  {
+    "id": "area-7",
+    "name": "Upton",
+    "slug": "upton",
+    "description": "Residential area with Upton Court Park"
+  },
+  {
+    "id": "area-8",
+    "name": "Wexham",
+    "slug": "wexham",
+    "description": "Area with Wexham Park Hospital"
+  },
+  {
+    "id": "area-9",
+    "name": "Manor Park",
+    "slug": "manor-park",
+    "description": "Residential neighbourhood"
+  },
+  {
+    "id": "area-10",
+    "name": "Salt Hill",
+    "slug": "salt-hill",
+    "description": "Area known for Salt Hill Park"
+  },
+  {
+    "id": "area-11",
+    "name": "Farnham Royal",
+    "slug": "farnham-royal",
+    "description": "Village north of Slough"
+  },
+  {
+    "id": "area-12",
+    "name": "Burnham",
+    "slug": "burnham",
+    "description": "Nearby town with its own high street"
+  }
+]

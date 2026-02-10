@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /editorial/
+
+Sitemap: https://www.waterlooville.co/sitemap.xml

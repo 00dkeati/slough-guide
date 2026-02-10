@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kid Portrait - Lead Funnel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    h1 span { font-size: 32px; }
+    
+    .stats-bar {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .stats-bar strong {
+      color: #4ade80;
+      font-weight: 600;
+    }
+    
+    /* Funnel Section */
+    .funnel-section {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .funnel-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .funnel {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 8px;
+      height: 200px;
+      padding: 0 20px;
+    }
+    
+    .funnel-stage {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .funnel-bar {
+      width: 100%;
+      border-radius: 8px 8px 4px 4px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 12px;
+      font-size: 24px;
+      font-weight: 700;
+      min-height: 40px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .funnel-bar:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    
+    .funnel-label {
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .stage-new .funnel-bar { background: linear-gradient(180deg, #6366f1, #4f46e5); }
+    .stage-contacted .funnel-bar { background: linear-gradient(180deg, #8b5cf6, #7c3aed); }
+    .stage-responded .funnel-bar { background: linear-gradient(180deg, #f59e0b, #d97706); }
+    .stage-interested .funnel-bar { background: linear-gradient(180deg, #10b981, #059669); }
+    .stage-ordered .funnel-bar { background: linear-gradient(180deg, #4ade80, #22c55e); }
+    .stage-delivered .funnel-bar { background: linear-gradient(180deg, #06b6d4, #0891b2); }
+    
+    /* Leads Table */
+    .leads-section {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    
+    .leads-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .leads-header h2 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .filter-tab {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: rgba(255,255,255,0.7);
+      transition: all 0.2s;
+    }
+    
+    .filter-tab:hover, .filter-tab.active {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    
+    .leads-table {
+      width: 100%;
+    }
+    
+    .leads-table th {
+      text-align: left;
+      padding: 16px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.5);
+      background: rgba(0,0,0,0.2);
+    }
+    
+    .leads-table td {
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 14px;
+    }
+    
+    .leads-table tr:hover {
+      background: rgba(255,255,255,0.03);
+    }
+    
+    .lead-name {
+      font-weight: 600;
+      color: #fff;
+    }
+    
+    .lead-email {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+    }
+    
+    .lead-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .source-fb { background: rgba(59, 89, 152, 0.3); color: #7c9ed9; }
+    .source-email { background: rgba(234, 67, 53, 0.3); color: #f08a84; }
+    .source-chat { background: rgba(37, 211, 102, 0.3); color: #5de898; }
+    .source-web { background: rgba(66, 133, 244, 0.3); color: #8ab4f8; }
+    
+    .stage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .stage-badge:hover {
+      transform: scale(1.05);
+    }
+    
+    .badge-new { background: rgba(99, 102, 241, 0.2); color: #a5b4fc; }
+    .badge-contacted { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; }
+    .badge-responded { background: rgba(245, 158, 11, 0.2); color: #fcd34d; }
+    .badge-interested { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
+    .badge-ordered { background: rgba(74, 222, 128, 0.2); color: #86efac; }
+    .badge-delivered { background: rgba(6, 182, 212, 0.2); color: #67e8f9; }
+    
+    .lead-date {
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+    }
+    
+    .lead-value {
+      font-weight: 600;
+      color: #4ade80;
+    }
+    
+    .actions-btn {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: rgba(255,255,255,0.7);
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    
+    .actions-btn:hover {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    
+    /* Stage Dropdown */
+    .stage-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .stage-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 4px;
+      background: #1e1e2e;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      z-index: 100;
+      min-width: 160px;
+      display: none;
+      overflow: hidden;
+    }
+    
+    .stage-options.show {
+      display: block;
+    }
+    
+    .stage-option {
+      padding: 10px 16px;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    
+    .stage-option:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    /* Add Lead Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    
+    .modal-overlay.show {
+      display: flex;
+    }
+    
+    .modal {
+      background: #1e1e2e;
+      border-radius: 16px;
+      padding: 32px;
+      width: 90%;
+      max-width: 480px;
+    }
+    
+    .modal h3 {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+    
+    .form-group {
+      margin-bottom: 16px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-size: 14px;
+    }
+    
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: #6366f1;
+    }
+    
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    
+    .btn {
+      flex: 1;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: #fff;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    }
+    
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    .add-lead-btn {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    
+    .add-lead-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 60px 24px;
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .empty-state span {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 16px;
+    }
+    
+    /* Conversion Rate */
+    .conversion-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    
+    .conversion-arrow {
+      color: rgba(255,255,255,0.3);
+      font-size: 18px;
+    }
+    
+    .conversion-rate {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    
+    @media (max-width: 768px) {
+      .funnel { height: 150px; flex-wrap: wrap; }
+      .funnel-stage { min-width: 30%; }
+      .leads-table th, .leads-table td { padding: 12px 16px; }
+      .filter-tabs { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><span>👶</span> Kid Portrait Funnel</h1>
+      <div class="stats-bar">
+        <span>Today: <strong id="today-leads">0</strong> leads</span>
+        <span>This week: <strong id="week-revenue">£0</strong> revenue</span>
+        <span>Conversion: <strong id="conversion-rate">0%</strong></span>
+      </div>
+    </header>
+    
+    <section class="funnel-section">
+      <h3 class="funnel-title">📊 Sales Funnel</h3>
+      <div class="funnel">
+        <div class="funnel-stage stage-new" data-stage="new">
+          <div class="funnel-bar" id="bar-new">0</div>
+          <span class="funnel-label">New Leads</span>
+        </div>
+        <div class="funnel-stage stage-contacted" data-stage="contacted">
+          <div class="funnel-bar" id="bar-contacted">0</div>
+          <span class="funnel-label">Contacted</span>
+        </div>
+        <div class="funnel-stage stage-responded" data-stage="responded">
+          <div class="funnel-bar" id="bar-responded">0</div>
+          <span class="funnel-label">Responded</span>
+        </div>
+        <div class="funnel-stage stage-interested" data-stage="interested">
+          <div class="funnel-bar" id="bar-interested">0</div>
+          <span class="funnel-label">Interested</span>
+        </div>
+        <div class="funnel-stage stage-ordered" data-stage="ordered">
+          <div class="funnel-bar" id="bar-ordered">0</div>
+          <span class="funnel-label">Ordered</span>
+        </div>
+        <div class="funnel-stage stage-delivered" data-stage="delivered">
+          <div class="funnel-bar" id="bar-delivered">0</div>
+          <span class="funnel-label">Delivered</span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="leads-section">
+      <div class="leads-header">
+        <h2>🎯 All Leads</h2>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="new">New</button>
+            <button class="filter-tab" data-filter="responded">Responded</button>
+            <button class="filter-tab" data-filter="interested">Interested</button>
+            <button class="filter-tab" data-filter="ordered">Ordered</button>
+          </div>
+          <button class="add-lead-btn" onclick="showAddModal()">
+            <span>+</span> Add Lead
+          </button>
+        </div>
+      </div>
+      <table class="leads-table">
+        <thead>
+          <tr>
+            <th>Lead</th>
+            <th>Source</th>
+            <th>Stage</th>
+            <th>Value</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="leads-tbody">
+          <!-- Leads will be inserted here -->
+        </tbody>
+      </table>
+      <div class="empty-state" id="empty-state" style="display: none;">
+        <span>📭</span>
+        <p>No leads yet. They'll show up here as they come in!</p>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Add Lead Modal -->
+  <div class="modal-overlay" id="add-modal">
+    <div class="modal">
+      <h3>➕ Add New Lead</h3>
+      <form id="add-lead-form">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" required placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label>Phone (optional)</label>
+          <input type="tel" name="phone" placeholder="+44 7xxx xxx xxx">
+        </div>
+        <div class="form-group">
+          <label>Source</label>
+          <select name="source">
+            <option value="fb">Facebook Lead Ad</option>
+            <option value="email">Email Inquiry</option>
+            <option value="chat">Chat/WhatsApp</option>
+            <option value="web">Website Form</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Notes (optional)</label>
+          <input type="text" name="notes" placeholder="Any extra info...">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" onclick="hideAddModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Add Lead</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Data store - will sync with backend
+    const DATA_KEY = 'kp_funnel_leads';
+    const API_URL = window.location.hostname === 'localhost' 
+      ? '/api/leads' 
+      : 'https://kp-funnel.pages.dev/api/leads';
+    
+    let leads = [];
+    let currentFilter = 'all';
+    
+    const stages = ['new', 'contacted', 'responded', 'interested', 'ordered', 'delivered'];
+    const stageLabels = {
+      new: '🆕 New',
+      contacted: '📞 Contacted', 
+      responded: '💬 Responded',
+      interested: '⭐ Interested',
+      ordered: '🛒 Ordered',
+      delivered: '✅ Delivered'
+    };
+    
+    const sourceLabels = {
+      fb: { icon: '📘', label: 'Facebook', class: 'source-fb' },
+      email: { icon: '📧', label: 'Email', class: 'source-email' },
+      chat: { icon: '💬', label: 'Chat', class: 'source-chat' },
+      web: { icon: '🌐', label: 'Website', class: 'source-web' }
+    };
+    
+    // Load data
+    async function loadLeads() {
+      // Try to load from localStorage first
+      const stored = localStorage.getItem(DATA_KEY);
+      if (stored) {
+        leads = JSON.parse(stored);
+      }
+      
+      // Then try to sync from server
+      try {
+        const res = await fetch(API_URL);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.leads) {
+            leads = data.leads;
+            saveLeads();
+          }
+        }
+      } catch (e) {
+        console.log('Working offline');
+      }
+      
+      renderAll();
+    }
+    
+    function saveLeads() {
+      localStorage.setItem(DATA_KEY, JSON.stringify(leads));
+      // Also try to sync to server
+      fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ leads })
+      }).catch(() => {});
+    }
+    
+    function renderAll() {
+      renderFunnel();
+      renderLeads();
+      renderStats();
+    }
+    
+    function renderFunnel() {
+      const counts = {};
+      stages.forEach(s => counts[s] = 0);
+      leads.forEach(l => counts[l.stage]++);
+      
+      const maxCount = Math.max(...Object.values(counts), 1);
+      
+      stages.forEach(stage => {
+        const bar = document.getElementById(`bar-${stage}`);
+        const count = counts[stage];
+        const height = Math.max(40, (count / maxCount) * 160);
+        bar.style.height = height + 'px';
+        bar.textContent = count;
+      });
+    }
+    
+    function renderLeads() {
+      const tbody = document.getElementById('leads-tbody');
+      const emptyState = document.getElementById('empty-state');
+      
+      let filtered = leads;
+      if (currentFilter !== 'all') {
+        filtered = leads.filter(l => l.stage === currentFilter);
+      }
+      
+      // Sort by date descending
+      filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      
+      if (filtered.length === 0) {
+        tbody.innerHTML = '';
+        emptyState.style.display = 'block';
+        return;
+      }
+      
+      emptyState.style.display = 'none';
+      
+      tbody.innerHTML = filtered.map(lead => `
+        <tr data-id="${lead.id}">
+          <td>
+            <div class="lead-name">${escapeHtml(lead.name)}</div>
+            <div class="lead-email">${escapeHtml(lead.email)}</div>
+            ${lead.phone ? `<div class="lead-email">${escapeHtml(lead.phone)}</div>` : ''}
+          </td>
+          <td>
+            <span class="lead-source ${sourceLabels[lead.source]?.class || 'source-web'}">
+              ${sourceLabels[lead.source]?.icon || '🌐'} ${sourceLabels[lead.source]?.label || lead.source}
+            </span>
+          </td>
+          <td>
+            <div class="stage-dropdown">
+              <span class="stage-badge badge-${lead.stage}" onclick="toggleStageDropdown('${lead.id}')">
+                ${stageLabels[lead.stage]}
+                <span style="opacity:0.5">▼</span>
+              </span>
+              <div class="stage-options" id="dropdown-${lead.id}">
+                ${stages.map(s => `
+                  <div class="stage-option" onclick="updateStage('${lead.id}', '${s}')">
+                    ${stageLabels[s]}
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </td>
+          <td class="lead-value">${lead.value ? '£' + lead.value : '-'}</td>
+          <td class="lead-date">${formatDate(lead.createdAt)}</td>
+          <td>
+            <button class="actions-btn" onclick="deleteLead('${lead.id}')">🗑️</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+    
+    function renderStats() {
+      const today = new Date().toDateString();
+      const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+      
+      const todayLeads = leads.filter(l => new Date(l.createdAt).toDateString() === today).length;
+      const weekRevenue = leads
+        .filter(l => new Date(l.createdAt) >= weekAgo && l.stage === 'ordered')
+        .reduce((sum, l) => sum + (l.value || 0), 0);
+      
+      const totalLeads = leads.length;
+      const orderedLeads = leads.filter(l => l.stage === 'ordered' || l.stage === 'delivered').length;
+      const conversionRate = totalLeads > 0 ? ((orderedLeads / totalLeads) * 100).toFixed(1) : 0;
+      
+      document.getElementById('today-leads').textContent = todayLeads;
+      document.getElementById('week-revenue').textContent = '£' + weekRevenue;
+      document.getElementById('conversion-rate').textContent = conversionRate + '%';
+    }
+    
+    function toggleStageDropdown(id) {
+      // Close all others
+      document.querySelectorAll('.stage-options').forEach(el => el.classList.remove('show'));
+      document.getElementById(`dropdown-${id}`).classList.toggle('show');
+    }
+    
+    function updateStage(id, newStage) {
+      const lead = leads.find(l => l.id === id);
+      if (lead) {
+        lead.stage = newStage;
+        lead.updatedAt = new Date().toISOString();
+        saveLeads();
+        renderAll();
+      }
+      document.querySelectorAll('.stage-options').forEach(el => el.classList.remove('show'));
+    }
+    
+    function deleteLead(id) {
+      if (confirm('Delete this lead?')) {
+        leads = leads.filter(l => l.id !== id);
+        saveLeads();
+        renderAll();
+      }
+    }
+    
+    function showAddModal() {
+      document.getElementById('add-modal').classList.add('show');
+    }
+    
+    function hideAddModal() {
+      document.getElementById('add-modal').classList.remove('show');
+      document.getElementById('add-lead-form').reset();
+    }
+    
+    document.getElementById('add-lead-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = new FormData(this);
+      
+      const newLead = {
+        id: 'lead_' + Date.now(),
+        name: form.get('name'),
+        email: form.get('email'),
+        phone: form.get('phone') || null,
+        source: form.get('source'),
+        notes: form.get('notes') || null,
+        stage: 'new',
+        value: null,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+      
+      leads.unshift(newLead);
+      saveLeads();
+      renderAll();
+      hideAddModal();
+    });
+    
+    // Filter tabs
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        currentFilter = this.dataset.filter;
+        renderLeads();
+      });
+    });
+    
+    // Click outside to close dropdowns
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.stage-dropdown')) {
+        document.querySelectorAll('.stage-options').forEach(el => el.classList.remove('show'));
+      }
+    });
+    
+    // Funnel bar clicks filter
+    document.querySelectorAll('.funnel-stage').forEach(stage => {
+      stage.addEventListener('click', function() {
+        const stageFilter = this.dataset.stage;
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        const allTab = document.querySelector('[data-filter="all"]');
+        if (stageFilter) {
+          const matchingTab = document.querySelector(`[data-filter="${stageFilter}"]`);
+          if (matchingTab) {
+            matchingTab.classList.add('active');
+            currentFilter = stageFilter;
+          } else {
+            allTab.classList.add('active');
+            currentFilter = 'all';
+          }
+          renderLeads();
+        }
+      });
+    });
+    
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/[&<>"']/g, m => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[m]);
+    }
+    
+    function formatDate(dateStr) {
+      const date = new Date(dateStr);
+      const now = new Date();
+      const diffMs = now - date;
+      const diffMins = Math.floor(diffMs / 60000);
+      const diffHours = Math.floor(diffMs / 3600000);
+      const diffDays = Math.floor(diffMs / 86400000);
+      
+      if (diffMins < 60) return `${diffMins}m ago`;
+      if (diffHours < 24) return `${diffHours}h ago`;
+      if (diffDays < 7) return `${diffDays}d ago`;
+      return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    }
+    
+    // Init
+    loadLeads();
+    
+    // Auto-refresh every 30 seconds
+    setInterval(loadLeads, 30000);
+  </script>
+</body>
+</html>

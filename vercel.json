@@ -1,0 +1,69 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "version": 2,
+  "functions": {
+    "app/sitemap.ts": {
+      "maxDuration": 10
+    },
+    "app/robots.ts": {
+      "maxDuration": 5
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/plumber/:path*",
+      "destination": "/plumbers/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/cafe/:path*",
+      "destination": "/cafes/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/vet/:path*",
+      "destination": "/vets/:path*",
+      "permanent": true
+    }
+  ]
+}
