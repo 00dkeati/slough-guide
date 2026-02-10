@@ -24,7 +24,7 @@ interface EditorialArticle {
 
 async function getArticles(): Promise<EditorialArticle[]> {
   const articlesData = await import('@/data/editorial-articles.json')
-  const articles: EditorialArticle[] = articlesData.default as EditorialArticle[]
+  const articles: EditorialArticle[] = (articlesData.default as unknown) as EditorialArticle[]
   
   // Sort by publish date (newest first)
   return articles.sort((a, b) => 

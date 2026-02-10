@@ -36,7 +36,7 @@ export async function GET(request: Request) {
     
     // Import the editorial articles data
     const articlesData = await import('../../../data/editorial-articles.json')
-    let articles: EditorialArticle[] = articlesData.default as EditorialArticle[]
+    let articles: EditorialArticle[] = (articlesData.default as unknown) as EditorialArticle[]
     
     // Filter featured if requested
     if (featured) {

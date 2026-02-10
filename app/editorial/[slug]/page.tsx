@@ -29,13 +29,13 @@ interface EditorialArticle {
 
 async function getArticle(slug: string): Promise<EditorialArticle | null> {
   const articlesData = await import('@/data/editorial-articles.json')
-  const articles: EditorialArticle[] = articlesData.default as EditorialArticle[]
+  const articles: EditorialArticle[] = (articlesData.default as unknown) as EditorialArticle[]
   return articles.find(article => article.slug === slug) || null
 }
 
 async function getRelatedArticles(currentArticle: EditorialArticle): Promise<EditorialArticle[]> {
   const articlesData = await import('@/data/editorial-articles.json')
-  const articles: EditorialArticle[] = articlesData.default as EditorialArticle[]
+  const articles: EditorialArticle[] = (articlesData.default as unknown) as EditorialArticle[]
   
   // Score articles by relevance (category match + tag overlap)
   const scored = articles
@@ -204,9 +204,11 @@ export default async function EditorialArticlePage({ params }: { params: { slug:
             <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
               {article.title}
             </h1>
-            <p className="text-lg text-slate-300 max-w-2xl">
-              {article.subtitle}
-            </p>
+            {article.subtitle && (
+              <p className="text-lg text-slate-300 max-w-2xl">
+                {article.subtitle}
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -214,16 +216,24 @@ export default async function EditorialArticlePage({ params }: { params: { slug:
       {/* Meta Bar */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 py-4 flex flex-wrap items-center gap-4 text-sm">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">
-              {article.author.charAt(0)}
-            </div>
-            <span className="font-medium text-slate-900">{article.author}</span>
-          </div>
-          <span className="text-slate-400">•</span>
+          {article.author && (
+            <>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">
+                  {article.author.charAt(0)}
+                </div>
+                <span className="font-medium text-slate-900">{article.author}</span>
+              </div>
+              <span className="text-slate-400">•</span>
+            </>
+          )}
           <span className="text-slate-600">{formatDate(article.publishedAt)}</span>
-          <span className="text-slate-400">•</span>
-          <span className="text-slate-600">{article.readTime} min read</span>
+          {article.readTime && (
+            <>
+              <span className="text-slate-400">•</span>
+              <span className="text-slate-600">{article.readTime} min read</span>
+            </>
+          )}
         </div>
       </div>
 
@@ -399,7 +409,7 @@ export default async function EditorialArticlePage({ params }: { params: { slug:
 
 export async function generateStaticParams() {
   const articlesData = await import('@/data/editorial-articles.json')
-  const articles: EditorialArticle[] = articlesData.default as EditorialArticle[]
+  const articles: EditorialArticle[] = (articlesData.default as unknown) as EditorialArticle[]
   return articles.map((article) => ({ slug: article.slug }))
 }
 
